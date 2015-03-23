@@ -1,5 +1,5 @@
 //
-//  BusStopDetail.swift
+//  Player.swift
 //  SFU_App
 //
 //  Created by Hugo Cheng on 2015-03-23.
