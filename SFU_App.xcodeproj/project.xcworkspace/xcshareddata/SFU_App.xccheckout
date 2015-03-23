@@ -12,20 +12,24 @@
 	<dict>
 		<key>03AE8C5402C8D129AEF63BB2D2A2C12DF29D8A00</key>
 		<string>https://bitbucket.org/Team1_cmpt275_sfu/remake.git</string>
+		<key>07D17FE6A3E5353AB82BE0CBC4F2BA862227E9E8</key>
+		<string>https://bitbucket.org/20151cmpt_275/2015-1-cmpt_275_team_01.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SFU_App.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>03AE8C5402C8D129AEF63BB2D2A2C12DF29D8A00</key>
+		<string>../../../03-05-15</string>
+		<key>07D17FE6A3E5353AB82BE0CBC4F2BA862227E9E8</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/Team1_cmpt275_sfu/remake.git</string>
+	<string>https://bitbucket.org/20151cmpt_275/2015-1-cmpt_275_team_01.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>03AE8C5402C8D129AEF63BB2D2A2C12DF29D8A00</string>
+	<string>07D17FE6A3E5353AB82BE0CBC4F2BA862227E9E8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>03AE8C5402C8D129AEF63BB2D2A2C12DF29D8A00</string>
 			<key>IDESourceControlWCCName</key>
 			<string>03-05-15</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07D17FE6A3E5353AB82BE0CBC4F2BA862227E9E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>2015-1-cmpt_275_team_01</string>
 		</dict>
 	</array>
 </dict>

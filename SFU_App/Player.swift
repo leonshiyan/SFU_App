@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+class Player: NSObject {
+    var name:String
+    var number:String
+    
+    init(name:String, number:String) {
+        self.name = name
+        self.number = number
+        super.init()
+    }
+}

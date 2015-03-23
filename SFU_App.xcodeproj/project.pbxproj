@@ -71,6 +71,11 @@
 		406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1251ABF8727004583DA /* sfuvancouver.png */; };
 		7D60E61A1AAE4B0A00A901F1 /* SchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */; };
 		7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60E61B1AAE4B2B00A901F1 /* NewsController.swift */; };
+		7DBBAF121AC0B48800066BCB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBAF111AC0B48800066BCB /* Player.swift */; };
+		7DBBAF141AC0B52400066BCB /* AllBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBAF131AC0B52400066BCB /* AllBusController.swift */; };
+		7DBBAF161AC0B56600066BCB /* BusStopDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBAF151AC0B56600066BCB /* BusStopDetail.swift */; };
+		7DBBAF181AC0B58B00066BCB /* BasFave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBAF171AC0B58B00066BCB /* BasFave.swift */; };
+		7DBBAF1A1AC0B5B500066BCB /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBAF191AC0B5B500066BCB /* FavoritesController.swift */; };
 		7DC35E3B1AA669B700554367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E3A1AA669B700554367 /* AppDelegate.swift */; };
 		7DC35E3D1AA669B700554367 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E3C1AA669B700554367 /* ViewController.swift */; };
 		7DC35E401AA669B700554367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC35E3E1AA669B700554367 /* Main.storyboard */; };
@@ -78,11 +83,6 @@
 		7DC35E451AA669B700554367 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC35E431AA669B700554367 /* LaunchScreen.xib */; };
 		7DC35E511AA669B800554367 /* SFU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E501AA669B800554367 /* SFU_AppTests.swift */; };
 		7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E5A1AA66D3400554367 /* LoginController.swift */; };
-		7DF4C4D41AC077D60017EEE8 /* AllBusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C4D31AC077D60017EEE8 /* AllBusController.swift */; };
-		7DF4C4D61AC07B1F0017EEE8 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C4D51AC07B1F0017EEE8 /* FavoritesController.swift */; };
-		7DF4C4D81AC07B2A0017EEE8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C4D71AC07B2A0017EEE8 /* Player.swift */; };
-		7DF4C4DA1AC07B300017EEE8 /* BaseFave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C4D91AC07B300017EEE8 /* BaseFave.swift */; };
-		7DF4C4DC1AC07B390017EEE8 /* BusStopDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4C4DB1AC07B390017EEE8 /* BusStopDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +161,11 @@
 		7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchViewController.swift; sourceTree = "<group>"; };
 		7D60E61B1AAE4B2B00A901F1 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		7D96B2821ABF7571007F1296 /* Swift-HTML-Parser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Swift-HTML-Parser-Bridging-Header.h"; path = "../Swift-HTML-Parser-Bridging-Header.h"; sourceTree = "<group>"; };
+		7DBBAF111AC0B48800066BCB /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		7DBBAF131AC0B52400066BCB /* AllBusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllBusController.swift; sourceTree = "<group>"; };
+		7DBBAF151AC0B56600066BCB /* BusStopDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStopDetail.swift; sourceTree = "<group>"; };
+		7DBBAF171AC0B58B00066BCB /* BasFave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasFave.swift; sourceTree = "<group>"; };
+		7DBBAF191AC0B5B500066BCB /* FavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		7DC35E351AA669B700554367 /* SFU_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFU_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC35E391AA669B700554367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC35E3A1AA669B700554367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,11 +177,6 @@
 		7DC35E4F1AA669B800554367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC35E501AA669B800554367 /* SFU_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFU_AppTests.swift; sourceTree = "<group>"; };
 		7DC35E5A1AA66D3400554367 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		7DF4C4D31AC077D60017EEE8 /* AllBusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllBusController.swift; path = ../../../../../../attachments/AllBusController.swift; sourceTree = "<group>"; };
-		7DF4C4D51AC07B1F0017EEE8 /* FavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesController.swift; path = ../../../../../../attachments/FavoritesController.swift; sourceTree = "<group>"; };
-		7DF4C4D71AC07B2A0017EEE8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../../../../../../attachments/Player.swift; sourceTree = "<group>"; };
-		7DF4C4D91AC07B300017EEE8 /* BaseFave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseFave.swift; path = ../../../../../../attachments/BaseFave.swift; sourceTree = "<group>"; };
-		7DF4C4DB1AC07B390017EEE8 /* BusStopDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusStopDetail.swift; path = ../../../../../../attachments/BusStopDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,13 +277,13 @@
 			isa = PBXGroup;
 			children = (
 				3E1B39221ABCDB6F001CF09E /* BusPassUpController.swift */,
-				7DF4C4D71AC07B2A0017EEE8 /* Player.swift */,
-				7DF4C4D51AC07B1F0017EEE8 /* FavoritesController.swift */,
-				7DF4C4D31AC077D60017EEE8 /* AllBusController.swift */,
-				7DF4C4D91AC07B300017EEE8 /* BaseFave.swift */,
-				7DF4C4DB1AC07B390017EEE8 /* BusStopDetail.swift */,
 				3E9628F21AA94DCF00A8DE88 /* TransitController.swift */,
 				3E9628FA1AA95D2900A8DE88 /* TViewController.swift */,
+				7DBBAF111AC0B48800066BCB /* Player.swift */,
+				7DBBAF131AC0B52400066BCB /* AllBusController.swift */,
+				7DBBAF151AC0B56600066BCB /* BusStopDetail.swift */,
+				7DBBAF171AC0B58B00066BCB /* BasFave.swift */,
+				7DBBAF191AC0B5B500066BCB /* FavoritesController.swift */,
 			);
 			name = Transit;
 			sourceTree = "<group>";
@@ -547,19 +547,19 @@
 				3A8318E31AA67207006D0922 /* EmailController.swift in Sources */,
 				3E9628FB1AA95D2900A8DE88 /* TViewController.swift in Sources */,
 				3ADDB5881AB8FC6600153543 /* courseGradeController.swift in Sources */,
-				7DF4C4D61AC07B1F0017EEE8 /* FavoritesController.swift in Sources */,
 				3A8318E51AA6724E006D0922 /* CanvasController.swift in Sources */,
 				7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,
 				3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */,
 				3ED91B981AB2467900554BDF /* ENSideMenuNavigationController.swift in Sources */,
 				3E13D39B1AB2524700EAF7B3 /* MyMenuTableViewController.swift in Sources */,
+				7DBBAF1A1AC0B5B500066BCB /* FavoritesController.swift in Sources */,
 				3E1B391F1ABCD881001CF09E /* BreakMatchController.swift in Sources */,
-				7DF4C4DC1AC07B390017EEE8 /* BusStopDetail.swift in Sources */,
 				3E9628F71AA953D700A8DE88 /* article.swift in Sources */,
 				3ADDB5841AB8D0D800153543 /* HTMLParser.swift in Sources */,
 				3E9628F81AA953D700A8DE88 /* BlogPost.swift in Sources */,
 				3E13D3991AB2520B00EAF7B3 /* MyNavigationController.swift in Sources */,
+				7DBBAF121AC0B48800066BCB /* Player.swift in Sources */,
 				3E1B39211ABCDA03001CF09E /* LoyaltyController.swift in Sources */,
 				3ADDB58C1AB91D1700153543 /* homeViewController.swift in Sources */,
 				3A6785B21AAA7DEA0000B21E /* rssPosts.swift in Sources */,
@@ -569,19 +569,19 @@
 				406DB11C1ABF86B9004583DA /* NewsTableViewController.swift in Sources */,
 				3A8319121AA6953D006D0922 /* ServicesController.swift in Sources */,
 				3E9628F91AA953D700A8DE88 /* subCategory.swift in Sources */,
+				7DBBAF181AC0B58B00066BCB /* BasFave.swift in Sources */,
 				3E1B391A1ABCD544001CF09E /* AbController.swift in Sources */,
 				7D60E61A1AAE4B0A00A901F1 /* SchViewController.swift in Sources */,
-				7DF4C4D81AC07B2A0017EEE8 /* Player.swift in Sources */,
 				3E5C83431ABCBE8800A4DB0B /* QRViewController.swift in Sources */,
 				3A6785AC1AAA76D40000B21E /* FinalGradesController.swift in Sources */,
 				3A6785B41AAA81680000B21E /* PostViewController.swift in Sources */,
 				7DC35E3D1AA669B700554367 /* ViewController.swift in Sources */,
+				7DBBAF141AC0B52400066BCB /* AllBusController.swift in Sources */,
+				7DBBAF161AC0B56600066BCB /* BusStopDetail.swift in Sources */,
 				7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */,
-				7DF4C4D41AC077D60017EEE8 /* AllBusController.swift in Sources */,
 				3A8318E71AA67599006D0922 /* MapController.swift in Sources */,
 				7DC35E3B1AA669B700554367 /* AppDelegate.swift in Sources */,
 				3A6785AE1AAA77630000B21E /* goSFUController.swift in Sources */,
-				7DF4C4DA1AC07B300017EEE8 /* BaseFave.swift in Sources */,
 				3ADDB5831AB8D0D800153543 /* HTMLNode.swift in Sources */,
 				3E9628F31AA94DCF00A8DE88 /* TransitController.swift in Sources */,
 			);
