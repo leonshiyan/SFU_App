@@ -13,6 +13,7 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
     
     @IBOutlet weak var subView1: UIView!
     @IBOutlet weak var subView2: UIView!
+    @IBOutlet weak var subView3: UIView!
     
     
     @IBOutlet weak var temp: UILabel!
@@ -38,6 +39,13 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         subView2.layer.shadowOffset = CGSizeMake(0, 0.5)
         subView2.layer.shadowOpacity = 0.1
         subView2.layer.shadowPath = shadowPath2.CGPath
+        
+        let shadowPath3 = UIBezierPath(rect: subView3.bounds)
+        subView3.layer.masksToBounds = false
+        subView3.layer.shadowColor = UIColor.blackColor().CGColor
+        subView3.layer.shadowOffset = CGSizeMake(0, 0.5)
+        subView3.layer.shadowOpacity = 0.1
+        subView3.layer.shadowPath = shadowPath3.CGPath
         
         
         var urlca = NSURL (string:"https://canvas.sfu.ca")
@@ -98,7 +106,23 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         }
         
         
-
+        let currentURLString = "https://canvas.sfu.ca/grades"
+        
+        
+        let currentURL = NSURL(string: currentURLString)
+        var err : NSError?
+        
+        
+        let currentHTMLString = NSString(contentsOfURL: currentURL!, encoding: NSUTF8StringEncoding, error: nil)
+        
+        
+        var parser = HTMLParser(html : currentHTMLString!, error: &err)
+        if err != nil{
+            println(err)
+            exit(1)
+        }
+        
+        var bodyNode = parser.body
         
         
 
