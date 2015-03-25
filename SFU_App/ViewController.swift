@@ -15,21 +15,21 @@ class ViewController: UIViewController, ENSideMenuDelegate {
         super.viewDidLoad()
         self.sideMenuController()?.sideMenu?.delegate = self;
         
-        let currentURLString = "http://api.openweathermap.org/data/2.5/weather?q=Burnaby&mode=xml"
+        //let currentURLString = "http://api.openweathermap.org/data/2.5/weather?q=Burnaby&mode=xml"
         
         
-        let currentURL = NSURL(string: currentURLString)
-        var err : NSError?
+        //let currentURL = NSURL(string: currentURLString)
+        //var err : NSError?
         
         
-        let currentHTMLString = NSString(contentsOfURL: currentURL!, encoding: NSUTF8StringEncoding, error: nil)
+        //let currentHTMLString = NSString(contentsOfURL: currentURL!, encoding: NSUTF8StringEncoding, error: nil)
         
         
-        var parser = HTMLParser(html : currentHTMLString!, error: &err)
-        if err != nil{
-            println(err)
-            exit(1)
-        }
+        //var parser = HTMLParser(html : currentHTMLString!, error: &err)
+        //if err != nil{
+        //    println(err)
+        //    exit(1)
+        //}
         
         let moon = UIImage(named: "moon.png") as UIImage!
         let thunder = UIImage(named: "thunder.png") as UIImage!

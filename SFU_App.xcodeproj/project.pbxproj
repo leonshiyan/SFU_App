@@ -83,6 +83,8 @@
 		7DC35E451AA669B700554367 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC35E431AA669B700554367 /* LaunchScreen.xib */; };
 		7DC35E511AA669B800554367 /* SFU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E501AA669B800554367 /* SFU_AppTests.swift */; };
 		7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E5A1AA66D3400554367 /* LoginController.swift */; };
+		C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */; };
+		C5C424A41AC22D7800BC212E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A31AC22D7800BC212E /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,8 @@
 		7DC35E4F1AA669B800554367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC35E501AA669B800554367 /* SFU_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFU_AppTests.swift; sourceTree = "<group>"; };
 		7DC35E5A1AA66D3400554367 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		C5C424A31AC22D7800BC212E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +389,8 @@
 		7DC35E381AA669B700554367 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5C424A31AC22D7800BC212E /* DataManager.swift */,
+				C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */,
 				3ADDB5801AB8D0D800153543 /* HTMLNode.swift */,
 				7D96B2821ABF7571007F1296 /* Swift-HTML-Parser-Bridging-Header.h */,
 				3ADDB5811AB8D0D800153543 /* HTMLParser.swift */,
@@ -549,6 +555,7 @@
 				3ADDB5881AB8FC6600153543 /* courseGradeController.swift in Sources */,
 				3A8318E51AA6724E006D0922 /* CanvasController.swift in Sources */,
 				7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */,
+				C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,
 				3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */,
 				3ED91B981AB2467900554BDF /* ENSideMenuNavigationController.swift in Sources */,
@@ -582,6 +589,7 @@
 				3A8318E71AA67599006D0922 /* MapController.swift in Sources */,
 				7DC35E3B1AA669B700554367 /* AppDelegate.swift in Sources */,
 				3A6785AE1AAA77630000B21E /* goSFUController.swift in Sources */,
+				C5C424A41AC22D7800BC212E /* DataManager.swift in Sources */,
 				3ADDB5831AB8D0D800153543 /* HTMLNode.swift in Sources */,
 				3E9628F31AA94DCF00A8DE88 /* TransitController.swift in Sources */,
 			);

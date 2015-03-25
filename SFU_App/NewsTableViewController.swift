@@ -91,7 +91,7 @@ class NewsTableViewController: UITableViewController, NSXMLParserDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         let post: rssPosts = posts[indexPath.row]
-        cell.textLabel.text = post.postTitle
+        cell.textLabel?.text = post.postTitle
         return cell
     }
     

@@ -52,8 +52,8 @@ class MyMenuTableViewController: UITableViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CELL")
             
             cell!.backgroundColor = UIColor.clearColor()
-            cell!.textLabel.textColor = UIColor.blackColor()
-            cell!.textLabel.font = UIFont.systemFontOfSize(14.0)
+            cell!.textLabel?.textColor = UIColor.blackColor()
+            cell!.textLabel?.font = UIFont.systemFontOfSize(14.0)
             let selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell!.frame.size.width, cell!.frame.size.height))
             selectedBackgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView
@@ -61,34 +61,34 @@ class MyMenuTableViewController: UITableViewController {
         
         switch (indexPath.row) {
         case 0:
-            cell!.textLabel.text = "Home"
+            cell!.textLabel?.text = "Home"
             break
         case 1:
-            cell!.textLabel.text = "Services"
+            cell!.textLabel?.text = "Services"
             break
         case 2:
-            cell!.textLabel.text = "Transit"
+            cell!.textLabel?.text = "Transit"
             break
         case 3:
-            cell!.textLabel.text = "News"
+            cell!.textLabel?.text = "News"
             break
         case 4:
-            cell!.textLabel.text = "Maps"
+            cell!.textLabel?.text = "Maps"
             break
         case 5:
-            cell!.textLabel.text = "BreakMatcher"
+            cell!.textLabel?.text = "BreakMatcher"
             break
         case 6:
-            cell!.textLabel.text = "SFU Loyalty"
+            cell!.textLabel?.text = "SFU Loyalty"
             break
         case 7:
-            cell!.textLabel.text = "Account"
+            cell!.textLabel?.text = "Account"
             break
         case 8:
-            cell!.textLabel.text = "About"
+            cell!.textLabel?.text = "About"
             break
         default:
-            cell!.textLabel.text = "DEFAULT"
+            cell!.textLabel?.text = "DEFAULT"
             break
         }
         

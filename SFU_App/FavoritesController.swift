@@ -48,7 +48,7 @@ class FavoritesController: UITableViewController {
         
         //display bus stop name input by user
         let player = players[indexPath.row] as Player
-        cell.textLabel.text = player.name
+        cell.textLabel?.text = player.name
         return cell
     }
     //segue bus number assiciated with cell in search

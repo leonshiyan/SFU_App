@@ -14,9 +14,32 @@ class courses{
     var number: String = String();
 }
 
-class SchViewController: UIViewController {
+class courseLists{
+    var name: String = String("NaN");
+    var instructor: String = String("NaN");
+    var times: String = String("NaN");
+    var days: String = String();
+    var desc: String = String();
     
-    @IBOutlet weak var TimeTable: UIWebView!
+}
+
+class classCell: UITableViewCell{
+    
+    @IBOutlet weak var className: UILabel!
+    @IBOutlet weak var classDesc: UILabel!
+    @IBOutlet weak var classInstruct: UILabel!
+    @IBOutlet weak var classTimes: UILabel!
+    @IBOutlet weak var classDays: UILabel!
+    
+    
+}
+
+class SchViewController: UITableViewController {
+    
+    var arr: [courses] = []
+    
+    var courseList: [courseLists] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let currentURLString = "https://sims-prd.sfu.ca/psc/csprd_1/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSR_SSENRL_SCHD_W.GBL?Page=SSR_SS_WEEK&Action=A&ExactKeys=Y&EMPLID=301179599&TargetFrameName=None&PortalActualURL=https%3a%2f%2fsims-prd.sfu.ca%2fpsc%2fcsprd_1%2fEMPLOYEE%2fHRMS%2fc%2fSA_LEARNER_SERVICES.SSR_SSENRL_SCHD_W.GBL%3fPage%3dSSR_SS_WEEK%26Action%3dA%26ExactKeys%3dY%26EMPLID%3d301179599%26TargetFrameName%3dNone&PortalRegistryName=EMPLOYEE&PortalServletURI=https%3a%2f%2fgo.sfu.ca%2fpsp%2fpaprd_1%2f&PortalURI=https%3a%2f%2fgo.sfu.ca%2fpsc%2fpaprd_1%2f&PortalHostNode=EMPL&NoCrumbs=yes&PortalKeyStruct=yes"
@@ -24,8 +47,6 @@ class SchViewController: UIViewController {
         
         let currentURL = NSURL(string: currentURLString)
         var err : NSError?
-        var request = NSURLRequest(URL: currentURL!)
-        TimeTable.loadRequest(request)
         
         let currentHTMLString = NSString(contentsOfURL: currentURL!, encoding: NSUTF8StringEncoding, error: nil)
         
@@ -40,7 +61,7 @@ class SchViewController: UIViewController {
         
         
         
-        var arr: [courses] = []
+        
         
         
         if let inputNodes = bodyNode?.findChildTagsAttr("span", attrName: "class", attrValue: "SSSTEXTWEEKLY"){
@@ -51,17 +72,24 @@ class SchViewController: UIViewController {
                 final = final.stringByReplacingOccurrencesOfString("(Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
                 final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
                 final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-                println(final)
+                
                 var classArray = split(final) {$0 == " "}
                 var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                 var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                 var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                 
                 var c1: courses = courses()
-                c1.department = dept
-                c1.section = sec
-                c1.number = num
-                arr.append(c1)
+                c1.department = dept.lowercaseString
+                c1.section = sec.lowercaseString
+                c1.number = num.lowercaseString
+                
+                //println(c1.department + c1.section + c1.number)
+                
+                if !checkArrayForCourse(c1){
+                    arr.append(c1)
+                }
+                
+                
                 
             }
         }
@@ -73,11 +101,19 @@ class SchViewController: UIViewController {
             final = final.stringByReplacingOccurrencesOfString(" (Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println(final)
+            
             var classArray = split(final) {$0 == " "}
             var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var c1: courses = courses()
+            c1.department = dept.lowercaseString
+            c1.section = sec.lowercaseString
+            c1.number = num.lowercaseString
+            //println(c1.department + c1.section + c1.number)
+            if !checkArrayForCourse(c1){
+                arr.append(c1)
+            }
             
         }
         if let inputNodes = bodyNode?.findChildTagAttr("span", attrName: "id", attrValue: "NO_MTG_CLASS$1"){
@@ -86,11 +122,19 @@ class SchViewController: UIViewController {
             final = final.stringByReplacingOccurrencesOfString(" (Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println(final)
+
             var classArray = split(final) {$0 == " "}
             var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var c1: courses = courses()
+            c1.department = dept.lowercaseString
+            c1.section = sec.lowercaseString
+            c1.number = num.lowercaseString
+            //println(c1.department + c1.section + c1.number)
+            if !checkArrayForCourse(c1){
+                arr.append(c1)
+            }
         }
         if let inputNodes = bodyNode?.findChildTagAttr("span", attrName: "id", attrValue: "NO_MTG_CLASS$2"){
             let original = inputNodes.contents
@@ -98,11 +142,19 @@ class SchViewController: UIViewController {
             final = final.stringByReplacingOccurrencesOfString(" (Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println(final)
+
             var classArray = split(final) {$0 == " "}
             var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var c1: courses = courses()
+            c1.department = dept.lowercaseString
+            c1.section = sec.lowercaseString
+            c1.number = num.lowercaseString
+            //println(c1.department + c1.section + c1.number)
+            if !checkArrayForCourse(c1){
+                arr.append(c1)
+            }
         }
         if let inputNodes = bodyNode?.findChildTagAttr("span", attrName: "id", attrValue: "NO_MTG_CLASS$3"){
             let original = inputNodes.contents
@@ -110,11 +162,19 @@ class SchViewController: UIViewController {
             final = final.stringByReplacingOccurrencesOfString(" (Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println(final)
+
             var classArray = split(final) {$0 == " "}
             var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var c1: courses = courses()
+            c1.department = dept.lowercaseString
+            c1.section = sec.lowercaseString
+            c1.number = num.lowercaseString
+            //println(c1.department + c1.section + c1.number)
+            if !checkArrayForCourse(c1){
+                arr.append(c1)
+            }
         }
         if let inputNodes = bodyNode?.findChildTagAttr("span", attrName: "id", attrValue: "NO_MTG_CLASS$4"){
             let original = inputNodes.contents
@@ -122,11 +182,19 @@ class SchViewController: UIViewController {
             final = final.stringByReplacingOccurrencesOfString(" (Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println(final)
+
             var classArray = split(final) {$0 == " "}
             var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var c1: courses = courses()
+            c1.department = dept.lowercaseString
+            c1.section = sec.lowercaseString
+            c1.number = num.lowercaseString
+            //println(c1.department + c1.section + c1.number)
+            if !checkArrayForCourse(c1){
+                arr.append(c1)
+            }
         }
         if let inputNodes = bodyNode?.findChildTagAttr("span", attrName: "id", attrValue: "NO_MTG_CLASS$5"){
             let original = inputNodes.contents
@@ -134,20 +202,119 @@ class SchViewController: UIViewController {
             final = final.stringByReplacingOccurrencesOfString(" (Section)", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("- ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             final = final.stringByReplacingOccurrencesOfString("  ", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println(final)
+
             var classArray = split(final) {$0 == " "}
             var dept = classArray[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var num = classArray[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             var sec = classArray[2].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var c1: courses = courses()
+            c1.department = dept.lowercaseString
+            c1.section = sec.lowercaseString
+            c1.number = num.lowercaseString
+            //println(c1.department + c1.section + c1.number)
+            if !checkArrayForCourse(c1){
+                arr.append(c1)
+            }
         }
         
+        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+        var error: NSErrorPointer = nil
+
+        
+        for course in arr{
+            let url = NSURL(string: "http://www.sfu.ca/bin/wcm/course-outlines?year=current&term=current&dept=" + course.department + "&number=" + course.number + "&section=" + course.section)
+            let request = NSURLRequest(URL: url!)
+            var dataVal: NSData =  NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error:nil)!
+
+                
+            //println(NSString(data: dataVal, encoding: NSUTF8StringEncoding))
+
+            let json = JSON(data: dataVal)
+            var className = json["info"]["name"].stringValue
+            var classInstruct = json["instructor"][0]["name"].stringValue
+            if classInstruct == ""{
+                classInstruct = "N/A"
+            }
+            var classStart = json["courseSchedule"][0]["startTime"].stringValue
+            var classEnd = json["courseSchedule"][0]["endTime"].stringValue
+            var classDays = json["courseSchedule"][0]["days"].stringValue
+            var classType = json["courseSchedule"][0]["sectionCode"].stringValue
+            var classTitle = json["info"]["title"].stringValue
+            if classType == "TUT"{
+                classType = "Tutorial"
+            }
+            if classType == "LEC"{
+                classType = "Lecture"
+            }
+            if classType == "SEC"{
+                classType = "Distance Ed"
+            }
+            println(className + " " + classInstruct)
+            var c1: courseLists = courseLists()
+            c1.name = className + " - " + classType
+            c1.instructor = classInstruct
+            c1.desc = classTitle
+            if classDays == "" {
+                c1.times = "Online"
+                c1.days = "Online"
+            }else{
+                c1.times = classStart + " -  " + classEnd
+                c1.days = classDays
+            }
+            
+            self.courseList.append(c1)
+        }
+        
+        
+        
     }
+    
+    func checkArrayForCourse(var x : courses) -> Bool{
+        for y in arr{
+            if x.department == y.department &&
+            x.section == y.section &&
+            x.number == y.number{
+                return true
+            }
+        }
+        return false
+        
+    }
+
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int)
+        -> Int {
+            return arr.count
+    }
+    
+    override func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath)
+        -> UITableViewCell {
+            let name = self.courseList[indexPath.row].name
+            let instruct = self.courseList[indexPath.row].instructor
+            let times = self.courseList[indexPath.row].times
+            let days = self.courseList[indexPath.row].days
+            let desc = self.courseList[indexPath.row].desc
+            
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("classCellInfo", forIndexPath: indexPath) as UITableViewCell
+            
+            
+            
+            (cell as classCell).className.text = name
+            (cell as classCell).classTimes.text = times
+            (cell as classCell).classInstruct.text = instruct
+            (cell as classCell).classDays.text = days
+            (cell as classCell).classDesc.text = desc
+            return cell
+    }
     
     
     

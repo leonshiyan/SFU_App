@@ -102,10 +102,10 @@ class AllBusController: UITableViewController, NSXMLParserDelegate {
         
         
         if (indexPath.row == 0) {
-            cell.textLabel.text = subCategorys.subCategoryTitle
+            cell.textLabel?.text = subCategorys.subCategoryTitle
         }
         else{
-            cell.textLabel.text = temparr[indexPath.row-1]
+            cell.textLabel?.text = temparr[indexPath.row-1]
         }
         return cell
     }

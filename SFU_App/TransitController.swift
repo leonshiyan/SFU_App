@@ -155,9 +155,9 @@ class TransitController: UITableViewController, NSXMLParserDelegate,ENSideMenuDe
         // Configure the cell...
         
         if (subCategoryID.isEmpty){
-            cell.textLabel.text = errorString
+            cell.textLabel?.text = errorString
         }else{
-            cell.textLabel.text = subCategorys.subCategoryTitle
+            cell.textLabel?.text = subCategorys.subCategoryTitle
             cell.detailTextLabel?.text = minuteString //subCategorys.subCategoryID
         }
         return cell
