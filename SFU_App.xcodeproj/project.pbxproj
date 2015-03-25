@@ -85,6 +85,7 @@
 		7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E5A1AA66D3400554367 /* LoginController.swift */; };
 		C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */; };
 		C5C424A41AC22D7800BC212E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A31AC22D7800BC212E /* DataManager.swift */; };
+		C5C424A61AC280D000BC212E /* mainContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A51AC280D000BC212E /* mainContentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		7DC35E5A1AA66D3400554367 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C5C424A31AC22D7800BC212E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C5C424A51AC280D000BC212E /* mainContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 				3A6785B31AAA81680000B21E /* PostViewController.swift */,
 				3A8319131AA69D43006D0922 /* mainNavController.swift */,
 				3A8318E81AA67776006D0922 /* HomeController.swift */,
+				C5C424A51AC280D000BC212E /* mainContentController.swift */,
 				3ADDB58B1AB91D1700153543 /* homeViewController.swift */,
 				7DC35E3E1AA669B700554367 /* Main.storyboard */,
 				7DC35E411AA669B700554367 /* Images.xcassets */,
@@ -557,6 +560,7 @@
 				7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */,
 				C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,
+				C5C424A61AC280D000BC212E /* mainContentController.swift in Sources */,
 				3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */,
 				3ED91B981AB2467900554BDF /* ENSideMenuNavigationController.swift in Sources */,
 				3E13D39B1AB2524700EAF7B3 /* MyMenuTableViewController.swift in Sources */,

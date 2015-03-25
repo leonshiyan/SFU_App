@@ -39,6 +39,14 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     var CASlogin:Bool? = false;
     
     var pass:String?
+    
+    var comingFromMenu:Bool? = false;
+    
+    func setComingFromMenu(var x:Bool){
+        comingFromMenu = x;
+    }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -288,7 +296,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
                 
                 
                  //returns user to main menu after successful login
-               if (Bounce == true){
+               if (Bounce == true && comingFromMenu == false){
                     performSegueWithIdentifier("mainScreenSeg", sender: self)
                 }
             
