@@ -48,6 +48,12 @@ public class ENSideMenuNavigationController: UINavigationController, ENSideMenuP
             break
         default:
             contentViewController.navigationItem.hidesBackButton = true
+            if contentViewController.restorationIdentifier == "login"{
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("login") as LoginController
+                vc.comingFromMenu = true
+                self.setViewControllers([vc], animated: true)
+                break
+            }
             self.setViewControllers([contentViewController], animated: true)
             break
         }

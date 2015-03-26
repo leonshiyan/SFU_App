@@ -1045,7 +1045,6 @@
         <!--Main Content Controller-->
         <scene sceneID="KeQ-uo-S32">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4pi-Ld-Dci" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="KFy-ix-mLA" customClass="mainContentController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" id="CeM-8C-iXh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1267,6 +1266,7 @@
                         <outlet property="weatherIcon" destination="qIV-uu-5Kz" id="YEJ-pk-NAz"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pi-Ld-Dci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="701" y="1173"/>
         </scene>
@@ -1781,7 +1781,7 @@ $8 per guest + tax</string>
         <!--Login Controller-->
         <scene sceneID="MHK-di-ZDq">
             <objects>
-                <viewController storyboardIdentifier="login" id="gtQ-p8-GOL" customClass="LoginController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gtQ-p8-GOL" customClass="LoginController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3lj-Cm-toF"/>
                         <viewControllerLayoutGuide type="bottom" id="bgP-FH-70t"/>
@@ -1817,13 +1817,6 @@ $8 per guest + tax</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-E5-aaY">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PmW-oc-HnG">
-                                <rect key="frame" x="57" y="408" width="229" height="140"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="djK-QU-RA7">
                                 <rect key="frame" x="151" y="366" width="20" height="20"/>
                             </activityIndicatorView>
@@ -1863,6 +1856,14 @@ $8 per guest + tax</string>
                                     <segue destination="eHz-hn-1PL" kind="push" id="GOZ-So-gB1"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PmW-oc-HnG">
+                                <rect key="frame" x="0.0" y="428" width="188" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHa-ON-Tj5">
+                                <rect key="frame" x="41" y="79" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="0.71372549019999998" green="0.0" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1883,7 +1884,7 @@ $8 per guest + tax</string>
                     <navigationItem key="navigationItem" id="joP-bD-bBj"/>
                     <connections>
                         <outlet property="LoginPage" destination="PmW-oc-HnG" id="l1Y-4n-oNw"/>
-                        <outlet property="SISview" destination="o7M-E5-aaY" id="eI7-Jc-095"/>
+                        <outlet property="SISview" destination="qHa-ON-Tj5" id="P8i-PF-jAs"/>
                         <outlet property="errorLabel" destination="5Sf-bT-uga" id="okj-mC-rvZ"/>
                         <outlet property="login" destination="zw5-Tw-WOj" id="8gB-Tg-2yo"/>
                         <outlet property="loginButton" destination="4tV-ob-aBB" id="0y4-0K-L82"/>
@@ -2612,8 +2613,8 @@ $8 per guest + tax</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZQb-Hv-fPx" id="bkJ-fG-65z">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Grades" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXI-1b-6ng">
-                                                    <rect key="frame" x="18" y="11" width="99" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Grades (TODO)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXI-1b-6ng">
+                                                    <rect key="frame" x="18" y="11" width="145" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
