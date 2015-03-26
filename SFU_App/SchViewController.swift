@@ -375,7 +375,7 @@ class SchViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int)
         -> Int {
-            return arr.count
+            return courseList.count
     }
     
     override func tableView(tableView: UITableView,
