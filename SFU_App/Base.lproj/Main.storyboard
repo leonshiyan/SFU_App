@@ -176,9 +176,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="H0X-BW-f27" kind="push" id="4ST-3B-w2P"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="0wG-BW-SNO">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2207,7 +2204,7 @@ $8 per guest + tax</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU3-sE-tjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2421" y="221"/>
+            <point key="canvasLocation" x="2389" y="-114"/>
         </scene>
         <!--Map-->
         <scene sceneID="bDY-QV-qOe">
@@ -2940,77 +2937,6 @@ $8 per guest + tax</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXk-Bs-zSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042" y="-536"/>
-        </scene>
-        <!--Channel-->
-        <scene sceneID="YU9-xG-B2c">
-            <objects>
-                <viewController id="H0X-BW-f27" customClass="ChannelController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zZy-vg-vPg"/>
-                        <viewControllerLayoutGuide type="bottom" id="3oX-Kb-4Rk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZrH-AN-9zK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6X-kv-hN9">
-                                <rect key="frame" x="0.0" y="277" width="320" height="93"/>
-                                <state key="normal" title="Vancouver Event" backgroundImage="sfuvancouver.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rjI-XO-VwY" kind="push" identifier="event3" id="Qen-3N-G3Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="redraw" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-2f-SVD">
-                                <rect key="frame" x="0.0" y="370" width="320" height="102"/>
-                                <state key="normal" title="Volunteer Service" backgroundImage="sfuvol.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rjI-XO-VwY" kind="push" identifier="event4" id="qtS-ob-7gn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLN-WD-rk1">
-                                <rect key="frame" x="0.0" y="472" width="320" height="96"/>
-                                <state key="normal" title="Service Deadline" backgroundImage="sfudeadline.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rjI-XO-VwY" kind="push" identifier="event5" id="cYc-Oo-qkX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMW-ua-krl">
-                                <rect key="frame" x="0.0" y="176" width="320" height="102"/>
-                                <state key="normal" title="Surrey Event" backgroundImage="sfusurrey.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rjI-XO-VwY" kind="push" identifier="event2" id="BaZ-VV-TOG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmw-8M-pTY">
-                                <rect key="frame" x="0.0" y="73" width="320" height="103"/>
-                                <state key="normal" title="SFU Event" backgroundImage="sfubby.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rjI-XO-VwY" kind="push" identifier="event1" id="9xN-h0-Hw3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Channel" id="dLZ-G1-nTG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LNd-8x-Tkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2421" y="-393"/>
         </scene>
     </scenes>
     <resources>
