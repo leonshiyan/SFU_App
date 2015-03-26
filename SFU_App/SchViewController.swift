@@ -234,8 +234,16 @@ class SchViewController: UITableViewController {
             let json = JSON(data: dataVal)
             var className = json["info"]["name"].stringValue
             var classInstruct = json["instructor"][0]["name"].stringValue
+            var classInstruct1 = json["instructor"][1]["name"].stringValue
+            var classInstruct2 = json["instructor"][2]["name"].stringValue
             if classInstruct == ""{
                 classInstruct = "N/A"
+            }
+            if classInstruct1 == ""{
+                classInstruct1 = classInstruct
+            }
+            if classInstruct2 == ""{
+                classInstruct2 = classInstruct
             }
             var classStart = json["courseSchedule"][0]["startTime"].stringValue
             var classEnd = json["courseSchedule"][0]["endTime"].stringValue
@@ -244,6 +252,23 @@ class SchViewController: UITableViewController {
             var classTitle = json["info"]["title"].stringValue
             var classRN = json["courseSchedule"][0]["roomNumber"].stringValue
             var classRoom = json["courseSchedule"][0]["buildingCode"].stringValue
+            
+            var classStart1 = json["courseSchedule"][1]["startTime"].stringValue
+            var classEnd1 = json["courseSchedule"][1]["endTime"].stringValue
+            var classDays1 = json["courseSchedule"][1]["days"].stringValue
+            var classType1 = json["courseSchedule"][1]["sectionCode"].stringValue
+            var classTitle1 = json["info"]["title"].stringValue
+            var classRN1 = json["courseSchedule"][1]["roomNumber"].stringValue
+            var classRoom1 = json["courseSchedule"][1]["buildingCode"].stringValue
+            
+            var classStart2 = json["courseSchedule"][2]["startTime"].stringValue
+            var classEnd2 = json["courseSchedule"][2]["endTime"].stringValue
+            var classDays2 = json["courseSchedule"][2]["days"].stringValue
+            var classType2 = json["courseSchedule"][2]["sectionCode"].stringValue
+            var classTitle2 = json["info"]["title"].stringValue
+            var classRN2 = json["courseSchedule"][2]["roomNumber"].stringValue
+            var classRoom2 = json["courseSchedule"][2]["buildingCode"].stringValue
+            
             if classType == "TUT"{
                 classType = "Tutorial"
             }
@@ -252,6 +277,26 @@ class SchViewController: UITableViewController {
             }
             if classType == "SEC"{
                 classType = "Distance Ed"
+            }
+            
+            if classType1 == "TUT"{
+                classType1 = "Tutorial"
+            }
+            if classType1 == "LEC"{
+                classType1 = "Lecture"
+            }
+            if classType1 == "SEC"{
+                classType1 = "Distance Ed"
+            }
+            
+            if classType2 == "TUT"{
+                classType2 = "Tutorial"
+            }
+            if classType2 == "LEC"{
+                classType2 = "Lecture"
+            }
+            if classType2 == "SEC"{
+                classType2 = "Distance Ed"
             }
             println(className + " " + classInstruct)
             var c1: courseLists = courseLists()
@@ -266,6 +311,40 @@ class SchViewController: UITableViewController {
                 c1.days = classDays
             }
             c1.location = classRoom+classRN
+            
+            if classStart1 != ""{
+                var c2: courseLists = courseLists()
+                c2.name = className + " - " + classType1
+                c2.instructor = classInstruct1
+                c2.desc = classTitle1
+                if classDays1 == "" {
+                    c2.times = "Online"
+                    c2.days = "Online"
+                }else{
+                    c2.times = classStart1 + " -  " + classEnd1
+                    c2.days = classDays1
+                }
+                c2.location = classRoom1+classRN1
+                self.courseList.append(c2)
+            }
+            
+            if classStart2 != ""{
+                var c3: courseLists = courseLists()
+                c3.name = className + " - " + classType2
+                c3.instructor = classInstruct2
+                c3.desc = classTitle2
+                if classDays2 == "" {
+                    c3.times = "Online"
+                    c3.days = "Online"
+                }else{
+                    c3.times = classStart2 + " -  " + classEnd2
+                    c3.days = classDays2
+                }
+                c3.location = classRoom2+classRN2
+                self.courseList.append(c3)
+            }
+            
+            
             
             self.courseList.append(c1)
         }
