@@ -34,13 +34,6 @@
 		3ADDB5881AB8FC6600153543 /* courseGradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDB5871AB8FC6600153543 /* courseGradeController.swift */; };
 		3ADDB58A1AB90A2400153543 /* assignmentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDB5891AB90A2400153543 /* assignmentsController.swift */; };
 		3ADDB58C1AB91D1700153543 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDB58B1AB91D1700153543 /* homeViewController.swift */; };
-		3ADDB58F1AB9205000153543 /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB58E1AB9205000153543 /* sunny.png */; };
-		3ADDB5911AB9205900153543 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB5901AB9205900153543 /* rain.png */; };
-		3ADDB5931AB9206C00153543 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB5921AB9206C00153543 /* snow.png */; };
-		3ADDB5951AB9207300153543 /* suncloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB5941AB9207300153543 /* suncloud.png */; };
-		3ADDB5971AB9207C00153543 /* cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB5961AB9207C00153543 /* cloudy.png */; };
-		3ADDB5991AB9208600153543 /* thunder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB5981AB9208600153543 /* thunder.png */; };
-		3ADDB59B1AB9209B00153543 /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB59A1AB9209B00153543 /* moon.png */; };
 		3ADDB59D1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB59C1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg */; };
 		3ADDB59F1AB9284700153543 /* SchoolQuadSexy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB59E1AB9284700153543 /* SchoolQuadSexy.jpg */; };
 		3E13D3991AB2520B00EAF7B3 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13D3981AB2520B00EAF7B3 /* MyNavigationController.swift */; };
@@ -83,9 +76,34 @@
 		7DC35E451AA669B700554367 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC35E431AA669B700554367 /* LaunchScreen.xib */; };
 		7DC35E511AA669B800554367 /* SFU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E501AA669B800554367 /* SFU_AppTests.swift */; };
 		7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E5A1AA66D3400554367 /* LoginController.swift */; };
+		C59004EC1AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C59004E61AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg */; };
+		C59004ED1AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C59004E71AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg */; };
+		C59004EE1AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C59004E81AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG */; };
+		C59004EF1AC3DA34009C85BC /* IMG_0495thumbnail270x175_25769.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C59004E91AC3DA34009C85BC /* IMG_0495thumbnail270x175_25769.JPG */; };
+		C59004F01AC3DA34009C85BC /* Starbucksthumbnail270x175_25775.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C59004EA1AC3DA34009C85BC /* Starbucksthumbnail270x175_25775.jpg */; };
+		C59004F11AC3DA34009C85BC /* Tims-Photothumbnail270x175_25780.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C59004EB1AC3DA34009C85BC /* Tims-Photothumbnail270x175_25780.jpg */; };
+		C5BED5871AC37B3100EC64BA /* homeTransitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BED5861AC37B3100EC64BA /* homeTransitController.swift */; };
 		C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */; };
 		C5C424A41AC22D7800BC212E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A31AC22D7800BC212E /* DataManager.swift */; };
 		C5C424A61AC280D000BC212E /* mainContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C424A51AC280D000BC212E /* mainContentController.swift */; };
+		C5DF45DF1AC3EE9300FD2277 /* cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45DA1AC3EE9300FD2277 /* cloudy.png */; };
+		C5DF45E01AC3EE9300FD2277 /* suncloud.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45DB1AC3EE9300FD2277 /* suncloud.png */; };
+		C5DF45E11AC3EE9300FD2277 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45DC1AC3EE9300FD2277 /* rain.png */; };
+		C5DF45E21AC3EE9300FD2277 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45DD1AC3EE9300FD2277 /* snow.png */; };
+		C5DF45E31AC3EE9300FD2277 /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45DE1AC3EE9300FD2277 /* sunny.png */; };
+		C5DF45E51AC3F15300FD2277 /* list23(biggering)white.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45E41AC3F15300FD2277 /* list23(biggering)white.png */; };
+		C5DF45F11AC3F54900FD2277 /* 1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45E61AC3F54900FD2277 /* 1.PNG */; };
+		C5DF45F21AC3F54900FD2277 /* 2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45E71AC3F54900FD2277 /* 2.PNG */; };
+		C5DF45F31AC3F54900FD2277 /* 3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45E81AC3F54900FD2277 /* 3.PNG */; };
+		C5DF45F41AC3F54900FD2277 /* 4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45E91AC3F54900FD2277 /* 4.PNG */; };
+		C5DF45F51AC3F54900FD2277 /* 5.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45EA1AC3F54900FD2277 /* 5.PNG */; };
+		C5DF45F61AC3F54900FD2277 /* 6.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45EB1AC3F54900FD2277 /* 6.PNG */; };
+		C5DF45F71AC3F54900FD2277 /* 7.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45EC1AC3F54900FD2277 /* 7.PNG */; };
+		C5DF45F81AC3F54900FD2277 /* 8.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45ED1AC3F54900FD2277 /* 8.PNG */; };
+		C5DF45F91AC3F54900FD2277 /* 9.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45EE1AC3F54900FD2277 /* 9.PNG */; };
+		C5DF45FA1AC3F54900FD2277 /* 10.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45EF1AC3F54900FD2277 /* 10.PNG */; };
+		C5DF45FB1AC3F54900FD2277 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45F01AC3F54900FD2277 /* 11.png */; };
+		C5DF45FD1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5DF45FC1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,13 +144,6 @@
 		3ADDB5871AB8FC6600153543 /* courseGradeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = courseGradeController.swift; sourceTree = "<group>"; };
 		3ADDB5891AB90A2400153543 /* assignmentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assignmentsController.swift; sourceTree = "<group>"; };
 		3ADDB58B1AB91D1700153543 /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
-		3ADDB58E1AB9205000153543 /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
-		3ADDB5901AB9205900153543 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
-		3ADDB5921AB9206C00153543 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
-		3ADDB5941AB9207300153543 /* suncloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suncloud.png; sourceTree = "<group>"; };
-		3ADDB5961AB9207C00153543 /* cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy.png; sourceTree = "<group>"; };
-		3ADDB5981AB9208600153543 /* thunder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thunder.png; sourceTree = "<group>"; };
-		3ADDB59A1AB9209B00153543 /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moon.png; sourceTree = "<group>"; };
 		3ADDB59C1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "BlurryWhoAddedThisPic=.=.jpg"; sourceTree = "<group>"; };
 		3ADDB59E1AB9284700153543 /* SchoolQuadSexy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SchoolQuadSexy.jpg; sourceTree = "<group>"; };
 		3E13D3981AB2520B00EAF7B3 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
@@ -180,9 +191,34 @@
 		7DC35E4F1AA669B800554367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC35E501AA669B800554367 /* SFU_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFU_AppTests.swift; sourceTree = "<group>"; };
 		7DC35E5A1AA66D3400554367 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C59004E61AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20141125_090007thumbnail270x175_25866.jpg; sourceTree = "<group>"; };
+		C59004E71AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dining-Hallthumbnail270x175_25766.jpg"; sourceTree = "<group>"; };
+		C59004E81AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0484thumbnail270x175_25772.JPG; sourceTree = "<group>"; };
+		C59004E91AC3DA34009C85BC /* IMG_0495thumbnail270x175_25769.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0495thumbnail270x175_25769.JPG; sourceTree = "<group>"; };
+		C59004EA1AC3DA34009C85BC /* Starbucksthumbnail270x175_25775.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Starbucksthumbnail270x175_25775.jpg; sourceTree = "<group>"; };
+		C59004EB1AC3DA34009C85BC /* Tims-Photothumbnail270x175_25780.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tims-Photothumbnail270x175_25780.jpg"; sourceTree = "<group>"; };
+		C5BED5861AC37B3100EC64BA /* homeTransitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeTransitController.swift; sourceTree = "<group>"; };
 		C5C424A11AC22CFE00BC212E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C5C424A31AC22D7800BC212E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C5C424A51AC280D000BC212E /* mainContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainContentController.swift; sourceTree = "<group>"; };
+		C5DF45DA1AC3EE9300FD2277 /* cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy.png; sourceTree = "<group>"; };
+		C5DF45DB1AC3EE9300FD2277 /* suncloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suncloud.png; sourceTree = "<group>"; };
+		C5DF45DC1AC3EE9300FD2277 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
+		C5DF45DD1AC3EE9300FD2277 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
+		C5DF45DE1AC3EE9300FD2277 /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
+		C5DF45E41AC3F15300FD2277 /* list23(biggering)white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list23(biggering)white.png"; sourceTree = "<group>"; };
+		C5DF45E61AC3F54900FD2277 /* 1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.PNG; sourceTree = "<group>"; };
+		C5DF45E71AC3F54900FD2277 /* 2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.PNG; sourceTree = "<group>"; };
+		C5DF45E81AC3F54900FD2277 /* 3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.PNG; sourceTree = "<group>"; };
+		C5DF45E91AC3F54900FD2277 /* 4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.PNG; sourceTree = "<group>"; };
+		C5DF45EA1AC3F54900FD2277 /* 5.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.PNG; sourceTree = "<group>"; };
+		C5DF45EB1AC3F54900FD2277 /* 6.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.PNG; sourceTree = "<group>"; };
+		C5DF45EC1AC3F54900FD2277 /* 7.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.PNG; sourceTree = "<group>"; };
+		C5DF45ED1AC3F54900FD2277 /* 8.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.PNG; sourceTree = "<group>"; };
+		C5DF45EE1AC3F54900FD2277 /* 9.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.PNG; sourceTree = "<group>"; };
+		C5DF45EF1AC3F54900FD2277 /* 10.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.PNG; sourceTree = "<group>"; };
+		C5DF45F01AC3F54900FD2277 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		C5DF45FC1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "CampusDiningMapwSbux-Large.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,13 +250,11 @@
 		3ADDB58D1AB9202700153543 /* Weather Icons */ = {
 			isa = PBXGroup;
 			children = (
-				3ADDB59A1AB9209B00153543 /* moon.png */,
-				3ADDB5981AB9208600153543 /* thunder.png */,
-				3ADDB5961AB9207C00153543 /* cloudy.png */,
-				3ADDB5941AB9207300153543 /* suncloud.png */,
-				3ADDB5921AB9206C00153543 /* snow.png */,
-				3ADDB5901AB9205900153543 /* rain.png */,
-				3ADDB58E1AB9205000153543 /* sunny.png */,
+				C5DF45DA1AC3EE9300FD2277 /* cloudy.png */,
+				C5DF45DB1AC3EE9300FD2277 /* suncloud.png */,
+				C5DF45DC1AC3EE9300FD2277 /* rain.png */,
+				C5DF45DD1AC3EE9300FD2277 /* snow.png */,
+				C5DF45DE1AC3EE9300FD2277 /* sunny.png */,
 			);
 			name = "Weather Icons";
 			sourceTree = "<group>";
@@ -245,6 +279,9 @@
 		3ED91B321AB2443700554BDF /* Picture Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5DF45FC1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg */,
+				C5DF45B51AC3E79F00FD2277 /* instagram pics */,
+				C59004F21AC3DA49009C85BC /* Dining */,
 				3ADDB59E1AB9284700153543 /* SchoolQuadSexy.jpg */,
 				3ADDB59C1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg */,
 				3E5A96D81AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png */,
@@ -257,6 +294,7 @@
 				406DB11D1ABF870B004583DA /* sfuvol.png */,
 				406DB1211ABF8719004583DA /* sfusurrey.png */,
 				3E5C834B1ABCC43800A4DB0B /* list23(biggering).png */,
+				C5DF45E41AC3F15300FD2277 /* list23(biggering)white.png */,
 				406DB1231ABF871E004583DA /* sfudeadline.png */,
 				3E5C83491ABCC3CB00A4DB0B /* list23(bigger).png */,
 				406DB1251ABF8727004583DA /* sfuvancouver.png */,
@@ -370,6 +408,7 @@
 				7DC35E3C1AA669B700554367 /* ViewController.swift */,
 				3A6785B31AAA81680000B21E /* PostViewController.swift */,
 				3A8319131AA69D43006D0922 /* mainNavController.swift */,
+				C5BED5861AC37B3100EC64BA /* homeTransitController.swift */,
 				3A8318E81AA67776006D0922 /* HomeController.swift */,
 				C5C424A51AC280D000BC212E /* mainContentController.swift */,
 				3ADDB58B1AB91D1700153543 /* homeViewController.swift */,
@@ -420,6 +459,37 @@
 				7DC35E4F1AA669B800554367 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C59004F21AC3DA49009C85BC /* Dining */ = {
+			isa = PBXGroup;
+			children = (
+				C59004E61AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg */,
+				C59004E71AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg */,
+				C59004E81AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG */,
+				C59004E91AC3DA34009C85BC /* IMG_0495thumbnail270x175_25769.JPG */,
+				C59004EA1AC3DA34009C85BC /* Starbucksthumbnail270x175_25775.jpg */,
+				C59004EB1AC3DA34009C85BC /* Tims-Photothumbnail270x175_25780.jpg */,
+			);
+			name = Dining;
+			sourceTree = "<group>";
+		};
+		C5DF45B51AC3E79F00FD2277 /* instagram pics */ = {
+			isa = PBXGroup;
+			children = (
+				C5DF45E61AC3F54900FD2277 /* 1.PNG */,
+				C5DF45E71AC3F54900FD2277 /* 2.PNG */,
+				C5DF45E81AC3F54900FD2277 /* 3.PNG */,
+				C5DF45E91AC3F54900FD2277 /* 4.PNG */,
+				C5DF45EA1AC3F54900FD2277 /* 5.PNG */,
+				C5DF45EB1AC3F54900FD2277 /* 6.PNG */,
+				C5DF45EC1AC3F54900FD2277 /* 7.PNG */,
+				C5DF45ED1AC3F54900FD2277 /* 8.PNG */,
+				C5DF45EE1AC3F54900FD2277 /* 9.PNG */,
+				C5DF45EF1AC3F54900FD2277 /* 10.PNG */,
+				C5DF45F01AC3F54900FD2277 /* 11.png */,
+			);
+			name = "instagram pics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,37 +573,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DC35E401AA669B700554367 /* Main.storyboard in Resources */,
+				C5DF45E01AC3EE9300FD2277 /* suncloud.png in Resources */,
+				C5DF45E51AC3F15300FD2277 /* list23(biggering)white.png in Resources */,
+				C5DF45F91AC3F54900FD2277 /* 9.PNG in Resources */,
+				C5DF45F81AC3F54900FD2277 /* 8.PNG in Resources */,
+				C5DF45F31AC3F54900FD2277 /* 3.PNG in Resources */,
+				C5DF45F11AC3F54900FD2277 /* 1.PNG in Resources */,
 				3ADDB59F1AB9284700153543 /* SchoolQuadSexy.jpg in Resources */,
 				3A83190C1AA69290006D0922 /* paperplane.png in Resources */,
 				3A8319001AA69070006D0922 /* news.png in Resources */,
+				C5DF45E31AC3EE9300FD2277 /* sunny.png in Resources */,
 				3A8319081AA69092006D0922 /* bubble1.png in Resources */,
 				3E5A96D91AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png in Resources */,
-				3ADDB5971AB9207C00153543 /* cloudy.png in Resources */,
+				C5DF45F71AC3F54900FD2277 /* 7.PNG in Resources */,
+				C59004ED1AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg in Resources */,
 				3ADDB59D1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg in Resources */,
-				3ADDB5911AB9205900153543 /* rain.png in Resources */,
 				3A6785AA1AAA6C8C0000B21E /* SFULogo.jpg in Resources */,
 				406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */,
+				C5DF45E11AC3EE9300FD2277 /* rain.png in Resources */,
+				C5DF45DF1AC3EE9300FD2277 /* cloudy.png in Resources */,
 				3A83190A1AA69271006D0922 /* see.png in Resources */,
-				3ADDB59B1AB9209B00153543 /* moon.png in Resources */,
-				3ADDB5951AB9207300153543 /* suncloud.png in Resources */,
+				C5DF45FA1AC3F54900FD2277 /* 10.PNG in Resources */,
 				3E5C83481ABCC39700A4DB0B /* list23(big).png in Resources */,
+				C5DF45F21AC3F54900FD2277 /* 2.PNG in Resources */,
+				C5DF45E21AC3EE9300FD2277 /* snow.png in Resources */,
+				C5DF45F51AC3F54900FD2277 /* 5.PNG in Resources */,
 				3A8319021AA69075006D0922 /* like.png in Resources */,
 				3A83190E1AA6929C006D0922 /* small61.png in Resources */,
-				3ADDB5931AB9206C00153543 /* snow.png in Resources */,
 				3A8319041AA6907C006D0922 /* small59.png in Resources */,
+				C59004F01AC3DA34009C85BC /* Starbucksthumbnail270x175_25775.jpg in Resources */,
 				3A8318FE1AA69069006D0922 /* location4.png in Resources */,
 				3A8319061AA69087006D0922 /* study.png in Resources */,
 				406DB11E1ABF870B004583DA /* sfuvol.png in Resources */,
-				3ADDB5991AB9208600153543 /* thunder.png in Resources */,
+				C59004F11AC3DA34009C85BC /* Tims-Photothumbnail270x175_25780.jpg in Resources */,
 				3E5C834A1ABCC3CB00A4DB0B /* list23(bigger).png in Resources */,
+				C5DF45F61AC3F54900FD2277 /* 6.PNG in Resources */,
+				C59004EF1AC3DA34009C85BC /* IMG_0495thumbnail270x175_25769.JPG in Resources */,
 				7DC35E451AA669B700554367 /* LaunchScreen.xib in Resources */,
 				3E5C834C1ABCC43800A4DB0B /* list23(biggering).png in Resources */,
+				C5DF45FD1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg in Resources */,
 				7DC35E421AA669B700554367 /* Images.xcassets in Resources */,
-				3ADDB58F1AB9205000153543 /* sunny.png in Resources */,
+				C59004EE1AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG in Resources */,
+				C59004EC1AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg in Resources */,
 				3A8319101AA692B6006D0922 /* user12.png in Resources */,
+				C5DF45FB1AC3F54900FD2277 /* 11.png in Resources */,
 				406DB1221ABF8719004583DA /* sfusurrey.png in Resources */,
 				406DB1201ABF8710004583DA /* sfubby.png in Resources */,
 				406DB1241ABF871E004583DA /* sfudeadline.png in Resources */,
+				C5DF45F41AC3F54900FD2277 /* 4.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +644,7 @@
 				3E9628FB1AA95D2900A8DE88 /* TViewController.swift in Sources */,
 				3ADDB5881AB8FC6600153543 /* courseGradeController.swift in Sources */,
 				3A8318E51AA6724E006D0922 /* CanvasController.swift in Sources */,
+				C5BED5871AC37B3100EC64BA /* homeTransitController.swift in Sources */,
 				7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */,
 				C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,

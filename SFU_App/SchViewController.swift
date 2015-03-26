@@ -20,6 +20,7 @@ class courseLists{
     var times: String = String("NaN");
     var days: String = String();
     var desc: String = String();
+    var location: String = String();
     
 }
 
@@ -30,6 +31,7 @@ class classCell: UITableViewCell{
     @IBOutlet weak var classInstruct: UILabel!
     @IBOutlet weak var classTimes: UILabel!
     @IBOutlet weak var classDays: UILabel!
+    @IBOutlet weak var classLocation: UILabel!
     
     
 }
@@ -240,6 +242,8 @@ class SchViewController: UITableViewController {
             var classDays = json["courseSchedule"][0]["days"].stringValue
             var classType = json["courseSchedule"][0]["sectionCode"].stringValue
             var classTitle = json["info"]["title"].stringValue
+            var classRN = json["courseSchedule"][0]["roomNumber"].stringValue
+            var classRoom = json["courseSchedule"][0]["buildingCode"].stringValue
             if classType == "TUT"{
                 classType = "Tutorial"
             }
@@ -261,6 +265,7 @@ class SchViewController: UITableViewController {
                 c1.times = classStart + " -  " + classEnd
                 c1.days = classDays
             }
+            c1.location = classRoom+classRN
             
             self.courseList.append(c1)
         }
@@ -302,7 +307,7 @@ class SchViewController: UITableViewController {
             let times = self.courseList[indexPath.row].times
             let days = self.courseList[indexPath.row].days
             let desc = self.courseList[indexPath.row].desc
-            
+            let loc = self.courseList[indexPath.row].location
             
             let cell = tableView.dequeueReusableCellWithIdentifier("classCellInfo", forIndexPath: indexPath) as UITableViewCell
             
@@ -313,6 +318,7 @@ class SchViewController: UITableViewController {
             (cell as classCell).classInstruct.text = instruct
             (cell as classCell).classDays.text = days
             (cell as classCell).classDesc.text = desc
+            (cell as classCell).classLocation.text = loc
             return cell
     }
     

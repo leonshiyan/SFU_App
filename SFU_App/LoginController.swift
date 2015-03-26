@@ -47,6 +47,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     }
     
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -196,7 +197,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
                     return;
                 }
                 var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-                println(strData)
+                //println(strData)
             }
             
             DataTask.resume()
@@ -214,7 +215,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
             
         }
         
-        if(defaults.stringForKey(userNameKeyConstant) != nil && logoutBool == false){
+        if(defaults.stringForKey(userNameKeyConstant) != nil && CASlogin == true && SISlogin == true){
             login.text = defaults.stringForKey(userNameKeyConstant)
             password.text = defaults.stringForKey(passwordKeyConstant)
             loginButton.sendActionsForControlEvents(.TouchUpInside)
@@ -297,7 +298,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
                 
                  //returns user to main menu after successful login
                if (Bounce == true && comingFromMenu == false){
-                    performSegueWithIdentifier("mainScreenSeg", sender: self)
+                    //performSegueWithIdentifier("mainScreenSeg", sender: self)
                 }
             
             }
@@ -308,7 +309,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     }
     
     
-    
+
     
     
 }

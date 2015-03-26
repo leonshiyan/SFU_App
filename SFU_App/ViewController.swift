@@ -11,9 +11,9 @@ import UIKit
 class ViewController: UIViewController, ENSideMenuDelegate {
 
     @IBOutlet weak var container: UIView!
-    @IBOutlet weak var weatherImage: UIImageView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
         self.sideMenuController()?.sideMenu?.delegate = self;
         
 

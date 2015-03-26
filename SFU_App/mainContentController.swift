@@ -9,21 +9,52 @@
 import Foundation
 import UIKit
 
+
+
+
 class mainContentController: UITableViewController, ENSideMenuDelegate {
     
     @IBOutlet weak var subView1: UIView!
     @IBOutlet weak var subView2: UIView!
     @IBOutlet weak var subView3: UIView!
     
-    
+    @IBOutlet weak var instagramImage: UIImageView!
     @IBOutlet weak var temp: UILabel!
-    @IBOutlet weak var humid: UILabel!
-    @IBOutlet weak var weatherDesc: UILabel!
-    @IBOutlet weak var weatherImage: UIImageView!
-    @IBOutlet weak var canvasView: UIWebView!
+    @IBOutlet weak var weatherIcon: UIImageView!
+    
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        println("TEST")
+        var randomImage: UInt32 = (arc4random_uniform(12) + 1)
+        var rdnImage = UIImage(named: "1.png") as UIImage!
+        if randomImage == 1{
+            rdnImage = UIImage(named: "1.png") as UIImage!
+        }else if randomImage == 2{
+            rdnImage = UIImage(named: "2.png") as UIImage!
+        }else if randomImage == 3{
+            rdnImage = UIImage(named: "3.png") as UIImage!
+        }else if randomImage == 4{
+            rdnImage = UIImage(named: "4.png") as UIImage!
+        }else if randomImage == 5{
+            rdnImage = UIImage(named: "5.png") as UIImage!
+        }else if randomImage == 6{
+            rdnImage = UIImage(named: "6.png") as UIImage!
+        }else if randomImage == 7{
+            rdnImage = UIImage(named: "7.png") as UIImage!
+        }else if randomImage == 8{
+            rdnImage = UIImage(named: "8.png") as UIImage!
+        }else if randomImage == 9{
+            rdnImage = UIImage(named: "9.png") as UIImage!
+        }else if randomImage == 10{
+            rdnImage = UIImage(named: "10.png") as UIImage!
+        }else if randomImage == 11{
+            rdnImage = UIImage(named: "11.png") as UIImage!
+        }
+        
+        instagramImage.image = rdnImage
+        
         self.sideMenuController()?.sideMenu?.delegate = self;
         
         let shadowPath = UIBezierPath(rect: subView1.bounds)
@@ -48,11 +79,6 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         subView3.layer.shadowPath = shadowPath3.CGPath
         
         
-        var urlca = NSURL (string:"https://canvas.sfu.ca")
-        // Load Url into webview
-        var requestcamn = NSURLRequest(URL: urlca!)
-        canvasView.loadRequest(requestcamn)
-
         
         
         var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
@@ -63,15 +89,18 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         var dataVal: NSData =  NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error:nil)!
             
         let json = JSON(data: dataVal)
-        var temperature = json["main"]["temp"].stringValue
-        var humidity = json["main"]["humidity"].stringValue
-        var description = json["weather"][0]["description"].stringValue
-        var weatherid = json["weather"][0]["id"].stringValue.toInt()
-        let substringindex = 3
-        temperature = temperature.substringToIndex(advance(temperature.startIndex,substringindex))
-        temp.text = temperature + "C"
-        humid.text = humidity + "%"
-        weatherDesc.text = description.capitalizedString
+        var humidity = "NaN"
+        var description = "NaN"
+        var weatherid = "NaN".toInt()
+        let temperature = json["main"]["temp"].stringValue
+        humidity = json["main"]["humidity"].stringValue
+        description = json["weather"][0]["description"].stringValue
+        weatherid = json["weather"][0]["id"].stringValue.toInt()
+        var index2 = temperature.rangeOfString(".", options: .BackwardsSearch)?.startIndex
+        var temperatureStr = temperature.substringToIndex(index2!)
+        temp.text = temperatureStr + "C"
+        //humid.text = humidity + "%"
+        //weatherDesc.text = description.capitalizedString
         
         let moon = UIImage(named: "moon.png") as UIImage!
         let thunder = UIImage(named: "thunder.png") as UIImage!
@@ -82,67 +111,43 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         let sunny = UIImage(named: "sunny.png") as UIImage!
         
         if weatherid >= 600 && weatherid <= 622{
-            weatherImage.image = snow
+            weatherIcon.image = snow
         }else
         if weatherid >= 802 && weatherid <= 804{
-            weatherImage.image = cloudy
+            weatherIcon.image = cloudy
         }else
         if weatherid == 801{
-            weatherImage.image = suncloud
+            weatherIcon.image = suncloud
         }else
         if weatherid == 80{
-            weatherImage.image = sunny
+            weatherIcon.image = sunny
         }else
         if weatherid >= 200 && weatherid <= 232{
-            weatherImage.image = thunder
+            weatherIcon.image = thunder
         }else
         if weatherid >= 300 && weatherid <= 321{
-            weatherImage.image = rain
+            weatherIcon.image = rain
         }else
         if weatherid >= 500 && weatherid <= 531{
-            weatherImage.image = rain
+            weatherIcon.image = rain
         }else{
-            weatherImage.image = cloudy
+            weatherIcon.image = cloudy
         }
         
-        
-        let currentURLString = "https://canvas.sfu.ca/grades"
-        
-        
-        let currentURL = NSURL(string: currentURLString)
-        var err : NSError?
-        
-        
-        let currentHTMLString = NSString(contentsOfURL: currentURL!, encoding: NSUTF8StringEncoding, error: nil)
-        
-        
-        var parser = HTMLParser(html : currentHTMLString!, error: &err)
-        if err != nil{
-            println(err)
-            exit(1)
-        }
-        
-        var bodyNode = parser.body
-        
+
         
 
         
 
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
-        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-        var error: NSErrorPointer = nil
-        
-        let url2 = NSURL(string: "https://canvas.sfu.ca/api/v1/users/self/todo")
-        let canvasRequest = NSURLRequest(URL: url2!)
-        var dataVal2: NSData =  NSURLConnection.sendSynchronousRequest(canvasRequest, returningResponse: response, error:nil)!
-        var theString:NSString = NSString(data: dataVal2, encoding: NSASCIIStringEncoding)!
-        println(theString)
-        theString = theString.substringFromIndex(9)
-        
-        let jsonCan = JSON(data: dataVal2)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        println("MEM")
     }
+    
+
+
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
