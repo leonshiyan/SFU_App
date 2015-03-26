@@ -73,16 +73,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         
         // HTML string of login page , used for accessing authentication results//
         var result : NSString! = LoginPage.stringByEvaluatingJavaScriptFromString("document.body.innerHTML")
-        var result2 : NSString! = SISview.stringByEvaluatingJavaScriptFromString("document.body.innerHTML")
         // sucessful login attempts returne the page containg the message "succesfully logged into", attempt to search html for this tag.
-        
-        if result2.containsString("login") && login.text != nil && password.text != nil && SISlogin == true{
-            logoutBool = false
-            SISview.stringByEvaluatingJavaScriptFromString("document.getElementById('user').value='\(login.text)'")
-            SISview.stringByEvaluatingJavaScriptFromString("document.getElementById('pwd').value='\(password.text)'")
-            SISview.stringByEvaluatingJavaScriptFromString("document.getElementsByName('Submit')[0].click()")
-            
-        }
+
         
         if result.containsString("successfully logged into"){
             // Events that trigger after successful login, gade out log in button, fade out password//
@@ -146,18 +138,18 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     // Delegate function that gets called after webview finishes loading resource, handle Javascript for login, and result parsing//
     func webViewDidFinishLoad(webView: UIWebView) {
         if(webView == self.SISview){
-            SISlogin = true
+            println("SIS LOADED")
             var result2 : NSString! = SISview.stringByEvaluatingJavaScriptFromString("document.body.innerHTML")
             // sucessful login attempts returne the page containg the message "succesfully logged into", attempt to search html for this tag.
             
-            if result2.containsString("login") && login.text != nil && password.text != nil && SISlogin == true{
+            if login.text != nil && password.text != nil{
                 
-                    logoutBool = false
                 SISview.stringByEvaluatingJavaScriptFromString("document.getElementById('user').value='\(login.text)'")
                 SISview.stringByEvaluatingJavaScriptFromString("document.getElementById('pwd').value='\(password.text)'")
                 SISview.stringByEvaluatingJavaScriptFromString("document.getElementsByName('Submit')[0].click()")
                 
             }
+            SISlogin = true
         }
         if(webView == self.LoginPage){
             CASlogin = true
@@ -240,6 +232,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         }
         
         if(defaults.stringForKey(userNameKeyConstant) != nil && logoutBool == false && CASlogin == true && SISlogin == true && comingFromMenu == false){
+
             login.text = defaults.stringForKey(userNameKeyConstant)
             password.text = defaults.stringForKey(passwordKeyConstant)
             loginButton.sendActionsForControlEvents(.TouchUpInside)
