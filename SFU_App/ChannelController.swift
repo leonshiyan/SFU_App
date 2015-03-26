@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 var rsschn: NSString!
 var eventTitle: String!
-class ChannelController: UIViewController{
+class ChannelController: UITableViewController{
     
     
     
@@ -29,8 +29,8 @@ class ChannelController: UIViewController{
 
         if (segue!.identifier == "event1")
         {
-            svc.rsschn = "http://athletics.sfu.ca/rss.aspx"
-            svc.eventTitle = "SFU Sport News"
+            svc.rsschn = "https://events.sfu.ca/rss/calendar_id/2.xml"
+            svc.eventTitle = "Burnaby Events Calender"
         }
         else if (segue!.identifier == "event2")
         {
@@ -46,12 +46,12 @@ class ChannelController: UIViewController{
         else if(segue!.identifier == "event4")
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/18.xml"
-            svc.eventTitle = "Voluntteer Servicies"
+            svc.eventTitle = "Volunteer Servicies"
         }
         else
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/30.xml"
-            svc.eventTitle = "Service Deadlines"
+            svc.eventTitle = "eadlines"
 
         }
         
