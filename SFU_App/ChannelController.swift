@@ -24,6 +24,11 @@ class ChannelController: UITableViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
+    
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         var svc = segue!.destinationViewController as NewsTableViewController;
 

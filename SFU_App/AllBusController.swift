@@ -13,7 +13,7 @@ import UIKit
 
 
 
-class AllBusController: UITableViewController, NSXMLParserDelegate {
+class AllBusController: UITableViewController, NSXMLParserDelegate,ENSideMenuDelegate {
     var parser : NSXMLParser = NSXMLParser() // Instance of NSXML parser
     var subCategoryID : String = String() // stores parsed data
     var subCat : [subCategory] = [] // Array to hold parsed data
@@ -26,6 +26,8 @@ class AllBusController: UITableViewController, NSXMLParserDelegate {
         
         println(passNo)
         
+        //Set slide menu control to this controller
+        self.sideMenuController()?.sideMenu?.delegate = self;
         
         // load translink api url and initialize parser
         var url : NSURL = NSURL(string: "http://api.translink.ca/rttiapi/v1/stops/\(stopNo)/estimates?apikey=jTTSvGWPEtJTFahKHoBe")!
@@ -108,6 +110,20 @@ class AllBusController: UITableViewController, NSXMLParserDelegate {
             cell.textLabel?.text = temparr[indexPath.row-1]
         }
         return cell
+    }
+    
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
+    }
+    // disabled Slide Menu
+    func sideMenuShouldOpenSideMenu() -> Bool {
+        println("sideMenuShouldOpenSideMenu")
+        return false;
     }
     
     

@@ -38,11 +38,10 @@
 		3ADDB59F1AB9284700153543 /* SchoolQuadSexy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ADDB59E1AB9284700153543 /* SchoolQuadSexy.jpg */; };
 		3E13D3991AB2520B00EAF7B3 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13D3981AB2520B00EAF7B3 /* MyNavigationController.swift */; };
 		3E13D39B1AB2524700EAF7B3 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13D39A1AB2524700EAF7B3 /* MyMenuTableViewController.swift */; };
-		3E1B391A1ABCD544001CF09E /* AbController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B39191ABCD544001CF09E /* AbController.swift */; };
 		3E1B391C1ABCD76C001CF09E /* MapTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B391B1ABCD76C001CF09E /* MapTableController.swift */; };
 		3E1B391F1ABCD881001CF09E /* BreakMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B391E1ABCD881001CF09E /* BreakMatchController.swift */; };
-		3E1B39211ABCDA03001CF09E /* LoyaltyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B39201ABCDA03001CF09E /* LoyaltyController.swift */; };
 		3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B39221ABCDB6F001CF09E /* BusPassUpController.swift */; };
+		3E25ECE21AC4B87400CEABCC /* DiningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25ECE11AC4B87400CEABCC /* DiningController.swift */; };
 		3E5A96D91AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A96D81AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png */; };
 		3E5C83431ABCBE8800A4DB0B /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C83421ABCBE8800A4DB0B /* QRViewController.swift */; };
 		3E5C83481ABCC39700A4DB0B /* list23(big).png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C83471ABCC39700A4DB0B /* list23(big).png */; };
@@ -148,11 +147,10 @@
 		3ADDB59E1AB9284700153543 /* SchoolQuadSexy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SchoolQuadSexy.jpg; sourceTree = "<group>"; };
 		3E13D3981AB2520B00EAF7B3 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		3E13D39A1AB2524700EAF7B3 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
-		3E1B39191ABCD544001CF09E /* AbController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbController.swift; sourceTree = "<group>"; };
 		3E1B391B1ABCD76C001CF09E /* MapTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableController.swift; sourceTree = "<group>"; };
 		3E1B391E1ABCD881001CF09E /* BreakMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakMatchController.swift; sourceTree = "<group>"; };
-		3E1B39201ABCDA03001CF09E /* LoyaltyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoyaltyController.swift; sourceTree = "<group>"; };
 		3E1B39221ABCDB6F001CF09E /* BusPassUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusPassUpController.swift; sourceTree = "<group>"; };
+		3E25ECE11AC4B87400CEABCC /* DiningController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningController.swift; sourceTree = "<group>"; };
 		3E5A96D81AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png; sourceTree = "<group>"; };
 		3E5C83421ABCBE8800A4DB0B /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		3E5C83471ABCC39700A4DB0B /* list23(big).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list23(big).png"; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				3E5C83421ABCBE8800A4DB0B /* QRViewController.swift */,
-				3E1B39201ABCDA03001CF09E /* LoyaltyController.swift */,
 			);
 			name = Loyalty;
 			sourceTree = "<group>";
@@ -355,7 +352,6 @@
 		3ED91B3C1AB2456E00554BDF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3E1B39191ABCD544001CF09E /* AbController.swift */,
 				3A8318E41AA6724E006D0922 /* CanvasController.swift */,
 				3A8318E21AA67207006D0922 /* EmailController.swift */,
 				7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */,
@@ -407,6 +403,7 @@
 				7DC35E3A1AA669B700554367 /* AppDelegate.swift */,
 				7DC35E3C1AA669B700554367 /* ViewController.swift */,
 				3A6785B31AAA81680000B21E /* PostViewController.swift */,
+				3E25ECE11AC4B87400CEABCC /* DiningController.swift */,
 				3A8319131AA69D43006D0922 /* mainNavController.swift */,
 				C5BED5861AC37B3100EC64BA /* homeTransitController.swift */,
 				3A8318E81AA67776006D0922 /* HomeController.swift */,
@@ -647,6 +644,7 @@
 				C5BED5871AC37B3100EC64BA /* homeTransitController.swift in Sources */,
 				7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */,
 				C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */,
+				3E25ECE21AC4B87400CEABCC /* DiningController.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,
 				C5C424A61AC280D000BC212E /* mainContentController.swift in Sources */,
 				3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */,
@@ -659,7 +657,6 @@
 				3E9628F81AA953D700A8DE88 /* BlogPost.swift in Sources */,
 				3E13D3991AB2520B00EAF7B3 /* MyNavigationController.swift in Sources */,
 				7DBBAF121AC0B48800066BCB /* Player.swift in Sources */,
-				3E1B39211ABCDA03001CF09E /* LoyaltyController.swift in Sources */,
 				3ADDB58C1AB91D1700153543 /* homeViewController.swift in Sources */,
 				3A6785B21AAA7DEA0000B21E /* rssPosts.swift in Sources */,
 				3ADDB58A1AB90A2400153543 /* assignmentsController.swift in Sources */,
@@ -669,7 +666,6 @@
 				3A8319121AA6953D006D0922 /* ServicesController.swift in Sources */,
 				3E9628F91AA953D700A8DE88 /* subCategory.swift in Sources */,
 				7DBBAF181AC0B58B00066BCB /* BasFave.swift in Sources */,
-				3E1B391A1ABCD544001CF09E /* AbController.swift in Sources */,
 				7D60E61A1AAE4B0A00A901F1 /* SchViewController.swift in Sources */,
 				3E5C83431ABCBE8800A4DB0B /* QRViewController.swift in Sources */,
 				3A6785AC1AAA76D40000B21E /* FinalGradesController.swift in Sources */,

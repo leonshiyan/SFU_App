@@ -10,7 +10,7 @@ import UIKit
 var player: Player!
 var players: [Player] = basedata
 
-class BusStopDetail: UITableViewController {
+class BusStopDetail: UITableViewController,ENSideMenuDelegate {
     
     //initialize buttons
     @IBOutlet weak var BusStopNum: UITextField!
@@ -18,6 +18,10 @@ class BusStopDetail: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set slide menu control to this controller
+        self.sideMenuController()?.sideMenu?.delegate = self;
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,5 +40,19 @@ class BusStopDetail: UITableViewController {
         if segue.identifier == "saveBusStopDetail" {
             player = Player(name: self.BusStopName.text, number: self.BusStopNum.text)
         }
+    }
+    
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
+    }
+    // disabled Slide Menu
+    func sideMenuShouldOpenSideMenu() -> Bool {
+        println("sideMenuShouldOpenSideMenu")
+        return false;
     }
 }

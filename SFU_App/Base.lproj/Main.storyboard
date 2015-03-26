@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qPl-Dy-uZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qPl-Dy-uZq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -81,221 +81,6 @@
             </objects>
             <point key="canvasLocation" x="669" y="456"/>
         </scene>
-        <!--QRSCanner-->
-        <scene sceneID="IfU-gD-ayM">
-            <objects>
-                <viewController title="QRSCanner" id="Nac-0C-2dG" customClass="QRViewController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G1T-nA-AkG"/>
-                        <viewControllerLayoutGuide type="bottom" id="6R4-Bc-xug"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dYx-zM-HDx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="SEW-Di-e5O"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rnv-PX-CzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="530" y="-355"/>
-        </scene>
-        <!--SFU-->
-        <scene sceneID="kC5-Er-pRQ">
-            <objects>
-                <tableViewController id="Tlf-uT-sIi" customClass="HomeController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="top" bounces="NO" scrollEnabled="NO" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LSW-rI-EEY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t4C-kH-dVe">
-                            <rect key="frame" x="-23" y="-15" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <sections>
-                            <tableViewSection id="eUi-aT-n6I">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" id="iLn-zD-Ahl">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iLn-zD-Ahl" id="b7b-GH-Q1C">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xJ-7i-8tS">
-                                                    <rect key="frame" x="48" y="11" width="99" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524969165402" green="0.33742976150243098" blue="0.34113919005102045" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="study.png" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-yd-YxX">
-                                                    <rect key="frame" x="14" y="10" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <segue destination="TPX-9g-bB2" kind="push" id="lbk-bh-QB5"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="pXD-g5-R9a">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pXD-g5-R9a" id="G9F-nQ-fum">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hM-rn-2z8">
-                                                    <rect key="frame" x="48" y="11" width="51" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="small59.png" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-fT-guD">
-                                                    <rect key="frame" x="14" y="10" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gfe-PM-SMz" kind="push" id="ygd-3I-E42"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="SFY-Wj-agH">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SFY-Wj-agH" id="Rz5-SK-aEL">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-I6-PRH">
-                                                    <rect key="frame" x="48" y="11" width="44" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="news.png" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-ia-2Ue">
-                                                    <rect key="frame" x="14" y="10" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="0wG-BW-SNO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0wG-BW-SNO" id="jUK-9d-XuE">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMz-x0-Can">
-                                                    <rect key="frame" x="48" y="11" width="43" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location4.png" translatesAutoresizingMaskIntoConstraints="NO" id="r8b-kg-Nlj">
-                                                    <rect key="frame" x="14" y="13" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="HQh-Mr-DxY" kind="push" id="3eb-RM-yWz"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="vYD-oJ-UBv">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vYD-oJ-UBv" id="kDW-MT-SUo">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Break Matcher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arr-Bs-9F2">
-                                                    <rect key="frame" x="48" y="11" width="113" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble1.png" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-MB-Xaf">
-                                                    <rect key="frame" x="14" y="13" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="heL-Zm-ppH" kind="push" id="GNp-38-PM8"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="aUK-z0-thP">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aUK-z0-thP" id="ALC-fb-rM3">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU Loyalty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-wq-IIq">
-                                                    <rect key="frame" x="48" y="11" width="93" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="like.png" translatesAutoresizingMaskIntoConstraints="NO" id="2WE-WA-Jeb">
-                                                    <rect key="frame" x="14" y="10" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="nEj-AS-hyQ" kind="push" id="8oh-pN-w6q"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="VKH-UR-Q9E">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VKH-UR-Q9E" id="50t-h3-y2I">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d70-jv-dMV">
-                                                    <rect key="frame" x="48" y="11" width="98" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user12.png" translatesAutoresizingMaskIntoConstraints="NO" id="XBQ-ib-dU7">
-                                                    <rect key="frame" x="14" y="10" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rtf-xh-QsQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rtf-xh-QsQ" id="52N-2W-DgJ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13I-27-26W">
-                                                    <rect key="frame" x="48" y="11" width="93" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.30603524970000001" green="0.33742976149999998" blue="0.34113919009999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paperplane.png" translatesAutoresizingMaskIntoConstraints="NO" id="m9S-wt-F7w">
-                                                    <rect key="frame" x="14" y="10" width="21" height="22"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="hk5-WR-Hbh" kind="push" id="Xqm-bi-nQu"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Tlf-uT-sIi" id="L8n-vZ-0Rf"/>
-                            <outlet property="delegate" destination="Tlf-uT-sIi" id="grg-Sx-PIU"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="SFU" id="jRv-FS-qcm"/>
-                    <connections>
-                        <outlet property="homeTableView" destination="LSW-rI-EEY" id="Drz-R1-BuK"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YiY-dm-lz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1271" y="98"/>
-        </scene>
         <!--Email-->
         <scene sceneID="oGB-1o-ST3">
             <objects>
@@ -322,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMs-dU-lPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="-1725"/>
+            <point key="canvasLocation" x="2147" y="-1191"/>
         </scene>
         <!--goSFU-->
         <scene sceneID="lJI-pf-k6I">
@@ -350,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRa-6D-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="-1725"/>
+            <point key="canvasLocation" x="2625" y="-1183"/>
         </scene>
         <!--Canvas-->
         <scene sceneID="6jq-46-AgE">
@@ -378,9 +163,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBz-1X-iJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-1725"/>
+            <point key="canvasLocation" x="2993" y="-1183"/>
         </scene>
-        <!--Course Grade Controller-->
+        <!--Course Grades-->
         <scene sceneID="Ls6-c7-Wpt">
             <objects>
                 <tableViewController id="gBe-3K-S9t" customClass="courseGradeController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -676,7 +461,7 @@
                             <outlet property="delegate" destination="gBe-3K-S9t" id="YVO-X6-Vtm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zzf-wp-Zkf"/>
+                    <navigationItem key="navigationItem" title="Course Grades" id="zzf-wp-Zkf"/>
                     <connections>
                         <outlet property="cell0" destination="vGh-SA-Ou8" id="w8P-Ac-IJb"/>
                         <outlet property="cell1" destination="1qD-Um-uiz" id="ZnQ-sA-f5b"/>
@@ -718,9 +503,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C12-Dv-izg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="-2403"/>
+            <point key="canvasLocation" x="3243" y="-1866"/>
         </scene>
-        <!--Assignments Controller-->
+        <!--Assignments-->
         <scene sceneID="mpd-bm-ket">
             <objects>
                 <tableViewController id="PFy-rN-I06" customClass="assignmentsController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -761,13 +546,13 @@
                             <outlet property="delegate" destination="PFy-rN-I06" id="KtC-mV-hQn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="i60-VF-mIL"/>
+                    <navigationItem key="navigationItem" title="Assignments" id="i60-VF-mIL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGd-Mw-IAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2587" y="-2408"/>
+            <point key="canvasLocation" x="3766" y="-1866"/>
         </scene>
-        <!--Final Grade Controller-->
+        <!--Final Grades-->
         <scene sceneID="Cip-im-ovq">
             <objects>
                 <tableViewController id="Md3-5H-kzS" customClass="FinalGradeController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -967,7 +752,7 @@
                             <outlet property="delegate" destination="Md3-5H-kzS" id="6O8-z4-Otq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zd6-u6-lFR"/>
+                    <navigationItem key="navigationItem" title="Final Grades" id="zd6-u6-lFR"/>
                     <connections>
                         <outlet property="course0" destination="fQe-vo-92t" id="LnY-Ql-HnL"/>
                         <outlet property="course1" destination="xwL-0X-r0i" id="hNC-KG-ZYI"/>
@@ -993,7 +778,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6b3-ba-MZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530" y="-1741"/>
+            <point key="canvasLocation" x="3521" y="-1167"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="4ha-fO-DqC">
@@ -1037,7 +822,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNR-ZH-u89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="-1556"/>
+            <point key="canvasLocation" x="1288" y="-304"/>
         </scene>
         <!--Main Content Controller-->
         <scene sceneID="KeQ-uo-S32">
@@ -1270,7 +1055,7 @@
         <!--About-->
         <scene sceneID="Jd5-QG-XfN">
             <objects>
-                <viewController storyboardIdentifier="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hk5-WR-Hbh" customClass="AbController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hk5-WR-Hbh" customClass="ViewController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zsX-wA-DzF"/>
                         <viewControllerLayoutGuide type="bottom" id="9yM-Xf-nbD"/>
@@ -1311,7 +1096,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Fg-3s-usL">
                                 <rect key="frame" x="16" y="-42" width="29" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list23(biggering).png">
+                                <state key="normal" image="list23(biggering)white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1323,12 +1108,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiF-2m-pqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="1155"/>
+            <point key="canvasLocation" x="-323" y="1553"/>
         </scene>
-        <!--View Controller-->
+        <!--Dining Controller-->
         <scene sceneID="hk1-z2-B4a">
             <objects>
-                <viewController id="aN7-GU-sp0" sceneMemberID="viewController">
+                <viewController id="aN7-GU-sp0" customClass="DiningController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WIa-a6-7SB"/>
                         <viewControllerLayoutGuide type="bottom" id="kXa-TT-JML"/>
@@ -1347,13 +1132,6 @@
                                 <rect key="frame" x="16" y="143" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdm-nh-EwI">
-                                <rect key="frame" x="16" y="49" width="288" height="86"/>
-                                <string key="text">Welcome to the SFU Dining Hall! We are proud to be the first ever 24 / 7 Dining Hall in Canada (during the spring &amp; fall semesters)!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breakfast 7-10am $5 per guest + tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-4G-Hne">
@@ -1410,6 +1188,13 @@ $8 per guest + tax</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdm-nh-EwI">
+                                <rect key="frame" x="16" y="49" width="288" height="86"/>
+                                <string key="text">Welcome to the SFU Dining Hall! We are proud to be the first ever 24 / 7 Dining Hall in Canada (during the spring &amp; fall semesters)!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1420,10 +1205,10 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="358" y="1976"/>
         </scene>
-        <!--View Controller-->
+        <!--Dining Controller-->
         <scene sceneID="7ZH-OV-9Ee">
             <objects>
-                <viewController id="CQp-uR-nIj" sceneMemberID="viewController">
+                <viewController id="CQp-uR-nIj" customClass="DiningController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lbS-gS-Gb7"/>
                         <viewControllerLayoutGuide type="bottom" id="YW0-Py-OFN"/>
@@ -1485,10 +1270,10 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="701" y="1976"/>
         </scene>
-        <!--View Controller-->
+        <!--Dining Controller-->
         <scene sceneID="3bb-vz-0xC">
             <objects>
-                <viewController id="zkG-E8-u5b" sceneMemberID="viewController">
+                <viewController id="zkG-E8-u5b" customClass="DiningController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iwa-6G-Tyb"/>
                         <viewControllerLayoutGuide type="bottom" id="HDe-oD-itS"/>
@@ -1556,10 +1341,10 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="1042" y="1976"/>
         </scene>
-        <!--View Controller-->
+        <!--Dining Controller-->
         <scene sceneID="u6o-yu-Lhl">
             <objects>
-                <viewController id="bA1-hh-2Su" sceneMemberID="viewController">
+                <viewController id="bA1-hh-2Su" customClass="DiningController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z2d-Le-vks"/>
                         <viewControllerLayoutGuide type="bottom" id="Lsm-H4-e8t"/>
@@ -1627,10 +1412,10 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="1382" y="1976"/>
         </scene>
-        <!--View Controller-->
+        <!--Dining Controller-->
         <scene sceneID="3wL-hz-F1g">
             <objects>
-                <viewController id="boe-bY-fNw" sceneMemberID="viewController">
+                <viewController id="boe-bY-fNw" customClass="DiningController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DVa-ES-wxo"/>
                         <viewControllerLayoutGuide type="bottom" id="NOE-1n-7Va"/>
@@ -1704,10 +1489,10 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="1724" y="1976"/>
         </scene>
-        <!--View Controller-->
+        <!--Dining Controller-->
         <scene sceneID="utQ-Lv-Byl">
             <objects>
-                <viewController id="va2-9s-nY1" sceneMemberID="viewController">
+                <viewController id="va2-9s-nY1" customClass="DiningController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IxD-Za-kSW"/>
                         <viewControllerLayoutGuide type="bottom" id="DUW-7r-KH4"/>
@@ -1950,7 +1735,7 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="266" y="1506"/>
         </scene>
-        <!--Map Table Controller-->
+        <!--Maps-->
         <scene sceneID="dsj-hr-aC0">
             <objects>
                 <tableViewController storyboardIdentifier="maps" id="HQh-Mr-DxY" customClass="MapTableController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -2016,12 +1801,12 @@ $8 per guest + tax</string>
                             <outlet property="delegate" destination="HQh-Mr-DxY" id="tOZ-3w-sVs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NQp-N0-YsS">
+                    <navigationItem key="navigationItem" title="Maps" id="NQp-N0-YsS">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="dvs-Lv-1aO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xED-pP-YPt">
                                 <rect key="frame" x="16" y="-42" width="29" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list23(biggering).png">
+                                <state key="normal" image="list23(biggering)white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2033,14 +1818,14 @@ $8 per guest + tax</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqi-Q3-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="573"/>
+            <point key="canvasLocation" x="2085" y="1173"/>
         </scene>
-        <!--Channel Controller-->
+        <!--Channels-->
         <scene sceneID="qbZ-10-lZ3">
             <objects>
                 <tableViewController storyboardIdentifier="news" id="dx3-30-yfo" customClass="ChannelController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="113" sectionHeaderHeight="1" sectionFooterHeight="1" id="cLn-Cw-ftF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -2201,10 +1986,24 @@ $8 per guest + tax</string>
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Channels" id="f6q-t1-6o3">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="5nU-Ck-BSG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SlX-SF-T8w">
+                                <rect key="frame" x="16" y="-42" width="29" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="list23(biggering)white.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSideMenu:" destination="dx3-30-yfo" eventType="touchUpInside" id="Vc7-vy-PBZ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU3-sE-tjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2389" y="-114"/>
+            <point key="canvasLocation" x="2587" y="464"/>
         </scene>
         <!--Map-->
         <scene sceneID="bDY-QV-qOe">
@@ -2232,9 +2031,9 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tnp-b9-ITf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="705"/>
+            <point key="canvasLocation" x="2492" y="1173"/>
         </scene>
-        <!--Sch View Controller-->
+        <!--Schedule-->
         <scene sceneID="Zag-md-mDI">
             <objects>
                 <tableViewController id="HGo-BQ-hGG" customClass="SchViewController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -2256,7 +2055,7 @@ $8 per guest + tax</string>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduction to Computer Architecture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpp-PW-Un1">
                                             <rect key="frame" x="8" y="24" width="233" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2325,11 +2124,11 @@ $8 per guest + tax</string>
                             <outlet property="delegate" destination="HGo-BQ-hGG" id="9RD-HR-JNi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="s6I-RH-fxo"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="s6I-RH-fxo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJS-o1-74f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2436" y="-1119"/>
+            <point key="canvasLocation" x="3521" y="-461"/>
         </scene>
         <!--Transit-->
         <scene sceneID="Zii-oY-D3K">
@@ -2382,7 +2181,7 @@ $8 per guest + tax</string>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kCS-uh-BcZ">
                                 <rect key="frame" x="16" y="-42" width="29" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Favorites" image="list23(biggering).png">
+                                <state key="normal" title="Favorites" image="list23(biggering)white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2392,10 +2191,10 @@ $8 per guest + tax</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Frd-jk-5qc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H7T-FS-djP">
-                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <rect key="frame" x="233" y="7" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Favorites">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Favourites">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -2412,7 +2211,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lc4-YN-8yP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="-796"/>
+            <point key="canvasLocation" x="1153" y="456"/>
         </scene>
         <!--News-->
         <scene sceneID="Vdm-gn-GrS">
@@ -2438,27 +2237,14 @@ $8 per guest + tax</string>
                             <outlet property="delegate" destination="rjI-XO-VwY" id="4LD-Ca-7FJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News" id="ysP-io-Cyt">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="5Ya-KS-gdd">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ypF-Og-I1l">
-                                <rect key="frame" x="16" y="-42" width="29" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list23(biggering).png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleSideMenu:" destination="rjI-XO-VwY" eventType="touchUpInside" id="UyR-X4-SEh"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="News" id="ysP-io-Cyt"/>
                     <connections>
                         <outlet property="tableView" destination="9c8-KF-RAO" id="KCe-sO-W9v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EP5-TZ-1FI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="-114"/>
+            <point key="canvasLocation" x="2972" y="464"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="1F1-gF-Moz">
@@ -2490,7 +2276,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9An-hP-K8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3257" y="-121"/>
+            <point key="canvasLocation" x="3359" y="464"/>
         </scene>
         <!--Add Bus Stop-->
         <scene sceneID="SPF-AS-fxy">
@@ -2561,7 +2347,7 @@ $8 per guest + tax</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxl-2W-dCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gNt-9X-TX2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3419" y="-2375"/>
+            <point key="canvasLocation" x="1320" y="-1075"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EPZ-mQ-jRq">
@@ -2577,7 +2363,7 @@ $8 per guest + tax</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpj-cm-Q8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="-2375"/>
+            <point key="canvasLocation" x="942" y="-1075"/>
         </scene>
         <!--BusPassUp-->
         <scene sceneID="nmh-5Z-AwL">
@@ -2595,7 +2381,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci7-FM-W5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3594" y="-1508"/>
+            <point key="canvasLocation" x="1724" y="-296"/>
         </scene>
         <!--Next Bus-->
         <scene sceneID="PNB-CW-Xlj">
@@ -2639,7 +2425,7 @@ $8 per guest + tax</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LZ-Np-nVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3238" y="-796"/>
+            <point key="canvasLocation" x="1525" y="456"/>
         </scene>
         <!--All Bus Controller-->
         <scene sceneID="Gb4-JU-Wtb">
@@ -2674,7 +2460,7 @@ $8 per guest + tax</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmG-Q7-3c0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3680" y="-796"/>
+            <point key="canvasLocation" x="1967" y="456"/>
         </scene>
         <!--BreakMatch-->
         <scene sceneID="DRD-W7-U4o">
@@ -2694,7 +2480,7 @@ $8 per guest + tax</string>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kgc-Wc-nVd">
                                 <rect key="frame" x="16" y="-42" width="29" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list23(biggering).png">
+                                <state key="normal" image="list23(biggering)white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2706,7 +2492,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQp-Uo-jla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="578"/>
+            <point key="canvasLocation" x="2972" y="1517"/>
         </scene>
         <!--Services-->
         <scene sceneID="Ckv-Tu-euG">
@@ -2842,7 +2628,7 @@ $8 per guest + tax</string>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Svq-73-CDQ">
                                 <rect key="frame" x="16" y="-42" width="29" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list23(biggering).png">
+                                <state key="normal" image="list23(biggering)white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2857,7 +2643,7 @@ $8 per guest + tax</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2U-cu-RoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="-984"/>
+            <point key="canvasLocation" x="2594" y="-296"/>
         </scene>
         <!--Loyalty-->
         <scene sceneID="6Qh-1Y-XJz">
@@ -2920,11 +2706,11 @@ $8 per guest + tax</string>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bUO-XM-BhR">
                                 <rect key="frame" x="16" y="-42" width="29" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="list23(biggering).png">
+                                <state key="normal" image="list23(biggering)white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleSideMenu:" destination="nEj-AS-hyQ" eventType="touchUpInside" id="HMi-EV-2gK"/>
+                                    <action selector="toggleSideMenu:" destination="nEj-AS-hyQ" eventType="touchUpInside" id="g72-cW-vyg"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2936,7 +2722,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXk-Bs-zSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="-536"/>
+            <point key="canvasLocation" x="12" y="23"/>
         </scene>
     </scenes>
     <resources>
@@ -2947,22 +2733,13 @@ $8 per guest + tax</string>
         <image name="IMG_0495thumbnail270x175_25769.JPG" width="270" height="175"/>
         <image name="Starbucksthumbnail270x175_25775.jpg" width="270" height="175"/>
         <image name="Tims-Photothumbnail270x175_25780.jpg" width="270" height="175"/>
-        <image name="bubble1.png" width="512" height="512"/>
         <image name="cloudy.png" width="100" height="100"/>
-        <image name="like.png" width="512" height="512"/>
-        <image name="list23(biggering).png" width="128" height="128"/>
         <image name="list23(biggering)white.png" width="128" height="128"/>
-        <image name="location4.png" width="512" height="512"/>
-        <image name="news.png" width="512" height="512"/>
-        <image name="paperplane.png" width="512" height="512"/>
         <image name="sfubby.png" width="878" height="398"/>
         <image name="sfudeadline.png" width="1000" height="265"/>
         <image name="sfusurrey.png" width="996" height="252"/>
         <image name="sfuvancouver.png" width="540" height="120"/>
         <image name="sfuvol.png" width="600" height="280"/>
-        <image name="small59.png" width="512" height="512"/>
-        <image name="study.png" width="512" height="512"/>
-        <image name="user12.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2970,10 +2747,9 @@ $8 per guest + tax</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="phO-uy-lwE"/>
-        <segue reference="Ndd-rK-68Z"/>
-        <segue reference="2VP-Oi-wgZ"/>
-        <segue reference="i4a-i0-ING"/>
-        <segue reference="auh-ae-yLd"/>
+        <segue reference="rB3-uP-a2d"/>
+        <segue reference="GOZ-So-gB1"/>
+        <segue reference="4o1-3k-u4l"/>
+        <segue reference="5AZ-ci-rw3"/>
     </inferredMetricsTieBreakers>
 </document>

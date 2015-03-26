@@ -13,8 +13,7 @@ import AVFoundation
 
 
 
-class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegate{
-
+class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegate {
 
     @IBOutlet weak var pointfield: UITextField!
     
@@ -38,11 +37,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             qrCodeFrameView.layer.borderWidth = 2
             view.addSubview(qrCodeFrameView)
             view.bringSubviewToFront(qrCodeFrameView)
-         
             
-            
-        
-        
             let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             
             var error:NSError?
@@ -90,11 +85,6 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
 
         
           }
-    
-    @IBAction func toggleSideMenu(sender: AnyObject) {
-        toggleSideMenuView()
-    }
-    
     
     
     @IBAction func IncrementP(sender: AnyObject) {
@@ -248,6 +238,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
 
     /*
     // MARK: - Navigation

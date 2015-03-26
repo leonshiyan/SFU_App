@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class FavoritesController: UITableViewController {
+class FavoritesController: UITableViewController,ENSideMenuDelegate {
     
     //go back when cancel pushed
     @IBAction func cancelToFavoritesController(segue:UIStoryboardSegue) {
@@ -30,6 +30,14 @@ class FavoritesController: UITableViewController {
         
         //hide the detail view controller
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //Set slide menu control to this controller
+        self.sideMenuController()?.sideMenu?.delegate = self;
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,6 +65,20 @@ class FavoritesController: UITableViewController {
         passNo = indexPath.row
         search = players[passNo].number
         
+    }
+    
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
+    }
+    // disabled Slide Menu
+    func sideMenuShouldOpenSideMenu() -> Bool {
+        println("sideMenuShouldOpenSideMenu")
+        return false;
     }
     
 }

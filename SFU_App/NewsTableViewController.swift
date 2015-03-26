@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsTableViewController: UITableViewController, NSXMLParserDelegate {
+class NewsTableViewController: UITableViewController, NSXMLParserDelegate,ENSideMenuDelegate {
 
     var parser: NSXMLParser = NSXMLParser() // Instance of NSXML parser
     var posts: [rssPosts] = [] // Holds RSS posts
@@ -30,6 +30,10 @@ class NewsTableViewController: UITableViewController, NSXMLParserDelegate {
         parser.delegate = self
         parser.parse()
         self.navigationItem.title = eventTitle
+        
+        //Set slide menu control to this controller
+        self.sideMenuController()?.sideMenu?.delegate = self;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +41,18 @@ class NewsTableViewController: UITableViewController, NSXMLParserDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func toggleSideMenu(sender: AnyObject) {
-        toggleSideMenuView()
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
+    }
+    // disabled Slide Menu
+    func sideMenuShouldOpenSideMenu() -> Bool {
+        println("sideMenuShouldOpenSideMenu")
+        return false;
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

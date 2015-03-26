@@ -146,6 +146,7 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("login") as UIViewController
             break
         }
+
         sideMenuController()?.setContentViewController(destViewController)
     }
     
