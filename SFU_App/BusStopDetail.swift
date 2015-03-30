@@ -6,11 +6,19 @@
 //  Copyright (c) 2015 Hugo Cheng. All rights reserved.
 //
 import UIKit
-
+import CoreData
 var player: Player!
 var players: [Player] = basedata
 
 class BusStopDetail: UITableViewController,ENSideMenuDelegate {
+    // Core data objects//
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    
+    
+    
+    
+    
     
     //initialize buttons
     @IBOutlet weak var BusStopNum: UITextField!
@@ -39,6 +47,12 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "saveBusStopDetail" {
             player = Player(name: self.BusStopName.text, number: self.BusStopNum.text)
+            
+            
+            // Adding code to add BusStopName.text and BusStopNum to core data //
+            
+            
+            
         }
     }
     

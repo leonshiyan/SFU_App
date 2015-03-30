@@ -35,5 +35,121 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SFU_App/BusStopDetail.swift"
+            timestampString = "449426140.232746"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "BusStopDetail"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.BusStopNum.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.030807"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.BusStopNum.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.031023"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.BusStopNum.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.031149"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.init (SFU_App.BusStopDetail.Type)(style : C.UITableViewStyle) -&gt; SFU_App.BusStopDetail"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.031277"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.init (SFU_App.BusStopDetail.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; SFU_App.BusStopDetail"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.031422"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.init (SFU_App.BusStopDetail.Type)() -&gt; SFU_App.BusStopDetail"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.031538"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SFU_App.BusStopDetail.init (SFU_App.BusStopDetail.Type)(coder : ObjectiveC.NSCoder) -&gt; SFU_App.BusStopDetail"
+                  moduleName = "SFU_App"
+                  urlString = "file:///Users/ykc10/Desktop/2015-1-cmpt_275_team_01/SFU_App/BusStopDetail.swift"
+                  timestampString = "449425908.031655"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
