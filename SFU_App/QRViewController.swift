@@ -87,7 +87,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
           }
     
     
-    @IBAction func IncrementP(sender: AnyObject) {
+    func IncrementP() {
         
         var name : NSString = defaults.stringForKey("usernameKey")!
         
@@ -173,8 +173,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     
     
     
-    
-    @IBAction func DecrementP(sender: AnyObject) {
+     func DecrementP() {
         var name : NSString = defaults.stringForKey("usernameKey")!
         
         var amount = pointfield.text
@@ -224,9 +223,26 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObjectForMetadataObject(metadataObj as AVMetadataMachineReadableCodeObject) as AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = barCodeObject.bounds;
-            
+            // if it  is not nil then increment or decrement depending on QR
             if metadataObj.stringValue != nil {
-                //ScoreGain.text = metadataObj.stringValue
+                
+                if(metadataObj.stringValue.toInt() > 0) {
+                    IncrementP();
+                    FetchPoints();
+                }
+                
+                if(metadataObj.stringValue.toInt() < 0 ) {
+                    DecrementP()
+                    FetchPoints()
+                    
+                }
+                
+                
+                
+                
+                
+                
+                
             }
         }
         return
