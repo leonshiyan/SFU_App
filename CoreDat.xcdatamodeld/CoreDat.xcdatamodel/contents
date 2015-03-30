@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="FavBus" representedClassName="FavBus" syncable="YES">
+    <entity name="FavBus" representedClassName="SFU_App.FavBus" syncable="YES">
         <attribute name="busnum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -10,7 +10,7 @@
         <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Friend" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="FavBus" positionX="-54" positionY="18" width="128" height="75"/>
+        <element name="Friend" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

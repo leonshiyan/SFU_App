@@ -8,10 +8,37 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 
+class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedResultsControllerDelegate {
+    
+    
+    // Core data variables//
+   
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    
+    var fetchedResultController : NSFetchedResultsController = NSFetchedResultsController()
 
-class FavoritesController: UITableViewController,ENSideMenuDelegate {
+    
+    func getFetchedResultsController() -> NSFetchedResultsController{
+        
+        var fetchedResultsController  = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        
+        return fetchedResultsController
+    }
+    
+    func taskFetchRequest() -> NSFetchRequest {
+        
+        let fetchRequest = NSFetchRequest(entityName: "FavBus")
+        let sortDescriptor = NSSortDescriptor(key: "tag", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+    
+    
+
+    
     
     //go back when cancel pushed
     @IBAction func cancelToFavoritesController(segue:UIStoryboardSegue) {
@@ -34,6 +61,12 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 50 ;
+        fetchedResultController = getFetchedResultsController()
+        fetchedResultController.delegate = self
+        
+        fetchedResultController.performFetch(nil)
+        
         
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
@@ -42,31 +75,75 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 1
+        return fetchedResultController.sections!.count
+        
+        
+        
+        
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //println(temparr)
         var cellCount = players.count
         //println(cellCount)
-        
-        return cellCount
+        println (fetchedResultController.sections![section].numberOfObjects)
+        if(fetchedResultController.sections![section].numberOfObjects <= 0 ) {
+            println("list is empty")
+            return 0 ;
+        }
+        return fetchedResultController.sections![section].numberOfObjects
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         //display bus stop name input by user
         let player = players[indexPath.row] as Player
         cell.textLabel?.text = player.name
-        return cell
+        return cell*/
+       
+            var  cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as UITableViewCell
+        
+     
+        
+ 
+        
+            let task = fetchedResultController .objectAtIndexPath(indexPath) as FavBus
+        
+     
+            cell.textLabel?.text = task.tag
+            return cell
+        
+        
+        
+        
+        
+        
+        
     }
     //segue bus number assiciated with cell in search
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
-        passNo = indexPath.row
-        search = players[passNo].number
         
+     
+        
+        let indexPath = tableView.indexPathForSelectedRow();
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
+        
+        println(currentCell.textLabel!.text)
+
+        
+        
+       // println("You selected cell #\(indexPath.row)!")
+        //passNo = indexPath.row
+        
+        search = currentCell.textLabel!.text
+        println(search)
     }
     
+ /*
+    func controllerDidChangeContent(controller: NSFetchedResultsController!){
+        
+        tableView.reloadData()
+    }*/
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
         println("sideMenuWillOpen")
@@ -79,6 +156,13 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate {
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // populates table with data 
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController!)
+    {
+        tableView.reloadData()
     }
     
 }

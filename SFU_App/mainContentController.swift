@@ -97,8 +97,12 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         description = json["weather"][0]["description"].stringValue
         weatherid = json["weather"][0]["id"].stringValue.toInt()
         var index2 = temperature.rangeOfString(".", options: .BackwardsSearch)?.startIndex
-        let temperatureStr = temperature.substringToIndex(index2!)
-        temp.text = temperatureStr + "C"
+        if(temperature.isEmpty){
+            let temperatureStr = " null"
+        }else{
+            let temperatureStr = temperature.substringToIndex(index2!)
+          temp.text = temperatureStr + "C"}
+        
         //humid.text = humidity + "%"
         //weatherDesc.text = description.capitalizedString
         

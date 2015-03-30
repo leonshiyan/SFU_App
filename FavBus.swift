@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+
+
 class FavBus: NSManagedObject {
 
     @NSManaged var busnum: String
