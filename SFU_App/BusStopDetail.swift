@@ -50,10 +50,28 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
             
             
             // Adding code to add BusStopName.text and BusStopNum to core data //
+            let entityDescription = NSEntityDescription.entityForName("FavBus", inManagedObjectContext: managedObjectContext!)
             
+            let favs = FavBus(entity: entityDescription!,insertIntoManagedObjectContext: managedObjectContext)
             
+            favs.busnum = BusStopNum.text
+            favs.tag = BusStopName.text
+            
+            var error: NSError?
+            
+            managedObjectContext?.save(&error)
+            
+            if  let err = error {
+                println(err.localizedFailureReason)
+                
+            } else{
+                println("Bus stop saved")
+            }
             
         }
+        
+        
+        
     }
     
     // MARK: - ENSideMenu Delegate
