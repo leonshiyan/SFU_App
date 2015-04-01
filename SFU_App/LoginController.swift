@@ -38,9 +38,12 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     var SISlogin:Bool? = false;
     var CASlogin:Bool? = false;
     
+    var loginEventFired:Bool? = false;
+    
     var pass:String?
     
     var comingFromMenu:Bool? = false;
+    
     
     func setComingFromMenu(var x:Bool){
         comingFromMenu = x;
@@ -218,6 +221,11 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
             
             DataTask.resume()
             
+            if(loginEventFired == false){
+                loginEventFired = true
+                performSegueWithIdentifier("goToMain", sender: self)
+            }
+            
             
         }else{
             errorLabel.text=""
@@ -232,9 +240,6 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         }
         
         if(defaults.stringForKey(userNameKeyConstant) != nil && logoutBool == false && CASlogin == true && SISlogin == true && comingFromMenu == false){
-
-            login.text = defaults.stringForKey(userNameKeyConstant)
-            password.text = defaults.stringForKey(passwordKeyConstant)
             loginButton.sendActionsForControlEvents(.TouchUpInside)
             
         }
@@ -312,11 +317,6 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
                 
                 logoutBool = false;
                 
-                
-                 //returns user to main menu after successful login
-               if (Bounce == true && comingFromMenu == false){
-                    performSegueWithIdentifier("mainScreenSeg", sender: self)
-                }
             
             }
         }

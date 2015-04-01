@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import Foundation
 
 
 class MapTableController: UITableViewController {
     
+    
+    @IBOutlet weak var bMaps: UITableViewCell!
+    @IBOutlet weak var sMaps: UITableViewCell!
+    @IBOutlet weak var vMaps: UITableViewCell!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let shadowPath = UIBezierPath(rect: bMaps.bounds)
+        bMaps.layer.masksToBounds = false
+        bMaps.layer.shadowColor = UIColor.blackColor().CGColor
+        bMaps.layer.shadowOffset = CGSizeMake(0, 0.5)
+        bMaps.layer.shadowOpacity = 0.1
+        bMaps.layer.shadowPath = shadowPath.CGPath
+        
+        let shadowPath2 = UIBezierPath(rect: sMaps.bounds)
+        sMaps.layer.masksToBounds = false
+        sMaps.layer.shadowColor = UIColor.blackColor().CGColor
+        sMaps.layer.shadowOffset = CGSizeMake(0, 0.5)
+        sMaps.layer.shadowOpacity = 0.1
+        sMaps.layer.shadowPath = shadowPath2.CGPath
+        
+        let shadowPath3 = UIBezierPath(rect: vMaps.bounds)
+        vMaps.layer.masksToBounds = false
+        vMaps.layer.shadowColor = UIColor.blackColor().CGColor
+        vMaps.layer.shadowOffset = CGSizeMake(0, 0.5)
+        vMaps.layer.shadowOpacity = 0.1
+        vMaps.layer.shadowPath = shadowPath3.CGPath
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,5 +51,6 @@ class MapTableController: UITableViewController {
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
+    
 }
 

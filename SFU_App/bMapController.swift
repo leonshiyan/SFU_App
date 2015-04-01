@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapController: UIViewController, UIWebViewDelegate,ENSideMenuDelegate {
+class bMapController: UIViewController, UIWebViewDelegate,ENSideMenuDelegate {
     
     // View Controller to load google maps for SFU, not fully implemented yet //
 

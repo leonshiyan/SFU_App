@@ -41,7 +41,7 @@ class MyMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 9
+        return 10
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -64,7 +64,7 @@ class MyMenuTableViewController: UITableViewController {
             cell!.textLabel?.text = "Home"
             break
         case 1:
-            cell!.textLabel?.text = "Services"
+            cell!.textLabel?.text = "Student Services"
             break
         case 2:
             cell!.textLabel?.text = "Transit"
@@ -85,6 +85,9 @@ class MyMenuTableViewController: UITableViewController {
             cell!.textLabel?.text = "Account"
             break
         case 8:
+            cell!.textLabel?.text = "Campus Info"
+            break
+        case 9:
             cell!.textLabel?.text = "About"
             break
         default:
@@ -128,7 +131,7 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("news") as UIViewController
             break
         case 4:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("maps") as UIViewController
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("maps2") as UIViewController
             break
         case 5:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("breakMatcher") as UIViewController
@@ -140,6 +143,9 @@ class MyMenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("login") as UIViewController
             break
         case 8:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("alerts") as UIViewController
+            break
+        case 9:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("About") as UIViewController
             break
         default:

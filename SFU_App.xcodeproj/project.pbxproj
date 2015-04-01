@@ -14,7 +14,7 @@
 		3A6785B41AAA81680000B21E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6785B31AAA81680000B21E /* PostViewController.swift */; };
 		3A8318E31AA67207006D0922 /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8318E21AA67207006D0922 /* EmailController.swift */; };
 		3A8318E51AA6724E006D0922 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8318E41AA6724E006D0922 /* CanvasController.swift */; };
-		3A8318E71AA67599006D0922 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8318E61AA67599006D0922 /* MapController.swift */; };
+		3A8318E71AA67599006D0922 /* bMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8318E61AA67599006D0922 /* bMapController.swift */; };
 		3A8318E91AA67776006D0922 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8318E81AA67776006D0922 /* HomeController.swift */; };
 		3A8318FE1AA69069006D0922 /* location4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8318FD1AA69069006D0922 /* location4.png */; };
 		3A8319001AA69070006D0922 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8318FF1AA69070006D0922 /* news.png */; };
@@ -79,6 +79,9 @@
 		7DC35E451AA669B700554367 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC35E431AA669B700554367 /* LaunchScreen.xib */; };
 		7DC35E511AA669B800554367 /* SFU_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E501AA669B800554367 /* SFU_AppTests.swift */; };
 		7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC35E5A1AA66D3400554367 /* LoginController.swift */; };
+		C52B8C831ACB7872005DEE20 /* campusInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B8C821ACB7872005DEE20 /* campusInfoController.swift */; };
+		C52B8C851ACB8EE4005DEE20 /* sMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B8C841ACB8EE4005DEE20 /* sMapController.swift */; };
+		C52B8C871ACB8EF6005DEE20 /* vMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B8C861ACB8EF6005DEE20 /* vMapController.swift */; };
 		C59004EC1AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C59004E61AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg */; };
 		C59004ED1AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C59004E71AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg */; };
 		C59004EE1AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C59004E81AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG */; };
@@ -127,7 +130,7 @@
 		3A6785B31AAA81680000B21E /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		3A8318E21AA67207006D0922 /* EmailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
 		3A8318E41AA6724E006D0922 /* CanvasController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
-		3A8318E61AA67599006D0922 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		3A8318E61AA67599006D0922 /* bMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bMapController.swift; sourceTree = "<group>"; };
 		3A8318E81AA67776006D0922 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3A8318FD1AA69069006D0922 /* location4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location4.png; path = linecons/png/location4.png; sourceTree = SOURCE_ROOT; };
 		3A8318FF1AA69070006D0922 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = news.png; path = linecons/png/news.png; sourceTree = SOURCE_ROOT; };
@@ -197,6 +200,9 @@
 		7DC35E4F1AA669B800554367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC35E501AA669B800554367 /* SFU_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFU_AppTests.swift; sourceTree = "<group>"; };
 		7DC35E5A1AA66D3400554367 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C52B8C821ACB7872005DEE20 /* campusInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = campusInfoController.swift; sourceTree = "<group>"; };
+		C52B8C841ACB8EE4005DEE20 /* sMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sMapController.swift; sourceTree = "<group>"; };
+		C52B8C861ACB8EF6005DEE20 /* vMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vMapController.swift; sourceTree = "<group>"; };
 		C59004E61AC3DA34009C85BC /* 20141125_090007thumbnail270x175_25866.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20141125_090007thumbnail270x175_25866.jpg; sourceTree = "<group>"; };
 		C59004E71AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dining-Hallthumbnail270x175_25766.jpg"; sourceTree = "<group>"; };
 		C59004E81AC3DA34009C85BC /* IMG_0484thumbnail270x175_25772.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0484thumbnail270x175_25772.JPG; sourceTree = "<group>"; };
@@ -352,7 +358,9 @@
 		3ED91B3B1AB2452900554BDF /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				3A8318E61AA67599006D0922 /* MapController.swift */,
+				3A8318E61AA67599006D0922 /* bMapController.swift */,
+				C52B8C841ACB8EE4005DEE20 /* sMapController.swift */,
+				C52B8C861ACB8EF6005DEE20 /* vMapController.swift */,
 				3E1B391B1ABCD76C001CF09E /* MapTableController.swift */,
 			);
 			name = Maps;
@@ -421,6 +429,7 @@
 				C5BED5861AC37B3100EC64BA /* homeTransitController.swift */,
 				3A8318E81AA67776006D0922 /* HomeController.swift */,
 				C5C424A51AC280D000BC212E /* mainContentController.swift */,
+				C52B8C821ACB7872005DEE20 /* campusInfoController.swift */,
 				3ADDB58B1AB91D1700153543 /* homeViewController.swift */,
 				7DC35E3E1AA669B700554367 /* Main.storyboard */,
 				7DC35E411AA669B700554367 /* Images.xcassets */,
@@ -658,6 +667,7 @@
 				7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */,
 				C5C424A21AC22CFE00BC212E /* SwiftyJSON.swift in Sources */,
 				3E25ECE21AC4B87400CEABCC /* DiningController.swift in Sources */,
+				C52B8C831ACB7872005DEE20 /* campusInfoController.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,
 				C5C424A61AC280D000BC212E /* mainContentController.swift in Sources */,
 				3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */,
@@ -681,6 +691,7 @@
 				7DB78C9D1AC9AE9100F17700 /* Friend.swift in Sources */,
 				3A8319121AA6953D006D0922 /* ServicesController.swift in Sources */,
 				3E9628F91AA953D700A8DE88 /* subCategory.swift in Sources */,
+				C52B8C851ACB8EE4005DEE20 /* sMapController.swift in Sources */,
 				7DBBAF181AC0B58B00066BCB /* BasFave.swift in Sources */,
 				7D60E61A1AAE4B0A00A901F1 /* SchViewController.swift in Sources */,
 				3E5C83431ABCBE8800A4DB0B /* QRViewController.swift in Sources */,
@@ -690,8 +701,9 @@
 				7DBBAF141AC0B52400066BCB /* AllBusController.swift in Sources */,
 				7DBBAF161AC0B56600066BCB /* BusStopDetail.swift in Sources */,
 				7DC35E5B1AA66D3400554367 /* LoginController.swift in Sources */,
-				3A8318E71AA67599006D0922 /* MapController.swift in Sources */,
+				3A8318E71AA67599006D0922 /* bMapController.swift in Sources */,
 				7DC35E3B1AA669B700554367 /* AppDelegate.swift in Sources */,
+				C52B8C871ACB8EF6005DEE20 /* vMapController.swift in Sources */,
 				3A6785AE1AAA77630000B21E /* goSFUController.swift in Sources */,
 				C5C424A41AC22D7800BC212E /* DataManager.swift in Sources */,
 				3ADDB5831AB8D0D800153543 /* HTMLNode.swift in Sources */,

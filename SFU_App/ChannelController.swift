@@ -13,11 +13,45 @@ var rsschn: NSString!
 var eventTitle: String!
 class ChannelController: UITableViewController{
     
+    @IBOutlet weak var bevents: UIButton!
+    @IBOutlet weak var sevents: UIButton!
+    @IBOutlet weak var vevents: UIButton!
+    @IBOutlet weak var deadlines: UIButton!
     
+    @IBOutlet weak var volunteer: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let shadowPath = UIBezierPath(rect: bevents.bounds)
+        bevents.layer.masksToBounds = false
+        bevents.layer.shadowColor = UIColor.blackColor().CGColor
+        bevents.layer.shadowOffset = CGSizeMake(0, 0.5)
+        bevents.layer.shadowOpacity = 0.1
+        bevents.layer.shadowPath = shadowPath.CGPath
+        
+        let shadowPath2 = UIBezierPath(rect: sevents.bounds)
+        sevents.layer.masksToBounds = false
+        sevents.layer.shadowColor = UIColor.blackColor().CGColor
+        sevents.layer.shadowOffset = CGSizeMake(0, 0.5)
+        sevents.layer.shadowOpacity = 0.1
+        sevents.layer.shadowPath = shadowPath2.CGPath
+        
+        let shadowPath3 = UIBezierPath(rect: vevents.bounds)
+        vevents.layer.masksToBounds = false
+        vevents.layer.shadowColor = UIColor.blackColor().CGColor
+        vevents.layer.shadowOffset = CGSizeMake(0, 0.5)
+        vevents.layer.shadowOpacity = 0.1
+        vevents.layer.shadowPath = shadowPath3.CGPath
+        
+        let shadowPath4 = UIBezierPath(rect: deadlines.bounds)
+        deadlines.layer.masksToBounds = false
+        deadlines.layer.shadowColor = UIColor.blackColor().CGColor
+        deadlines.layer.shadowOffset = CGSizeMake(0, 0.5)
+        deadlines.layer.shadowOpacity = 0.1
+        deadlines.layer.shadowPath = shadowPath4.CGPath
+        
     }
     
     override func didReceiveMemoryWarning() {
