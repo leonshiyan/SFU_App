@@ -26,6 +26,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     // hidden webview references//
     @IBOutlet weak var LoginPage: UIWebView!
     
+    @IBOutlet weak var guestLogin: UIButton!
     @IBOutlet weak var SISview: UIWebView!
     
     @IBOutlet weak var loginLoader: UIActivityIndicatorView!
@@ -54,6 +55,11 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        if(comingFromMenu == true){
+            guestLogin.setTitle("Main Menu", forState: UIControlState.Normal)
+        }
+        
         // Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
         
@@ -221,7 +227,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
             
             DataTask.resume()
             
-            if(loginEventFired == false){
+            if(loginEventFired == false && comingFromMenu == false){
                 loginEventFired = true
                 performSegueWithIdentifier("goToMain", sender: self)
             }
@@ -243,7 +249,11 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
             loginButton.sendActionsForControlEvents(.TouchUpInside)
             
         }
-        loginLoader.stopAnimating()
+        if(CASlogin == true && SISlogin == true){
+            loginLoader.stopAnimating()
+            
+        }
+        
     }
     // Log out button Function
     @IBAction func logoutAction(sender: AnyObject) {

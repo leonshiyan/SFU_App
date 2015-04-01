@@ -11,6 +11,10 @@ import UIKit
 
 class campusInfoController: UITableViewController{
     
+    @IBOutlet weak var cell1: UIView!
+    @IBOutlet weak var cell2: UIView!
+    
+    
     //burnaby
     @IBOutlet weak var bOpen: UILabel!
     @IBOutlet weak var bRoads: UILabel!
@@ -24,6 +28,8 @@ class campusInfoController: UITableViewController{
     //vancouver
     @IBOutlet weak var vOpen: UILabel!
     @IBOutlet weak var vClasses: UILabel!
+    
+    @IBOutlet weak var weatherWebView: UIWebView!
     
     @IBAction func bCall(sender: AnyObject) {
         let phone = "tel://7787824500";
@@ -47,6 +53,27 @@ class campusInfoController: UITableViewController{
     }
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        //URL to sfu canvas
+        var url = NSURL (string:"http://cgi.sfu.ca/~netops/cgi-bin/image.php?cam=mallcam&nocache=0.6927982002962381&update=2000&timeout=1800000&offset=4")
+        // Load Url into webview
+        var request = NSURLRequest(URL: url!)
+        weatherWebView.loadRequest(request)
+        //weatherWebView.scrollView.zoomScale = 4
+        
+        let shadowPath = UIBezierPath(rect: cell1.bounds)
+        cell1.layer.masksToBounds = false
+        cell1.layer.shadowColor = UIColor.blackColor().CGColor
+        cell1.layer.shadowOffset = CGSizeMake(0, 0.5)
+        cell1.layer.shadowOpacity = 0.1
+        cell1.layer.shadowPath = shadowPath.CGPath
+        
+        let shadowPath2 = UIBezierPath(rect: cell2.bounds)
+        cell2.layer.masksToBounds = false
+        cell2.layer.shadowColor = UIColor.blackColor().CGColor
+        cell2.layer.shadowOffset = CGSizeMake(0, 0.5)
+        cell2.layer.shadowOpacity = 0.1
+        cell2.layer.shadowPath = shadowPath2.CGPath
         
         let currentURLString = "http://www.sfu.ca/security/sfuroadconditions/"
         

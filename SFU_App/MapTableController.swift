@@ -13,9 +13,10 @@ import Foundation
 class MapTableController: UITableViewController {
     
     
-    @IBOutlet weak var bMaps: UITableViewCell!
-    @IBOutlet weak var sMaps: UITableViewCell!
-    @IBOutlet weak var vMaps: UITableViewCell!
+    @IBOutlet weak var bMaps: UIView!
+    @IBOutlet weak var sMaps: UIView!
+    @IBOutlet weak var vMaps: UIView!
+    
     
     
     override func viewDidLoad() {
