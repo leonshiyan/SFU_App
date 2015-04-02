@@ -50,11 +50,31 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         comingFromMenu = x;
     }
     
+    // Check internet function
+    func outputError() {
+        if(Reachability.isConnectedToNetwork() == true){
+            println("Internet connection OK")
+            return
+        }
+        else{
+            println("Internet connection FAILED")
+            let alertHandler = { (action:UIAlertAction!) -> Void in // Handler: recursively calls itself
+                return self.outputError()
+            }
+            let alertController = UIAlertController(title: "Error", message: "No internet connection available", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "Retry", style: .Default, handler: alertHandler)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // Check for internet connection
+        self.outputError()
         
         if(comingFromMenu == true){
             guestLogin.setTitle("Main Menu", forState: UIControlState.Normal)
@@ -86,7 +106,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
 
         
         if result.containsString("successfully logged into"){
-            // Events that trigger after successful login, gade out log in button, fade out password//
+            // Events that trigger after successful login, fade out log in button, fade out password//
             login.enabled = false
             password.enabled = false
             loginButton.enabled = false

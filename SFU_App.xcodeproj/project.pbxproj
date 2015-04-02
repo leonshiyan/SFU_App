@@ -52,6 +52,8 @@
 		3E9628F81AA953D700A8DE88 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9628F51AA953D700A8DE88 /* BlogPost.swift */; };
 		3E9628F91AA953D700A8DE88 /* subCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9628F61AA953D700A8DE88 /* subCategory.swift */; };
 		3E9628FB1AA95D2900A8DE88 /* TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9628FA1AA95D2900A8DE88 /* TViewController.swift */; };
+		3EA102DD1ACDDFDC005C12A8 /* errorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA102DC1ACDDFDC005C12A8 /* errorMessage.swift */; };
+		3ED637671ACDCD6C00E5F75C /* internetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED637661ACDCD6C00E5F75C /* internetCheck.swift */; };
 		3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED91B951AB2467900554BDF /* ENSideMenu.swift */; };
 		3ED91B981AB2467900554BDF /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED91B961AB2467900554BDF /* ENSideMenuNavigationController.swift */; };
 		406DB11A1ABF8692004583DA /* ChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406DB1191ABF8692004583DA /* ChannelController.swift */; };
@@ -168,6 +170,8 @@
 		3E9628F51AA953D700A8DE88 /* BlogPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
 		3E9628F61AA953D700A8DE88 /* subCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subCategory.swift; sourceTree = "<group>"; };
 		3E9628FA1AA95D2900A8DE88 /* TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TViewController.swift; sourceTree = "<group>"; };
+		3EA102DC1ACDDFDC005C12A8 /* errorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = errorMessage.swift; sourceTree = "<group>"; };
+		3ED637661ACDCD6C00E5F75C /* internetCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = internetCheck.swift; sourceTree = "<group>"; };
 		3ED91B951AB2467900554BDF /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENSideMenu.swift; path = Library/ENSideMenu.swift; sourceTree = "<group>"; };
 		3ED91B961AB2467900554BDF /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENSideMenuNavigationController.swift; path = Library/ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		406DB1191ABF8692004583DA /* ChannelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelController.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				7DB78C991AC9AE3E00F17700 /* CoreDat.xcdatamodeld */,
 				7DB78C9E1AC9AED200F17700 /* FavBus.swift */,
 				7DB78C9C1AC9AE9100F17700 /* Friend.swift */,
+				3EA102DC1ACDDFDC005C12A8 /* errorMessage.swift */,
+				3ED637661ACDCD6C00E5F75C /* internetCheck.swift */,
 				7DB78C971AC9AE1B00F17700 /* CoreData.framework */,
 				3ADDB5851AB8D5A800153543 /* libxml2.dylib */,
 				7DC35E371AA669B700554367 /* SFU_App */,
@@ -677,11 +683,13 @@
 				7DBBAF1A1AC0B5B500066BCB /* FavoritesController.swift in Sources */,
 				3E1B391F1ABCD881001CF09E /* BreakMatchController.swift in Sources */,
 				3E9628F71AA953D700A8DE88 /* article.swift in Sources */,
+				3EA102DD1ACDDFDC005C12A8 /* errorMessage.swift in Sources */,
 				7DB78C9B1AC9AE3E00F17700 /* CoreDat.xcdatamodeld in Sources */,
 				3ADDB5841AB8D0D800153543 /* HTMLParser.swift in Sources */,
 				3E9628F81AA953D700A8DE88 /* BlogPost.swift in Sources */,
 				3E13D3991AB2520B00EAF7B3 /* MyNavigationController.swift in Sources */,
 				7DBBAF121AC0B48800066BCB /* Player.swift in Sources */,
+				3ED637671ACDCD6C00E5F75C /* internetCheck.swift in Sources */,
 				3ADDB58C1AB91D1700153543 /* homeViewController.swift in Sources */,
 				3A6785B21AAA7DEA0000B21E /* rssPosts.swift in Sources */,
 				3ADDB58A1AB90A2400153543 /* assignmentsController.swift in Sources */,
