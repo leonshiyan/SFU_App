@@ -6,17 +6,96 @@
 //  Copyright (c) 2015 Hugo Cheng. All rights reserved.
 //
 
-import UIKit
 
-class BreakMatchController: UIViewController {
-    var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
+func CreateMatrix() ->String {
+    for course in courseList {
+        //println(course.times)
+        var daymult = 0
+        var intstring : [String] = course.times.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ": -"))
+        
+        var daystring = course.days.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ", "))
+        
+        var startime = intstring[0].toInt()
+        var endtime = intstring[5].toInt()
+        
+        
+        
+        
+        
+        
+        for day in daystring {
+            
+            
+            switch day {
+                
+                
+            case "Mo" :
+                
+                daymult = 0
+                break;
+                
+            case "Tu":
+                daymult = 1
+                break;
+                
+            case "We":
+                daymult = 2
+                break;
+                
+            case "Th":
+                daymult = 3
+                break;
+                
+            case "Fr":
+                daymult = 4
+                break;
+                
+            default :
+                break;
+                
+                
+            }
+            
+            //Do some computation here
+            var start = startime! - 8
+            var end = endtime! - 8
+            var hourOfClass = endtime! - startime!
+            for (var i = 0; i < hourOfClass ; i++)
+            {
+                matrix[daymult*12 + start + i] = "1"
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+    }
+    let schedule  = "" + matrix
+    //println(schedule)
     
-    var daymult = 0
+    
+    return schedule
+    
+}
+
+import UIKit
+ var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
+class BreakMatchController: UIViewController {
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var colon = 0
-       // var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
-        for course in courseList {
+               // var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
+     /*   for course in courseList {
             //println(course.times)
             
             var intstring : [String] = course.times.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ": -"))
@@ -70,7 +149,7 @@ class BreakMatchController: UIViewController {
                 var hourOfClass = endtime! - startime!
                 for (var i = 0; i < hourOfClass ; i++)
                 {
-                self.matrix[daymult*12 + start + i] = "1"
+                matrix[daymult*12 + start + i] = "1"
                 }
 
                 let date = NSDate()
