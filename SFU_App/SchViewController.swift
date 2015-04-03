@@ -36,11 +36,15 @@ class classCell: UITableViewCell{
     
 }
 
+var arr: [courses] = []
+    
+var courseList: [courseLists] = []
+
 class SchViewController: UITableViewController,ENSideMenuDelegate {
     
-    var arr: [courses] = []
+   //var arr: [courses] = []
     
-    var courseList: [courseLists] = []
+  // var courseList: [courseLists] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -329,7 +333,7 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
                     c2.days = classDays1
                 }
                 c2.location = classRoom1+classRN1
-                self.courseList.append(c2)
+                courseList.append(c2)
             }
             
             if classStart2 != ""{
@@ -345,15 +349,17 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
                     c3.days = classDays2
                 }
                 c3.location = classRoom2+classRN2
-                self.courseList.append(c3)
+                courseList.append(c3)
             }
             
             
             
-            self.courseList.append(c1)
+             courseList.append(c1)
         }
         
-        
+        for course in courseList{
+            println (course.times)
+}
         
     }
     
@@ -400,12 +406,12 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath)
         -> UITableViewCell {
-            let name = self.courseList[indexPath.row].name
-            let instruct = self.courseList[indexPath.row].instructor
-            let times = self.courseList[indexPath.row].times
-            let days = self.courseList[indexPath.row].days
-            let desc = self.courseList[indexPath.row].desc
-            let loc = self.courseList[indexPath.row].location
+            let name = courseList[indexPath.row].name
+            let instruct = courseList[indexPath.row].instructor
+            let times = courseList[indexPath.row].times
+            let days = courseList[indexPath.row].days
+            let desc = courseList[indexPath.row].desc
+            let loc = courseList[indexPath.row].location
             
             let cell = tableView.dequeueReusableCellWithIdentifier("classCellInfo", forIndexPath: indexPath) as UITableViewCell
             
