@@ -8,7 +8,7 @@
 
 import UIKit
 
-class courses{
+/*class courses{
     var department: String = String();
     var section: String = String();
     var number: String = String();
@@ -39,7 +39,7 @@ class classCell: UITableViewCell{
 var arr: [courses] = []
     
 var courseList: [courseLists] = []
-
+*/
 class SchViewController: UITableViewController,ENSideMenuDelegate {
     
    //var arr: [courses] = []
