@@ -45,7 +45,6 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     
     var comingFromMenu:Bool? = false;
     
-    
     func setComingFromMenu(var x:Bool){
         comingFromMenu = x;
     }
@@ -58,8 +57,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         }
         else{
             println("Internet connection FAILED")
-            let alertHandler = { (action:UIAlertAction!) -> Void in // Handler: recursively calls itself
-                return self.outputError()
+            let alertHandler = { (action:UIAlertAction!) -> Void in // Handler: refreshes view so that autologin can work
+                return self.viewDidLoad()
             }
             let alertController = UIAlertController(title: "Error", message: "No internet connection available", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "Retry", style: .Default, handler: alertHandler)
