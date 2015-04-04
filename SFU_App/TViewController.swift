@@ -10,16 +10,17 @@
 var search: NSString!
 import UIKit
 
-class TViewController: UIViewController {
+class TViewController: UIViewController,UITextFieldDelegate {
     // ViewController that takes user input for bus stop number
     @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var input: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            // Do any additional setup after loading the view.
+        input.delegate = self
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
