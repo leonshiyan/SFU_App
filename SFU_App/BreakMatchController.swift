@@ -121,8 +121,12 @@ func CreateMatrix() ->String {
 import UIKit
 import CoreData
  var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
-class BreakMatchController: UIViewController {
+class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
    
+    
+    @IBOutlet weak var FriendTable: UITableView!
+    
+    
     var DisplayList : [String] = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
@@ -137,8 +141,10 @@ class BreakMatchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkBreak()
+        self.checkBreak()
         
+        FriendTable.delegate = self
+        FriendTable.dataSource = self
         
 }
     
@@ -152,7 +158,7 @@ class BreakMatchController: UIViewController {
             
             
         }
-        self.checkBreak ()
+        
     }
     // Runs through the list
     func checkBreak (){
@@ -248,12 +254,15 @@ class BreakMatchController: UIViewController {
             println("No, he is not free now")
             
         }
+            
         }
         
-        
-        
+        if(DisplayList.isEmpty){
+            println("Everyone is Busy :(") }
+        else{
         for name in DisplayList {
             println(name);
+        }
         }
     }
     
@@ -265,6 +274,35 @@ class BreakMatchController: UIViewController {
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
+    
+    func numberOfSectionsINtableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section : Int) -> Int {
+        let fetchRequest  = NSFetchRequest(entityName:"Friend")
+        let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+       
+
+        return fetchResults as [Friend].count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell
+        let fetchRequest  = NSFetchRequest(entityName:"Friend")
+        let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+        var Display2 : [String] = []
+        for  result in fetchResults as [Friend] {
+             Display2.append(result.userid)
+            
+            
+        }
+        let row = indexPath.row
+        cell.textLabel?.text = Display2[row]
+        
+        return cell
+    }
+    
 }
 
 
