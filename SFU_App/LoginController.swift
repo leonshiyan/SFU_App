@@ -11,7 +11,7 @@ import Foundation
 // View controller responsible for SFU authentication for both SIS system and CAS, serves to maintain login state for canvas, connect and SIS//
 var USERID = ""
 let defaults = NSUserDefaults.standardUserDefaults()
-class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
+class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UITextFieldDelegate {
     // Reference to login and password fields//
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -45,7 +45,6 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     
     var comingFromMenu:Bool? = false;
     
-    
     func setComingFromMenu(var x:Bool){
         comingFromMenu = x;
     }
@@ -58,8 +57,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         }
         else{
             println("Internet connection FAILED")
-            let alertHandler = { (action:UIAlertAction!) -> Void in // Handler: recursively calls itself
-                return self.outputError()
+            let alertHandler = { (action:UIAlertAction!) -> Void in // Handler: refreshes view so that autologin can work
+                return self.viewDidLoad()
             }
             let alertController = UIAlertController(title: "Error", message: "No internet connection available", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "Retry", style: .Default, handler: alertHandler)
@@ -72,6 +71,10 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // Delegates for textfield
+        login.delegate = self
+        password.delegate = self
         
         // Check for internet connection
         self.outputError()
@@ -140,6 +143,19 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate {
         
     }
     
+    // Set textfield so that after pressing Next in login textfield, it will move to password textfield
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if(login.isFirstResponder()){
+            login.resignFirstResponder()
+            password.becomeFirstResponder()
+        }
+        
+        else if(password.isFirstResponder()){
+            password.resignFirstResponder()
+            loginAction(loginButton)
+        }
+        return true
+    }
     
     // Do any additional setup after loading the view.
     

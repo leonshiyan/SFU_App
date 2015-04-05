@@ -26,6 +26,15 @@ class TransitController: UITableViewController, NSXMLParserDelegate,ENSideMenuDe
         override func viewDidLoad() {
             super.viewDidLoad()
             stopNo = search
+            
+            // Error checking for when user inputs stop numbers >5 or <5
+            if(countElements(search as String) != 5){
+                let alertController = UIAlertController(title: "Error", message: "Not a valid 5-number bus stop", preferredStyle: .Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+            
             //Set slide menu control to this controller
             self.sideMenuController()?.sideMenu?.delegate = self;
                         
@@ -94,7 +103,13 @@ class TransitController: UITableViewController, NSXMLParserDelegate,ENSideMenuDe
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        // Error checking for invalid bus stop number
+        if(subCat.count == 0){
+            let alertController = UIAlertController(title: "Error", message: "Invalid Bus Stop", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
         return subCat.count
     }
     
