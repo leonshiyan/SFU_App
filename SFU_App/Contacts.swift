@@ -10,10 +10,13 @@ import Foundation
 import CoreData
 import UIKit
 class ContactsViewController: UIViewController {
-
+   
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
 // Parse user Schedule and put it online first .. 
     
+    @IBOutlet weak var friendinput: UITextField!
     
     func updateSch () -> Void {
         var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Time.php")!)
@@ -389,6 +392,77 @@ class ContactsViewController: UIViewController {
     
     
     
+    // Get friend from scheudle from post
+    @IBAction func FetchFriend(sender: AnyObject) {
+        
+        var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
+        var name = self.friendinput.text
+        var session = NSURLSession.sharedSession()
+        POSTrequest.HTTPMethod="POST"
+        POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
+        //var matrix = CreateMatrix()
+        var body = "USERID=\(name)"
+        POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        var DataTask = session.dataTaskWithRequest(POSTrequest) {
+            data, response, error in
+            
+            if(error != nil){
+                println("error=\(error)")
+                return;
+            }
+            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+            //println(strData)
+            self.saveContact(name,Matrix: strData!)
+            // save data long with user name to database 
+            
+            
+            
+            
+            
+        }
+        
+        DataTask.resume()
+        
+    }
+
+        
+        
+        
+    func saveContact (userID: NSString , Matrix: NSString) -> Void {
+        
+        let entityDescription = NSEntityDescription.entityForName("Friend",inManagedObjectContext: managedObjectContext!)
+        
+        let friend  = Friend (entity: entityDescription!,insertIntoManagedObjectContext: managedObjectContext)
+        
+        
+        friend.sch = Matrix
+        friend.userid = self.friendinput.text
+        friend.email = "\(friend.userid)@sfu.ca"
+        println(friend.sch)
+        
+        var error: NSError?
+        
+        managedObjectContext?.save(&error)
+        
+        if let err = error {
+            println(err.localizedFailureReason)
+        } else {
+            println("saved")
+            
+        }
+        
+        
+        
+    }
+        
+        
+        
+        
+    }
+    
+    
+
     
     
     
@@ -401,8 +475,3 @@ class ContactsViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-}

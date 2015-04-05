@@ -36,6 +36,8 @@
         
     }
 
+    
+var FriendList : [Friend]?
 
 func CreateMatrix() ->String {
     
@@ -111,21 +113,32 @@ func CreateMatrix() ->String {
     let schedule  = "" + matrix
     //println(schedule)
     
-    println(schedule)
+   // println(schedule)
     return schedule
     
 }
 
 import UIKit
+import CoreData
  var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
 class BreakMatchController: UIViewController {
    
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+
+    
+    
+    
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        
                 let date = NSDate()
                 let calendar = NSCalendar.currentCalendar()
                 let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
@@ -207,6 +220,20 @@ class BreakMatchController: UIViewController {
         }
     
 }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        let fetchRequest  = NSFetchRequest(entityName:"Friend")
+         let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+        for  result in fetchResults as [Friend] {
+            println(result.userid)
+            
+            
+        }
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

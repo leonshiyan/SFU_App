@@ -4,13 +4,13 @@
         <attribute name="busnum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Friend" representedClassName="Friend" syncable="YES">
+    <entity name="Friend" representedClassName="SFU_App.Friend" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sch" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="FavBus" positionX="-54" positionY="18" width="128" height="75"/>
-        <element name="Friend" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Friend" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>
