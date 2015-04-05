@@ -18,24 +18,7 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
-    var fetchedResultController : NSFetchedResultsController = NSFetchedResultsController()
-
-    
-    func getFetchedResultsController() -> NSFetchedResultsController{
-        
-        var fetchedResultsController  = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-        
-        return fetchedResultsController
-    }
-    
-    func taskFetchRequest() -> NSFetchRequest {
-        
-        let fetchRequest = NSFetchRequest(entityName: "FavBus")
-        let sortDescriptor = NSSortDescriptor(key: "tag", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        return fetchRequest
-    }
-    
+  
     
 
     
@@ -62,12 +45,8 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 50 ;
-        fetchedResultController = getFetchedResultsController()
-        fetchedResultController.delegate = self
-        
-        fetchedResultController.performFetch(nil)
-        
-        
+        self.tableView.delegate = self ;
+        self.tableView.dataSource = self ;
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
         
@@ -75,41 +54,49 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return fetchedResultController.sections!.count
+        return 1
         
         
         
         
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //println(temparr)
-        var cellCount = players.count
-        //println(cellCount)
-        println (fetchedResultController.sections![section].numberOfObjects)
-        if(fetchedResultController.sections![section].numberOfObjects <= 0 ) {
-            println("list is empty")
-            return 0 ;
+        
+        let fetchRequest  = NSFetchRequest(entityName:"FavBus")
+        let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+        var Display2 : [String] = []
+        for  result in fetchResults as [FavBus] {
+          Display2.append(result.tag)
+        
+        
         }
-        return fetchedResultController.sections![section].numberOfObjects
+        
+        
+        
+        return Display2.count
+        //println(temparr)
+        
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        //display bus stop name input by user
-        let player = players[indexPath.row] as Player
-        cell.textLabel?.text = player.name
-        return cell*/
-       
+        let fetchRequest  = NSFetchRequest(entityName:"FavBus")
+        let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+        var Display2 : [String] = []
+        for  result in fetchResults as [FavBus] {
+            Display2.append(result.tag)
+            
+            
+        }
+
             var  cell = tableView.dequeueReusableCellWithIdentifier("Cell",forIndexPath: indexPath) as UITableViewCell
         
      
         
  
         
-            let task = fetchedResultController .objectAtIndexPath(indexPath) as FavBus
+        
         
      
-            cell.textLabel?.text = task.tag
+            cell.textLabel?.text = Display2[indexPath.row]
             return cell
         
         

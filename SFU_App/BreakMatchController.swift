@@ -126,9 +126,12 @@ var timeSlotsOfADay = 12
 
 
 
-
-
-
+    struct buddy {
+        
+        var name: String
+        var status: String
+    }
+    
 class BreakMatchCell: UITableViewCell {
     
     @IBOutlet weak var status: UILabel!
@@ -149,7 +152,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     @IBOutlet weak var FriendTable: UITableView!
     
-    
+    var FriendArray: [buddy] = []
     var DisplayList : [String]  = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
@@ -176,8 +179,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         let fetchRequest  = NSFetchRequest(entityName:"Friend")
          let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
         for  result in fetchResults as [Friend] {
-            //println(result.userid)
-            //println(result.sch)
+            println(result.userid)
+            println(result.sch)
             
             
         }
@@ -270,10 +273,16 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         if(daymult >= 100)
         {
             println("There is no class today")
+            self.DisplayList.append(result.userid)
+            
+
         }
         else if (timeSlot == 24) //Current time is not regular class hour : 0000-0930
         {
             println("All classes over now")
+            self.DisplayList.append(result.userid)
+            
+
 
         }
             else
@@ -281,23 +290,34 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             if(Usermatrix[daymult*timeSlotsOfADay + timeSlot] == "0")
             {
                 //Display for tesing purpose
+                //var newbuddy :buddy = buddy(name: result.userid,status: "Free")
                 
+                //self.FriendArray.append(buddy(name: result.userid,status: "Free"))
                 self.DisplayList.append(result.userid)
-                println(Usermatrix)
+               
                 
                 println("Yes, he is free now")
             }
             else
             {
                 //Display for tesing purpose
+              //  var newbuddy :buddy = buddy(name: result.userid,status: "Free")
                 
+              //  self.FriendArray.append(buddy(name: result.userid,status: "Busy"))
+            
                 self.DisplayList.append(result.userid)
-                println(Usermatrix)
+                
                 println("No, he is not free now")
             
             }
         }
     }
+        
+        
+        
+        for people in DisplayList {
+            println(people)
+        }
         
            }
     
@@ -315,30 +335,29 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section : Int) -> Int {
-        let fetchRequest  = NSFetchRequest(entityName:"Friend")
-        let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
-       
+       // let fetchRequest  = NSFetchRequest(entityName:"Friend")
+        //let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+        //fetchResults!.count
 
-        return fetchResults!.count
-    }
+       
+        
+        return  self.DisplayList.count   }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as BreakMatchCell
-        let fetchRequest  = NSFetchRequest(entityName:"Friend")
-        let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
-        var Display2 : [String] = []
-        for  result in fetchResults as [Friend] {
-             Display2.append(result.userid)
+        let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell     // let fetchRequest  = NSFetchRequest(entityName:"Friend")
+        //let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
+       // var Display2 : [String] = []
+       // for  result in fetchResults as [Friend] {
+          //   Display2.append(result.userid)
             
             
-        }
+      //  }
+   
         let row = indexPath.row
         
-        cell.Title?.text = Display2[row]
-        cell.status?.text = "Free"
+        cell.textLabel?.text = self.DisplayList[row]
         
-        return cell
-    }
+        return cell     }
     
 }
 
