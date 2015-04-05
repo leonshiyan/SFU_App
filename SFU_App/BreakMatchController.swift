@@ -93,7 +93,7 @@ func CreateMatrix() ->String {
             var hourOfClass = endtime! - startime!
             for (var i = 0; i < hourOfClass ; i++)
             {
-                matrix[daymult*12 + start + i] = "1"
+                matrix[daymult*timeSlotsOfADay + start + i] = "1"
             }
             
             // Convert the array back to the string that used to stored in database
@@ -182,7 +182,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
 
         
-                switch currentTime
+        switch currentTime
         {
         case 830...929:
             timeSlot = 0;
@@ -209,7 +209,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         case 1930...2329:
             timeSlot = 11;
         default :
-            break
+            timeSlot = 24;// Non regular class time
         }
         let dayTimeFormatter = NSDateFormatter()
         dayTimeFormatter.dateFormat = "EEEEEE"
@@ -240,28 +240,28 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             break;
             
         default :
-            break;
-        }
-        
-        if(Usermatrix[daymult*12 + timeSlot] == "0")
-        {
-            println(Usermatrix)
-            println("Yes, he is free now")
-            self.DisplayList.append(result.userid)
-        }
-        else
-        {
-            println("No, he is not free now")
-            
+            daymult = 100;
         }
             
+            
+        if(daymult >= 100)
+        {
+            println("There is no class today")
         }
+        else if (timeSlot == 24) //Current time is not regular class hour : 0000-0930
+        {
+            println("All classes over now")
+
+        }
+            
+        }
+    }
         
         if(DisplayList.isEmpty){
             println("Everyone is Busy :(") }
         else{
         for name in DisplayList {
-            println(name);
+           // println(name);
         }
         }
     }
