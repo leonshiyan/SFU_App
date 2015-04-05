@@ -120,14 +120,37 @@ func CreateMatrix() ->String {
 
 import UIKit
 import CoreData
- var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
+var matrix = Array("000000000000000000000000000000000000000000000000000000000000")
+
+var timeSlotsOfADay = 12
+
+
+
+
+
+
+class BreakMatchCell: UITableViewCell {
+    
+    @IBOutlet weak var status: UILabel!
+    
+    @IBOutlet weak var Title: UILabel!
+}
+
+
+
+
+
+
+
+
+
+
 class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
-   
     
     @IBOutlet weak var FriendTable: UITableView!
     
     
-    var DisplayList : [String] = []
+    var DisplayList : [String]  = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
     
@@ -253,18 +276,30 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             println("All classes over now")
 
         }
+            else
+        {
+            if(Usermatrix[daymult*timeSlotsOfADay + timeSlot] == "0")
+            {
+                //Display for tesing purpose
+                
+                self.DisplayList.append(result.userid)
+                println(Usermatrix)
+                
+                println("Yes, he is free now")
+            }
+            else
+            {
+                //Display for tesing purpose
+                
+                self.DisplayList.append(result.userid)
+                println(Usermatrix)
+                println("No, he is not free now")
             
+            }
         }
     }
         
-        if(DisplayList.isEmpty){
-            println("Everyone is Busy :(") }
-        else{
-        for name in DisplayList {
-           // println(name);
-        }
-        }
-    }
+           }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -284,11 +319,11 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
        
 
-        return fetchResults as [Friend].count
+        return fetchResults!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as BreakMatchCell
         let fetchRequest  = NSFetchRequest(entityName:"Friend")
         let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
         var Display2 : [String] = []
@@ -298,7 +333,9 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
         }
         let row = indexPath.row
-        cell.textLabel?.text = Display2[row]
+        
+        cell.Title?.text = Display2[row]
+        cell.status?.text = "Free"
         
         return cell
     }
