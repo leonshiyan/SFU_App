@@ -360,7 +360,7 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
         for course in courseList{
             println (course.times)
 }
-        
+
     }
     
     func checkArrayForCourse(var x : courses) -> Bool{
@@ -374,7 +374,6 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
         return false
         
     }
-
 
     
     override func didReceiveMemoryWarning() {

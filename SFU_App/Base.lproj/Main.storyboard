@@ -2852,6 +2852,53 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="3059" y="1824"/>
         </scene>
+        <!--Add Friend-->
+        <scene sceneID="c6n-vO-ky8">
+            <objects>
+                <viewController storyboardIdentifier="AddFriend" title="Add Friend" id="3eJ-Qt-q32" customClass="ContactsViewController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D9a-Y0-44h"/>
+                        <viewControllerLayoutGuide type="bottom" id="M4m-5T-NaT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="179-41-aYv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-IW-B1v">
+                                <rect key="frame" x="43" y="120" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-b2-j1w">
+                                <rect key="frame" x="38" y="154" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e9-Bu-yaG">
+                                <rect key="frame" x="38" y="239" width="46" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-9w-ko0">
+                                <rect key="frame" x="43" y="347" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="heL-Zm-ppH" kind="modal" id="F0S-pC-Giw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gRc-EV-g8O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59c-xA-sbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="389" y="-907"/>
+        </scene>
         <!--BreakMatch-->
         <scene sceneID="DRD-W7-U4o">
             <objects>
@@ -2878,11 +2925,17 @@ $8 per guest + tax</string>
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Friend" id="gtE-gb-KHx">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="3eJ-Qt-q32" kind="push" id="gnL-zF-Wqh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQp-Uo-jla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4238" y="543"/>
+            <point key="canvasLocation" x="380" y="-267"/>
         </scene>
         <!--V Map Controller-->
         <scene sceneID="oGp-oW-daD">

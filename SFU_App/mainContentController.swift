@@ -170,16 +170,17 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
       
         
        
-        self.updateSch()
+        //self.updateSch()
     }
+    // adds matrix to database
     func updateSch () -> Void {
         var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Time.php")!)
         var name : NSString = defaults.stringForKey("usernameKey")!
         var session = NSURLSession.sharedSession()
         POSTrequest.HTTPMethod="POST"
         POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-        println(CreateMatrix())
-        var body = "USERID=\(name)&Sch=\(CreateMatrix())"
+        var matrix = CreateMatrix()
+        var body = "USERID=\(name)&Sch=\(matrix)"
         POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
         var DataTask = session.dataTaskWithRequest(POSTrequest) {
@@ -190,11 +191,11 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
                 return;
             }
             var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println(strData)
+           // println(strData)
         }
         
         DataTask.resume()
-        
+        println(matrix)
     }
 
 
