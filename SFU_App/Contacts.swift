@@ -411,9 +411,10 @@ class ContactsViewController: UIViewController {
                 println("error=\(error)")
                 return;
             }
-            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-            //println(strData)
-            self.saveContact(name,Matrix: strData!)
+            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
+            
+            println(strData)
+            self.saveContact(name,Matrix: strData)
             // save data long with user name to database 
             
             
@@ -439,7 +440,7 @@ class ContactsViewController: UIViewController {
         friend.sch = Matrix
         friend.userid = self.friendinput.text
         friend.email = "\(friend.userid)@sfu.ca"
-        println(friend.sch)
+        println(friend.email)
         
         var error: NSError?
         
