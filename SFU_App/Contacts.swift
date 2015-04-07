@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import UIKit
+
 class ContactsViewController: UIViewController {
    
     
@@ -485,6 +486,7 @@ class ContactsViewController: UIViewController {
                     println("no such student")
                     return}
                 self.saveContact(name,Matrix: strData)
+                self.view.setNeedsDisplay()
                 // save data long with user name to database
                 
                 
@@ -494,7 +496,8 @@ class ContactsViewController: UIViewController {
             }
             
             DataTask.resume()
-            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+            //var Table : BreakMatchController! = BreakMatchController()
+            //Table.FriendTable.reloadData()
             
         }
         

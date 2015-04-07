@@ -525,9 +525,16 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     
     override func viewWillAppear(animated: Bool) {
-       //super.viewWillAppear(<#animated: Bool#>)
-        
+        super.viewWillAppear(false)
+        println("OMG!")
+       
     }
+       
+    
+  
+    
+   
+        
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
