@@ -171,11 +171,13 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     //@IBOutlet weak var StatusLabel: UILabel!
     
     @IBOutlet weak var FriendTable: UITableView!
+
     var FriendArray: [buddy] = []
     var DisplayList : [String]  = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
-    
+   
+
     
     
     
@@ -190,15 +192,14 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
         FriendTable.delegate = self
         FriendTable.dataSource = self
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.FriendTable.reloadData()
-        })
-        
-       }
+              }
     
     
+    
+    
+ 
     override func viewDidAppear(animated: Bool) {
+       
         let fetchRequest  = NSFetchRequest(entityName:"Friend")
          let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
         for  result in fetchResults as [Friend] {
@@ -524,7 +525,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     
     override func viewWillAppear(animated: Bool) {
-          FriendTable.reloadData()
+       //super.viewWillAppear(<#animated: Bool#>)
+        
     }
     
     @IBAction func toggleSideMenu(sender: AnyObject) {

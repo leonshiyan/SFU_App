@@ -494,6 +494,7 @@ class ContactsViewController: UIViewController {
             }
             
             DataTask.resume()
+            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
             
         }
         
