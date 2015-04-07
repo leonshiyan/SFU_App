@@ -63,6 +63,7 @@
 		406DB1221ABF8719004583DA /* sfusurrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1211ABF8719004583DA /* sfusurrey.png */; };
 		406DB1241ABF871E004583DA /* sfudeadline.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1231ABF871E004583DA /* sfudeadline.png */; };
 		406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1251ABF8727004583DA /* sfuvancouver.png */; };
+		7D2E5A731AD43B1B003C5EC8 /* BreakMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */; };
 		7D37513A1AD1BCF900D6655D /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3751391AD1BCF900D6655D /* Contacts.swift */; };
 		7D60E61A1AAE4B0A00A901F1 /* SchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */; };
 		7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60E61B1AAE4B2B00A901F1 /* NewsController.swift */; };
@@ -182,6 +183,7 @@
 		406DB1211ABF8719004583DA /* sfusurrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfusurrey.png; sourceTree = "<group>"; };
 		406DB1231ABF871E004583DA /* sfudeadline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfudeadline.png; sourceTree = "<group>"; };
 		406DB1251ABF8727004583DA /* sfuvancouver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfuvancouver.png; sourceTree = "<group>"; };
+		7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakMatchCell.swift; sourceTree = "<group>"; };
 		7D3751391AD1BCF900D6655D /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchViewController.swift; sourceTree = "<group>"; };
 		7D60E61B1AAE4B2B00A901F1 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				3E1B391E1ABCD881001CF09E /* BreakMatchController.swift */,
+				7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */,
 				7D3751391AD1BCF900D6655D /* Contacts.swift */,
 			);
 			name = BreakMatch;
@@ -669,6 +672,7 @@
 				3E1B391C1ABCD76C001CF09E /* MapTableController.swift in Sources */,
 				406DB11A1ABF8692004583DA /* ChannelController.swift in Sources */,
 				7D37513A1AD1BCF900D6655D /* Contacts.swift in Sources */,
+				7D2E5A731AD43B1B003C5EC8 /* BreakMatchCell.swift in Sources */,
 				3A8318E31AA67207006D0922 /* EmailController.swift in Sources */,
 				3E9628FB1AA95D2900A8DE88 /* TViewController.swift in Sources */,
 				3ADDB5881AB8FC6600153543 /* courseGradeController.swift in Sources */,
