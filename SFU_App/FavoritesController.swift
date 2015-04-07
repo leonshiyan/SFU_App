@@ -30,12 +30,15 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
     //save user input
     @IBAction func saveBusStopDetail(segue:UIStoryboardSegue) {
         let BusDetailsViewController = segue.sourceViewController as BusStopDetail
+        var buses = [FavBus]()
+        let fetchRequest  = NSFetchRequest(entityName:"FavBus")
+        buses = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil ) as [FavBus]
         
         //add the new bus to the players array
         players.append(player)
         
         //update the tableView
-        let indexPath = NSIndexPath(forRow: players.count-1, inSection: 0)
+        let indexPath = NSIndexPath(forRow: buses.count-1, inSection: 0)
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         
         //hide the detail view controller
@@ -49,6 +52,12 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
         self.tableView.dataSource = self ;
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
+        
+        /*let entityDescription = NSEntityDescription.entityForName("FavBus", inManagedObjectContext: managedObjectContext!)
+        let favs = FavBus(entity: entityDescription!,insertIntoManagedObjectContext: managedObjectContext)
+        
+        favs.busnum = "58444"
+        favs.tag = "test"*/
         
     }
     
@@ -96,7 +105,7 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
         
         
      
-            cell.textLabel?.text = Display2[indexPath.row]
+            cell.textLabel!.text = Display2[indexPath.row]
             return cell
         
         
@@ -108,7 +117,10 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
     }
     //segue bus number assiciated with cell in search
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+
+        var buses = [FavBus]()
+        let fetchRequest  = NSFetchRequest(entityName:"FavBus")
+        buses = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil ) as [FavBus]
      
         
         let indexPath = tableView.indexPathForSelectedRow();
@@ -122,7 +134,8 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
        // println("You selected cell #\(indexPath.row)!")
         //passNo = indexPath.row
         
-        search = currentCell.textLabel!.text
+        search = buses[indexPath!.row].busnum
+            //currentCell.textLabel!.text
         println(search)
     }
     

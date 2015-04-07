@@ -128,7 +128,7 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
             let temperatureStr = " null"
         }else{
             let temperatureStr = temperature.substringToIndex(index2!)
-          temp.text = temperatureStr + "C"}
+          temp.text = temperatureStr + "°C"}
         
         //humid.text = humidity + "%"
         //weatherDesc.text = description.capitalizedString

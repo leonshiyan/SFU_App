@@ -26,12 +26,12 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let entityDescription = NSEntityDescription.entityForName("FavBus", inManagedObjectContext: managedObjectContext!)
+        /*let entityDescription = NSEntityDescription.entityForName("FavBus", inManagedObjectContext: managedObjectContext!)
         
         let favs = FavBus(entity: entityDescription!,insertIntoManagedObjectContext: managedObjectContext)
         
-        favs.busnum = "test"
-        favs.tag = "test"
+        favs.busnum = "58444"
+        favs.tag = "test"*/
         
         var error: NSError?
         
