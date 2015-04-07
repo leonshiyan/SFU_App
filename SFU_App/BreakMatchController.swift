@@ -22,7 +22,32 @@
     }
     
     
-    
+    extension Array {
+        func slice(args: Int...) -> Array {
+            var s = args[0]
+            var e = self.count - 1
+            if args.count > 1 { e = args[1] }
+            
+            if e < 0 {
+                e += self.count
+            }
+            
+            if s < 0 {
+                s += self.count
+            }
+            
+            let count = (s < e ? e-s : s-e)+1
+            let inc = s < e ? 1 : -1
+            var ret = Array()
+            
+            var idx = s
+            for var i=0;i<count;i++  {
+                ret.append(self[idx])
+                idx += inc
+            }
+            return ret
+        }
+    }
     
     func checkArrayForCourse(var x : courses) -> Bool{
         for y in arr{
@@ -314,9 +339,6 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
         
         
-        for people in DisplayList {
-            println(people)
-        }
         
            }
     
@@ -325,14 +347,146 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     
     // Checks when next class is
-    func TimeTillClass () {
+    func TimeTillClass (index: Int) ->String{
         // get matrix of person 
+        // Find Current time slot
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let hour = components.hour
+        let minutes = components.minute
+        let day = components.day
+        var currentTime = hour*100 + minutes
+        var timeSlot = 0
+        if(self.FriendArray[index].matrix.isEmpty){return""}
+         var mat = Array(self.FriendArray[index].matrix)
+        // iterate each friendslist and check//
+        
+            
+            
+            
+            
+            switch currentTime
+            {
+            case 830...929:
+                timeSlot = 0;
+            case 930...1029:
+                timeSlot = 1;
+            case 1030...1129:
+                timeSlot = 2;
+            case 1130...1229:
+                timeSlot = 3;
+            case 1230...1329:
+                timeSlot = 4;
+            case 1330...1429:
+                timeSlot = 5;
+            case 1430...1529:
+                timeSlot = 6;
+            case 1530...1629:
+                timeSlot = 7;
+            case 1630...1729:
+                timeSlot = 8;
+            case 1730...1829:
+                timeSlot = 9;
+            case 1830...1929:
+                timeSlot = 10;
+            case 1930...2329:
+                timeSlot = 11;
+            default :
+                timeSlot = 24;// Non regular class time
+            }
+            let dayTimeFormatter = NSDateFormatter()
+            dayTimeFormatter.dateFormat = "EEEEEE"
+            let dayString = dayTimeFormatter.stringFromDate(date)
+            
+            
+            var daymult = 0
+            switch dayString {
+            case "Mo" :
+                
+                daymult = 0
+                break;
+                
+            case "Tu":
+                daymult = 1
+                break;
+                
+            case "We":
+                daymult = 2
+                break;
+                
+            case "Th":
+                daymult = 3
+                break;
+                
+            case "Fr":
+                daymult = 4
+                break;
+                
+            default :
+                daymult = 100;
+            }
+            
+            
+            if(daymult >= 100)
+            {
+                return "There is no class today"
+                
+                
+            }
+            else if (timeSlot == 24) //Current time is not regular class hour : 0000-0930
+            {
+                return "All classes over now"
+             
+                
+            }
+            else
+            {
+                if(mat[daymult*timeSlotsOfADay + timeSlot] == "0")
+                {
+                    // if currently is break, then scan rest of array for next 1
+                   
+                    var startPoint = daymult*timeSlotsOfADay + timeSlot
+                    
+                    var submat = mat.slice(startPoint + 1)
+                    println(mat)
+                    println(submat)
+                    if(find(submat,"1") == nil){return""}
+                    var nextClass = (Float) (find(submat,"1")! + startPoint)
+                    var floatofDay = Float(daymult*timeSlotsOfADay)
+                    println(nextClass)
+                    println(floatofDay)
+                    if( nextClass < floatofDay + 8.0){
+                        // difference is just matter of hours//
+                        var difference = find(submat,"1")!
+                        return " class in \(difference) hours"
+                    }else{
+                       return "No Class Left Today"
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                }
+                if(mat[daymult*timeSlotsOfADay + timeSlot] == "1"){}
+                
+                
+                
+                            }
         
         
         
         
         
+    
+    return ""
     }
+    
+        
+        
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -365,6 +519,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
             
       //  }
+        if(self.FriendArray.isEmpty){return cell ;}
         var green:UIImage = UIImage(named:"led-green-black")!
         var red: UIImage = UIImage(named:"led-red-black")!
         
@@ -376,11 +531,11 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
         //(cell.contentView.viewWithTag(10) as UILabel).text = self.FriendArray[row].status
         if(FriendArray[row].status == "Busy"){
-            cell.detailTextLabel?.text = "Busy till "
+            cell.detailTextLabel?.text = self.TimeTillClass(row)
             cell.imageView?.image = red
         }
         else{
-        cell.detailTextLabel?.text = "Free till" //"Break till"
+        cell.detailTextLabel?.text = self.TimeTillClass(row)
         cell.imageView?.image = green
         }
        
