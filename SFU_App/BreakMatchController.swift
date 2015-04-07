@@ -350,11 +350,25 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
             
       //  }
-   
+        var green:UIImage = UIImage(named:"led-green-black")!
+        var red: UIImage = UIImage(named:"led-red-black")!
+        
         let row = indexPath.row
         
         cell.textLabel?.text = self.FriendArray[row].name
-        (cell.contentView.viewWithTag(10) as UILabel).text = self.FriendArray[row].status
+        cell.imageView?.image = green
+        
+        
+        //(cell.contentView.viewWithTag(10) as UILabel).text = self.FriendArray[row].status
+        if(FriendArray[row].status == "Busy"){
+            cell.detailTextLabel?.text = "Busy till "
+            cell.imageView?.image = red
+        }
+        else{
+        cell.detailTextLabel?.text = "Free till" //"Break till"
+        cell.imageView?.image = green
+        }
+       
         return cell     }
     
 }

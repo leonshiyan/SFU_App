@@ -64,6 +64,8 @@
 		406DB1241ABF871E004583DA /* sfudeadline.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1231ABF871E004583DA /* sfudeadline.png */; };
 		406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1251ABF8727004583DA /* sfuvancouver.png */; };
 		7D2E5A731AD43B1B003C5EC8 /* BreakMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */; };
+		7D2E5A761AD44B24003C5EC8 /* led-green-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E5A751AD44B24003C5EC8 /* led-green-black.png */; };
+		7D2E5A781AD44BD8003C5EC8 /* led-red-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E5A771AD44BD8003C5EC8 /* led-red-black.png */; };
 		7D37513A1AD1BCF900D6655D /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3751391AD1BCF900D6655D /* Contacts.swift */; };
 		7D60E61A1AAE4B0A00A901F1 /* SchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */; };
 		7D60E61C1AAE4B2B00A901F1 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60E61B1AAE4B2B00A901F1 /* NewsController.swift */; };
@@ -184,6 +186,8 @@
 		406DB1231ABF871E004583DA /* sfudeadline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfudeadline.png; sourceTree = "<group>"; };
 		406DB1251ABF8727004583DA /* sfuvancouver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfuvancouver.png; sourceTree = "<group>"; };
 		7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakMatchCell.swift; sourceTree = "<group>"; };
+		7D2E5A751AD44B24003C5EC8 /* led-green-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "led-green-black.png"; path = "../../led-green-black.png"; sourceTree = "<group>"; };
+		7D2E5A771AD44BD8003C5EC8 /* led-red-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "led-red-black.png"; path = "../../led-red-black.png"; sourceTree = "<group>"; };
 		7D3751391AD1BCF900D6655D /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		7D60E6191AAE4B0A00A901F1 /* SchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchViewController.swift; sourceTree = "<group>"; };
 		7D60E61B1AAE4B2B00A901F1 /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				3A8319011AA69075006D0922 /* like.png */,
 				3E5C83471ABCC39700A4DB0B /* list23(big).png */,
 				3A8319031AA6907C006D0922 /* small59.png */,
+				7D2E5A741AD44B09003C5EC8 /* Breakmatcher */,
 				406DB11F1ABF8710004583DA /* sfubby.png */,
 				406DB11D1ABF870B004583DA /* sfuvol.png */,
 				406DB1211ABF8719004583DA /* sfusurrey.png */,
@@ -400,6 +405,15 @@
 				3ED91B951AB2467900554BDF /* ENSideMenu.swift */,
 			);
 			name = SlideyMenuMaJiggy;
+			sourceTree = "<group>";
+		};
+		7D2E5A741AD44B09003C5EC8 /* Breakmatcher */ = {
+			isa = PBXGroup;
+			children = (
+				7D2E5A771AD44BD8003C5EC8 /* led-red-black.png */,
+				7D2E5A751AD44B24003C5EC8 /* led-green-black.png */,
+			);
+			name = Breakmatcher;
 			sourceTree = "<group>";
 		};
 		7DC35E2C1AA669B700554367 = {
@@ -616,6 +630,7 @@
 				C5DF45E31AC3EE9300FD2277 /* sunny.png in Resources */,
 				3A8319081AA69092006D0922 /* bubble1.png in Resources */,
 				3E5A96D91AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png in Resources */,
+				7D2E5A781AD44BD8003C5EC8 /* led-red-black.png in Resources */,
 				C5DF45F71AC3F54900FD2277 /* 7.PNG in Resources */,
 				C59004ED1AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg in Resources */,
 				3ADDB59D1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg in Resources */,
@@ -624,6 +639,7 @@
 				C5DF45E11AC3EE9300FD2277 /* rain.png in Resources */,
 				C5DF45DF1AC3EE9300FD2277 /* cloudy.png in Resources */,
 				3A83190A1AA69271006D0922 /* see.png in Resources */,
+				7D2E5A761AD44B24003C5EC8 /* led-green-black.png in Resources */,
 				C5DF45FA1AC3F54900FD2277 /* 10.PNG in Resources */,
 				3E5C83481ABCC39700A4DB0B /* list23(big).png in Resources */,
 				C5DF45F21AC3F54900FD2277 /* 2.PNG in Resources */,
