@@ -128,6 +128,7 @@ var timeSlotsOfADay = 12
         
         var name: String
         var status: String
+        var matrix: String
     }
 
 
@@ -266,7 +267,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         if(daymult >= 100)
         {
             println("There is no class today")
-            var Busy1 = buddy(name:result.userid,status:"Busy")
+            var Busy1 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
             
             self.DisplayList.append(result.userid)
             self.FriendArray.append(Busy1)
@@ -277,7 +278,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         {
             println("All classes over now")
             self.DisplayList.append(result.userid)
-             var Busy2 = buddy(name:result.userid,status:"Busy")
+            var Busy2 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
              self.FriendArray.append(Busy2)
 
 
@@ -291,7 +292,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                 
                 //self.FriendArray.append(buddy(name: result.userid,status: "Free"))
                 self.DisplayList.append(result.userid)
-                var Free = buddy(name:result.userid,status:"Free")
+                var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
                 self.FriendArray.append(Free)
                 println("Yes, he is free now")
             }
@@ -303,7 +304,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
               //  self.FriendArray.append(buddy(name: result.userid,status: "Busy"))
             
                 self.DisplayList.append(result.userid)
-                var Busy3 = buddy(name:result.userid,status:"Busy")
+                var Busy3 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
                 self.FriendArray.append(Busy3)
                 println("No, he is not free now")
             
@@ -318,6 +319,20 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         }
         
            }
+    
+    
+    
+    
+    
+    // Checks when next class is
+    func TimeTillClass () {
+        // get matrix of person 
+        
+        
+        
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
