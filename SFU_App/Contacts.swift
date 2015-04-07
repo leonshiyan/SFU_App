@@ -458,7 +458,47 @@ class ContactsViewController: UIViewController {
     }
         
         
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToBreak" {
+            
+            
+            var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
+            var name = self.friendinput.text
+            var session = NSURLSession.sharedSession()
+            POSTrequest.HTTPMethod="POST"
+            POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
+            //var matrix = CreateMatrix()
+            var body = "USERID=\(name)"
+            POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+            
+            var DataTask = session.dataTaskWithRequest(POSTrequest) {
+                data, response, error in
+                
+                if(error != nil){
+                    println("error=\(error)")
+                    return;
+                }
+                var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
+                
+                println(strData)
+                if(strData == "FAIL" ){
+                    println("no such student")
+                    return}
+                self.saveContact(name,Matrix: strData)
+                // save data long with user name to database
+                
+                
+                
+                
+                
+            }
+            
+            DataTask.resume()
+            
+        }
         
+
+
         
     }
     
@@ -474,5 +514,5 @@ class ContactsViewController: UIViewController {
     
     
     
-    
+}
     

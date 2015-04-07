@@ -2874,7 +2874,7 @@ $8 per guest + tax</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="FetchFriend:" destination="3eJ-Qt-q32" eventType="touchUpInside" id="s9j-YF-2tO"/>
+                                    <segue destination="heL-Zm-ppH" kind="push" identifier="ToBreak" id="3Bb-LO-2KE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-9w-ko0">
@@ -2882,9 +2882,6 @@ $8 per guest + tax</string>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="heL-Zm-ppH" kind="modal" id="F0S-pC-Giw"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2896,7 +2893,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59c-xA-sbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="389" y="-907"/>
+            <point key="canvasLocation" x="-697" y="-1005"/>
         </scene>
         <!--BreakMatch-->
         <scene sceneID="DRD-W7-U4o">
@@ -3283,9 +3280,9 @@ $8 per guest + tax</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="rB3-uP-a2d"/>
         <segue reference="w7c-Wy-zfK"/>
         <segue reference="4o1-3k-u4l"/>
         <segue reference="5AZ-ci-rw3"/>
-        <segue reference="rB3-uP-a2d"/>
     </inferredMetricsTieBreakers>
 </document>

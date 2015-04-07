@@ -191,7 +191,11 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         FriendTable.delegate = self
         FriendTable.dataSource = self
         
-}
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.FriendTable.reloadData()
+        })
+        
+       }
     
     
     override func viewDidAppear(animated: Bool) {
@@ -459,7 +463,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                     if( nextClass < floatofDay + 8.0){
                         // difference is just matter of hours//
                         var difference = find(submat,"1")!
-                        return " class in \(difference) hours"
+                        return " Class in \(difference) hours"
                     }else{
                        return "No Class Left Today"
                         
@@ -470,7 +474,32 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                     
                     
                 }
-                if(mat[daymult*timeSlotsOfADay + timeSlot] == "1"){}
+                if(mat[daymult*timeSlotsOfADay + timeSlot] == "1"){
+                    var startPoint = daymult*timeSlotsOfADay + timeSlot
+                    
+                    var submat = mat.slice(startPoint + 1)
+                    println(mat)
+                    println(submat)
+                    if(find(submat,"0") == nil){return"Never Free"}
+                    var nextClass = (Float) (find(submat,"0")! + startPoint)
+                    var floatofDay = Float(daymult*timeSlotsOfADay)
+                    println(nextClass)
+                    println(floatofDay)
+                    if( nextClass < floatofDay + 8.0){
+                        // difference is just matter of hours//
+                        var difference = find(submat,"0")!
+                        return " Break in \(difference) hours"
+                    }else{
+                        return "No Breaks Left Today"
+                        
+                        
+                        
+                    }
+                    
+
+                
+                
+                }
                 
                 
                 
@@ -491,6 +520,11 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+          FriendTable.reloadData()
     }
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
@@ -540,6 +574,14 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         }
        
         return cell     }
+    
+    
+    
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController!)
+    {
+        FriendTable.reloadData()
+    }
     
 }
 
