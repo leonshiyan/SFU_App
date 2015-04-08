@@ -154,7 +154,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         var session = NSURLSession.sharedSession()
         request.HTTPMethod="POST"
         request.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-        var body = "USERID=\(name)&Amount=\(amount)"
+        var body = "USERID=\(name)&Amount=\(amount!)"
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
         
@@ -211,7 +211,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         var DataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             
             dispatch_async(dispatch_get_main_queue(),{
-                self.TOTAL.text = NSString(data: data, encoding: NSUTF8StringEncoding)});
+                self.TOTAL.text = NSString(data: data, encoding: NSUTF8StringEncoding)!});
         })
         
         
