@@ -118,13 +118,14 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         if metadataObj.stringValue != "No QR code is detected" {
             
             if(metadataObj.stringValue.toInt() > 0) {
+                println("hello world")
                 IncrementP();
-                FetchPoints();
+                //FetchPoints();
             }
             
             if(metadataObj.stringValue.toInt() < 0 ) {
                 DecrementP()
-                FetchPoints()
+                //FetchPoints()
                 
             }
             
