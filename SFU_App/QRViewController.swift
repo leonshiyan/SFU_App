@@ -118,6 +118,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         if metadataObj.stringValue != "No QR code is detected" {
             
             if(metadataObj.stringValue.toInt() > 0) {
+                println("Hello world")
                 IncrementP();
                 FetchPoints();
             }
@@ -144,8 +145,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         var name : NSString = defaults.stringForKey("usernameKey")!
         
         var amount = msgLabel.text?.toInt()
-        println(amount)
-        if (amount < 0 ){
+        println(amount!)
+        
+        if (amount! < 0 ){
             // future version will have alert dialog
             return;
         }
@@ -190,6 +192,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         */
         DataTask.resume()
         FetchPoints()
+        captureSession?.stopRunning()
         
     }
     
