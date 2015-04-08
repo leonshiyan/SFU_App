@@ -29,7 +29,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var qrCodeFrameView:UIView!*/
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        FetchPoints()
+
         /*var captureSession : AVCaptureSession
         var videoPreviewLayer: AVCaptureVideoPreviewLayer
         var qrCodeFrameView:UIView
@@ -48,7 +50,8 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             println("\(error?.localizedDescription)")
             return
         }
-        
+        super.viewDidLoad()
+        FetchPoints()
         // Initialize the captureSession object.
         captureSession = AVCaptureSession()
         // Set the input device on the capture session.
@@ -61,8 +64,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         // Set delegate and use the default dispatch queue to execute the call back
         captureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
-        super.viewDidLoad()
-        FetchPoints()
+      
         
         // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
