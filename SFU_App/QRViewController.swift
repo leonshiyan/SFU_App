@@ -120,12 +120,12 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             if(metadataObj.stringValue.toInt() > 0) {
                 println("Hello world")
                 IncrementP();
-                FetchPoints();
+                //FetchPoints();
             }
             
             if(metadataObj.stringValue.toInt() < 0 ) {
                 DecrementP()
-                FetchPoints()
+                //FetchPoints()
                 
             }
             
