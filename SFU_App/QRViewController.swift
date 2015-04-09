@@ -232,22 +232,27 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     func DecrementP() {
         var name : NSString = defaults.stringForKey("usernameKey")!
         
-        var amount = msgLabel.text?.toInt()
-        if(amount == 0 ||  name != defaults.stringForKey("usernameKey")){
+        var amountInt = 0
+        
+        var amount = msgLabel.text//?.toInt()
+        amount = amount!.substringWithRange(Range<String.Index>(start: advance(amount!.startIndex, 1), end: advance(amount!.endIndex, 0)))
+        amountInt = amount!.toInt()!
+        
+        if(amountInt == 0 ||  name != defaults.stringForKey("usernameKey")){
             println("not valid input, you are not loggedin");
             return;
         }
         // Future version will have alert dialog
         
         var request = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Spend.php")!)
-        if (amount < 0 ){
+        if (amountInt < 0 ){
             // future version will have alert dialog
             return;
         }
         var session = NSURLSession.sharedSession()
         request.HTTPMethod="POST"
         request.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-        var body = "USERID=\(name)&Amount=\(amount)"
+        var body = "USERID=\(name)&Amount=\(amountInt)"
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
         
