@@ -57,12 +57,17 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
         }
         else{
             println("Internet connection FAILED")
-            let alertHandler = { (action:UIAlertAction!) -> Void in // Handler: refreshes view so that autologin can work
+            let retryHandler = { (action:UIAlertAction!) -> Void in // Handler: refreshes view so that autologin can work
                 return self.viewDidLoad()
             }
+            let gLogHandler = { (action:UIAlertAction!) -> Void in // Handler: goes to guest log in
+                return self.guestLogin.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+            }
             let alertController = UIAlertController(title: "Error", message: "No internet connection available", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "Retry", style: .Default, handler: alertHandler)
-            alertController.addAction(defaultAction)
+            let retryAction = UIAlertAction(title: "Retry", style: .Default, handler: retryHandler)
+            let gLogAction = UIAlertAction(title: "Guest Login", style: .Default, handler: gLogHandler)
+            alertController.addAction(retryAction)
+            alertController.addAction(gLogAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
@@ -327,6 +332,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
     //let defaults = NSUserDefaults.standardUserDefaults()
     // Login button Function//
     @IBAction func loginAction(sender: AnyObject) {
+        
         if SISlogin == true && CASlogin == true{
             loginLoader.startAnimating()
             //set username
