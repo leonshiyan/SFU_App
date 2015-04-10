@@ -16,6 +16,9 @@ class TViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var input: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
         
         input.delegate = self
         

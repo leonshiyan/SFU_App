@@ -443,6 +443,7 @@ class ContactsViewController: UIViewController {
         friend.email = "\(friend.userid)@sfu.ca"
         println(friend.email)
         
+        
         var error: NSError?
         
         managedObjectContext?.save(&error)

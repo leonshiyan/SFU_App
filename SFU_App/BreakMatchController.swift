@@ -75,6 +75,7 @@ func CreateMatrix() ->String {
         
         var daystring = course.days.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ", "))
         
+        //if (daystring.count > 5){
         var startime = intstring[0].toInt()
         var endtime = intstring[5].toInt()
         
@@ -126,7 +127,7 @@ func CreateMatrix() ->String {
             
             
             
-            
+            //}
             
             
             
@@ -188,6 +189,9 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
         self.checkBreak()
         
         FriendTable.delegate = self
@@ -527,7 +531,16 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         println("OMG!")
-       
+
+        FriendArray = []
+        println("Array count before: %@", FriendArray.count)
+        checkBreak()
+        println("Array count after: %@", FriendArray.count)
+        FriendTable.reloadData()
+        if (FriendArray.count > FriendTable .numberOfRowsInSection(0)) {
+            let indexPath = NSIndexPath(forRow: FriendArray.count-1, inSection: 0)
+            FriendTable.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }       
     }
        
     
@@ -551,7 +564,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
 
        
         
-        return  self.DisplayList.count   }
+        return  self.FriendArray.count   }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell   // let fetchRequest  = NSFetchRequest(entityName:"Friend")

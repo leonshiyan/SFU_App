@@ -111,8 +111,13 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         var response2: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
         var error2: NSErrorPointer = nil
         
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
+        
         let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Burnaby,CA&units=metric")
         let request = NSURLRequest(URL: url!)
+        
         var dataVal: NSData =  NSURLConnection.sendSynchronousRequest(request, returningResponse: response2, error:nil)!
             
         let json = JSON(data: dataVal)

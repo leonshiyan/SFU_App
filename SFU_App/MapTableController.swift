@@ -21,6 +21,9 @@ class MapTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
         
         let shadowPath = UIBezierPath(rect: bMaps.bounds)
         bMaps.layer.masksToBounds = false

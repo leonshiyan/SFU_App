@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qPl-Dy-uZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qPl-Dy-uZq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -93,12 +93,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-uI-CDQ">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-uI-CDQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LYD-uI-CDQ" secondAttribute="trailing" id="BL5-n8-kyM"/>
+                            <constraint firstItem="LYD-uI-CDQ" firstAttribute="bottom" secondItem="KSO-bR-f1n" secondAttribute="top" id="I9a-lp-yp8"/>
+                            <constraint firstItem="LYD-uI-CDQ" firstAttribute="top" secondItem="6qu-gS-z4E" secondAttribute="top" id="YhM-re-6Ni"/>
+                            <constraint firstItem="LYD-uI-CDQ" firstAttribute="leading" secondItem="6qu-gS-z4E" secondAttribute="leading" id="e3P-8m-6Zt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Email" id="k5C-aJ-iS1"/>
                     <connections>
@@ -121,12 +127,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ela-Ew-Id4">
-                                <rect key="frame" x="0.0" y="64" width="320" height="524"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ela-Ew-Id4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ela-Ew-Id4" secondAttribute="trailing" id="6Cx-05-UOF"/>
+                            <constraint firstItem="ela-Ew-Id4" firstAttribute="leading" secondItem="eDy-Te-POY" secondAttribute="leading" id="8K4-iJ-4FR"/>
+                            <constraint firstItem="ela-Ew-Id4" firstAttribute="top" secondItem="eDy-Te-POY" secondAttribute="top" id="SIg-Ob-ORX"/>
+                            <constraint firstItem="ela-Ew-Id4" firstAttribute="bottom" secondItem="yyH-Pp-ZLG" secondAttribute="top" id="nfu-aR-ocC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="goSFU" id="Vz1-Yc-dDJ"/>
                     <connections>
@@ -149,12 +161,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvY-xd-r4s">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvY-xd-r4s">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KvY-xd-r4s" secondAttribute="trailing" id="MaG-KM-Qj7"/>
+                            <constraint firstItem="KvY-xd-r4s" firstAttribute="leading" secondItem="Csr-uv-Xar" secondAttribute="leading" id="OUW-un-itg"/>
+                            <constraint firstItem="KvY-xd-r4s" firstAttribute="bottom" secondItem="F5J-9r-S43" secondAttribute="top" id="YZF-au-Jpl"/>
+                            <constraint firstItem="KvY-xd-r4s" firstAttribute="top" secondItem="Csr-uv-Xar" secondAttribute="top" id="bvj-cp-Uof"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Canvas" id="BqP-Ce-UNb"/>
                     <connections>

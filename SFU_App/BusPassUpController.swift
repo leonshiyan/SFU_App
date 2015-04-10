@@ -14,7 +14,7 @@ class BusPassUpController: UIViewController,ENSideMenuDelegate {
     @IBOutlet var BusPassUpView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
         

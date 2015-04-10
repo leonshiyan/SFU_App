@@ -30,6 +30,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     var qrCodeFrameView:UIView!*/
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
         FetchPoints()
 
         /*var captureSession : AVCaptureSession

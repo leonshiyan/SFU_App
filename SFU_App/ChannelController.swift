@@ -22,6 +22,10 @@ class ChannelController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
         // Do any additional setup after loading the view, typically from a nib.
         
         let shadowPath = UIBezierPath(rect: bevents.bounds)

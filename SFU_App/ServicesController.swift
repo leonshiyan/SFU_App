@@ -21,6 +21,10 @@ class ServicesController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (Reachability.isConnectedToNetwork() == false) {
+            return
+        }
         // Adjust navigation tab color to red
         servicesTableView.separatorColor = UIColor(red: (224/255.0), green: (224/255.0), blue: (224/255.0), alpha: 1.0)
         
