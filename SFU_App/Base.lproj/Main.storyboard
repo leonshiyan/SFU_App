@@ -3307,7 +3307,8 @@ $8 per guest + tax</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="heL-Zm-ppH" kind="modal" id="m7d-qb-u03"/>
+                                    <action selector="UpdateFriendTable:" destination="3eJ-Qt-q32" eventType="touchUpInside" id="vil-LP-qJW"/>
+                                    <segue destination="heL-Zm-ppH" kind="push" identifier="SaveFriend" id="fSS-GX-8Zq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-9w-ko0">
@@ -3326,7 +3327,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59c-xA-sbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-697" y="-1005"/>
+            <point key="canvasLocation" x="-1229" y="-917"/>
         </scene>
         <!--BreakMatch-->
         <scene sceneID="DRD-W7-U4o">
@@ -3400,7 +3401,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQp-Uo-jla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="-955"/>
+            <point key="canvasLocation" x="-367" y="-1005"/>
         </scene>
         <!--V Map Controller-->
         <scene sceneID="oGp-oW-daD">
@@ -3813,9 +3814,9 @@ $8 per guest + tax</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="w7c-Wy-zfK"/>
-        <segue reference="i4a-i0-ING"/>
-        <segue reference="5AZ-ci-rw3"/>
         <segue reference="rB3-uP-a2d"/>
+        <segue reference="i4a-i0-ING"/>
+        <segue reference="w7c-Wy-zfK"/>
+        <segue reference="5AZ-ci-rw3"/>
     </inferredMetricsTieBreakers>
 </document>

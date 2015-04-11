@@ -4,7 +4,8 @@
 //
 //  Created by Nethaniel Yuen on 2015-03-20.
 //  Copyright (c) 2015 Hugo Cheng. All rights reserved.
-//
+//   
+    var FriendArray: [buddy] = []
     class courses{
         var department: String = String();
         var section: String = String();
@@ -48,6 +49,13 @@
             return ret
         }
     }
+    
+    
+   
+    
+    
+
+    
     
     func checkArrayForCourse(var x : courses) -> Bool{
         for y in arr{
@@ -173,7 +181,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     @IBOutlet weak var FriendTable: UITableView!
 
-    var FriendArray: [buddy] = []
+    //var FriendArray: [buddy] = []
     var DisplayList : [String]  = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
@@ -192,7 +200,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         if (Reachability.isConnectedToNetwork() == false) {
             return
         }
-        self.checkBreak()
+        checkBreak()
         self.FriendTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FriendCell")
         FriendTable.delegate = self
         FriendTable.dataSource = self
@@ -211,20 +219,16 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             println(result.userid)
             println(result.sch)
         */
-        self.FriendArray = []
-        for friend in self.FriendArray {
-            println(friend.name)
-        }
-        checkBreak()
+      
         self.FriendTable.reloadData()
         
       
         
     }
     // Runs through the list
-    func checkBreak (){
+   func checkBreak (){
         
-        
+    
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
@@ -311,7 +315,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             var Busy1 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
             
             self.DisplayList.append(result.userid)
-            self.FriendArray.append(Busy1)
+            FriendArray.append(Busy1)
             
 
         }
@@ -320,7 +324,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             println("All classes over now")
             self.DisplayList.append(result.userid)
             var Busy2 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
-             self.FriendArray.append(Busy2)
+             FriendArray.append(Busy2)
 
 
         }
@@ -334,7 +338,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                 //self.FriendArray.append(buddy(name: result.userid,status: "Free"))
                 self.DisplayList.append(result.userid)
                 var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
-                self.FriendArray.append(Free)
+                FriendArray.append(Free)
                 println("Yes, he is free now")
             }
             else
@@ -346,7 +350,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
                 self.DisplayList.append(result.userid)
                 var Busy3 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
-                self.FriendArray.append(Busy3)
+                FriendArray.append(Busy3)
                 println("No, he is not free now")
             
             }
@@ -358,7 +362,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
            }
     
-    
+
     
     
     
@@ -374,8 +378,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         let day = components.day
         var currentTime = hour*100 + minutes
         var timeSlot = 0
-        if(self.FriendArray[index].matrix.isEmpty){return""}
-         var mat = Array(self.FriendArray[index].matrix)
+        if(FriendArray[index].matrix.isEmpty){return""}
+         var mat = Array(FriendArray[index].matrix)
         // iterate each friendslist and check//
         
             
@@ -537,7 +541,15 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
-        println("OMG!")
+        
+        FriendArray.removeAll()
+      
+        println(FriendArray.count)
+        self.checkBreak()
+        println(FriendArray.count)
+        for friend in FriendArray{
+            println(friend.status)
+        }
         self.FriendTable.reloadData();
       /*  FriendArray = []
         println("Array count before: %@", FriendArray.count)
@@ -571,7 +583,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
 
        
         
-        return  self.FriendArray.count   }
+        return  FriendArray.count   }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell   // let fetchRequest  = NSFetchRequest(entityName:"Friend")
@@ -582,13 +594,13 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
             
       //  }
-        if(self.FriendArray.isEmpty){return cell ;}
+        if(FriendArray.isEmpty){return cell ;}
         var green:UIImage = UIImage(named:"led-green-black")!
         var red: UIImage = UIImage(named:"led-red-black")!
         
         let row = indexPath.row
         
-        cell.textLabel?.text = self.FriendArray[row].name
+        cell.textLabel?.text = FriendArray[row].name
         cell.imageView?.image = green
         
         
