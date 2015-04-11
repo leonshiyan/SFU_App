@@ -134,5 +134,8 @@ class campusInfoController: UITableViewController{
         
         
     }
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
     
 }

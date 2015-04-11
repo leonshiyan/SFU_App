@@ -1024,7 +1024,23 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Campus Info" id="kwv-QJ-d97"/>
+                    <navigationItem key="navigationItem" title="Campus Info" id="kwv-QJ-d97">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="SZK-3T-m1L">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5k5-ni-AsG">
+                                <rect key="frame" x="16" y="-42" width="29" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="list23(biggering)white.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSideMenu:" destination="MmH-SS-joC" eventType="touchUpInside" id="8uS-5k-O01"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="toggleSideMenu:" destination="MmH-SS-joC" id="5Ho-nt-16D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bBuses" destination="AEB-ns-r20" id="i22-F1-ryF"/>
                         <outlet property="bClasses" destination="w54-am-3mf" id="0au-ED-LNx"/>
@@ -1143,18 +1159,18 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFB-me-KtV">
                                                     <rect key="frame" x="8" y="0.0" width="304" height="179"/>
                                                     <subviews>
-                                                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRQ-eF-Cns">
-                                                            <rect key="frame" x="8" y="29" width="288" height="142"/>
-                                                            <connections>
-                                                                <segue destination="9LP-ox-Fok" kind="embed" id="4fs-0e-kT5"/>
-                                                            </connections>
-                                                        </containerView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Buses at Lower Loop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1B-Yq-3gt">
                                                             <rect key="frame" x="8" y="8" width="204" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRQ-eF-Cns">
+                                                            <rect key="frame" x="8" y="29" width="288" height="142"/>
+                                                            <connections>
+                                                                <segue destination="9LP-ox-Fok" kind="embed" id="4fs-0e-kT5"/>
+                                                            </connections>
+                                                        </containerView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -2374,7 +2390,20 @@ $8 per guest + tax</string>
                             </button>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Maps" id="Cyj-sK-V9x"/>
+                    <navigationItem key="navigationItem" title="Maps" id="Cyj-sK-V9x">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="cwx-yf-7E0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c7R-5I-xPc">
+                                <rect key="frame" x="16" y="-42" width="29" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="list23(biggering)white.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSideMenu:" destination="B9n-hF-ELh" eventType="touchUpInside" id="OFU-TI-FHE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bMaps" destination="48L-DQ-Se4" id="92K-kJ-FEn"/>
@@ -2876,15 +2905,17 @@ $8 per guest + tax</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-IW-B1v">
-                                <rect key="frame" x="43" y="120" width="106" height="21"/>
+                                <rect key="frame" x="43" y="120" width="254" height="21"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-b2-j1w">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-b2-j1w">
                                 <rect key="frame" x="38" y="154" width="168" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e9-Bu-yaG">
                                 <rect key="frame" x="38" y="239" width="46" height="30"/>
@@ -2894,12 +2925,6 @@ $8 per guest + tax</string>
                                 <connections>
                                     <segue destination="heL-Zm-ppH" kind="push" identifier="ToBreak" id="3Bb-LO-2KE"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-9w-ko0">
-                                <rect key="frame" x="43" y="347" width="46" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3308,9 +3333,9 @@ $8 per guest + tax</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rB3-uP-a2d"/>
         <segue reference="w7c-Wy-zfK"/>
-        <segue reference="4o1-3k-u4l"/>
+        <segue reference="i4a-i0-ING"/>
+        <segue reference="rB3-uP-a2d"/>
         <segue reference="5AZ-ci-rw3"/>
     </inferredMetricsTieBreakers>
 </document>

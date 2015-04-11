@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UIViewController,ENSideMenuDelegate {
    
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
@@ -46,6 +46,10 @@ class ContactsViewController: UIViewController {
 
     
     override func viewDidLoad(){
+        
+        
+    // Set slide menu control to this controller
+    self.sideMenuController()?.sideMenu?.delegate = self;
     
     if(courseList.isEmpty){
     
@@ -458,7 +462,21 @@ class ContactsViewController: UIViewController {
         
         
     }
-        
+    
+    // MARK: - ENSideMenu Delegate
+    func sideMenuWillOpen() {
+        println("sideMenuWillOpen")
+    }
+    
+    func sideMenuWillClose() {
+        println("sideMenuWillClose")
+    }
+    // disabled Slide Menu
+    func sideMenuShouldOpenSideMenu() -> Bool {
+        println("sideMenuShouldOpenSideMenu")
+        return false;
+    }
+    
         
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ToBreak" {
