@@ -204,14 +204,21 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
  
     override func viewDidAppear(animated: Bool) {
        
-        let fetchRequest  = NSFetchRequest(entityName:"Friend")
+       /* let fetchRequest  = NSFetchRequest(entityName:"Friend")
+        
          let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
         for  result in fetchResults as [Friend] {
             println(result.userid)
             println(result.sch)
-            
-            
+        */
+        self.FriendArray = []
+        for friend in self.FriendArray {
+            println(friend.name)
         }
+        checkBreak()
+        self.FriendTable.reloadData()
+        
+      
         
     }
     // Runs through the list
@@ -602,7 +609,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!)
     {
-        FriendTable.reloadData()
+        self.FriendTable.reloadData()
     }
     
 }

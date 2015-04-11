@@ -2276,7 +2276,7 @@ $8 per guest + tax</string>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxx-Y2-jmQ">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hxx-Y2-jmQ">
                                             <rect key="frame" x="0.0" y="33" width="290" height="1"/>
                                             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
@@ -3307,7 +3307,7 @@ $8 per guest + tax</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="UpdateFriendTable:" destination="3eJ-Qt-q32" eventType="touchUpInside" id="dmo-7A-rDv"/>
+                                    <segue destination="heL-Zm-ppH" kind="modal" id="m7d-qb-u03"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEa-9w-ko0">
@@ -3400,7 +3400,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQp-Uo-jla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="-275"/>
+            <point key="canvasLocation" x="-24" y="-955"/>
         </scene>
         <!--V Map Controller-->
         <scene sceneID="oGp-oW-daD">

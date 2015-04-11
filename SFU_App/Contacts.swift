@@ -460,7 +460,7 @@ class ContactsViewController: UIViewController {
     }
         
         
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ToBreak" {
             
             
@@ -501,10 +501,10 @@ class ContactsViewController: UIViewController {
             //Table.FriendTable.reloadData()
             
         }
-        */
+        
 
 
-    @IBAction func UpdateFriendTable(sender: AnyObject) {
+    /*@IBAction func UpdateFriendTable(sender: AnyObject) {
         var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
         var name = self.friendinput.text
         var session = NSURLSession.sharedSession()
@@ -539,7 +539,7 @@ class ContactsViewController: UIViewController {
         
         DataTask.resume()
 
-    }
+    }*/
     
     
     
@@ -551,7 +551,7 @@ class ContactsViewController: UIViewController {
     
     
     
-    
+    }
     
     
     
