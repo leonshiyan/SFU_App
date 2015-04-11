@@ -46,8 +46,20 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
     
   // var courseList: [courseLists] = []
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Check internet connection to instantly return
+        if(Reachability.isConnectedToNetwork() == false){
+            return
+        }
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         // Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
@@ -68,11 +80,6 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
         }
         
         var bodyNode = parser.body
-        
-        
-        
-        
-        
         
         if let inputNodes = bodyNode?.findChildTagsAttr("span", attrName: "class", attrValue: "SSSTEXTWEEKLY"){
             for node in inputNodes{
@@ -364,6 +371,11 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
         }
     }
     
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
+    
     func checkArrayForCourse(var x : courses) -> Bool{
         for y in arr{
             if x.department == y.department &&
@@ -395,6 +407,26 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     override func tableView(tableView: UITableView,

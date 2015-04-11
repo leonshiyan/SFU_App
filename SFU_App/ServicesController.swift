@@ -19,12 +19,16 @@ class ServicesController: UITableViewController {
     @IBOutlet weak var canvas: UIView!
     @IBOutlet weak var goSFU: UIView!
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (Reachability.isConnectedToNetwork() == false) {
-            return
-        }
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
+        
         // Adjust navigation tab color to red
         servicesTableView.separatorColor = UIColor(red: (224/255.0), green: (224/255.0), blue: (224/255.0), alpha: 1.0)
         
@@ -65,6 +69,11 @@ class ServicesController: UITableViewController {
         
     }
     
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,6 +81,26 @@ class ServicesController: UITableViewController {
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
 }
 

@@ -15,10 +15,8 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
-    
-    
-    
-    
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     //initialize buttons
     @IBOutlet weak var BusStopNum: UITextField!
@@ -32,6 +30,10 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
         
         favs.busnum = "58444"
         favs.tag = "test"*/
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         var error: NSError?
         
@@ -48,6 +50,11 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
         
+    }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,5 +112,25 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
 }

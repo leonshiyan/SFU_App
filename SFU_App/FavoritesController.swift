@@ -13,6 +13,8 @@ import CoreData
 
 class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedResultsControllerDelegate {
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     // Core data variables//
    
@@ -47,6 +49,11 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
+        
         self.tableView.rowHeight = 50 ;
         self.tableView.delegate = self ;
         self.tableView.dataSource = self ;
@@ -59,6 +66,11 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
         favs.busnum = "58444"
         favs.tag = "test"*/
         
+    }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -156,6 +168,26 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     // populates table with data 
