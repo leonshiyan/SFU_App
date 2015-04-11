@@ -186,7 +186,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SFU_App/mainContentController.swift"
@@ -429,8 +429,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "522"
             endingLineNumber = "522"
-            landmarkName = "didReceiveMemoryWarning()"
-            landmarkType = "5">
+            landmarkName = "BreakMatchController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -445,7 +445,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "554"
             endingLineNumber = "554"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkName = "toggleSideMenu(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -488,11 +488,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SFU_App/Contacts.swift"
-            timestampString = "450138828.731935"
+            timestampString = "450465989.563414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522">
+            startingLineNumber = "558"
+            endingLineNumber = "558"
+            landmarkName = "ContactsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -523,8 +525,24 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "532"
             endingLineNumber = "532"
-            landmarkName = "BreakMatchController"
-            landmarkType = "3">
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SFU_App/BreakMatchController.swift"
+            timestampString = "450465034.512396"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

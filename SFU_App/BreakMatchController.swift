@@ -193,7 +193,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             return
         }
         self.checkBreak()
-        
+        self.FriendTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FriendCell")
         FriendTable.delegate = self
         FriendTable.dataSource = self
               }
@@ -531,8 +531,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         println("OMG!")
-
-        FriendArray = []
+        self.FriendTable.reloadData();
+      /*  FriendArray = []
         println("Array count before: %@", FriendArray.count)
         checkBreak()
         println("Array count after: %@", FriendArray.count)
@@ -540,7 +540,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         if (FriendArray.count > FriendTable .numberOfRowsInSection(0)) {
             let indexPath = NSIndexPath(forRow: FriendArray.count-1, inSection: 0)
             FriendTable.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        }       
+        }   */
     }
        
     
