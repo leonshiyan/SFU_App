@@ -20,7 +20,6 @@ class HomeController: UITableViewController {
         // Adjust color of table view //
         homeTableView.separatorColor = UIColor(red: (224/255.0), green: (224/255.0), blue: (224/255.0), alpha: 1.0)
         
-        
     }
     
     override func didReceiveMemoryWarning() {

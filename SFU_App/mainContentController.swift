@@ -38,20 +38,20 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
     @IBOutlet weak var temp: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
        
         
        println("should be done")
         println(courseList.count);
-
-       
-        
-        
         
         println("TEST")
         var randomImage: UInt32 = (arc4random_uniform(12) + 1)
@@ -110,11 +110,7 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         
         var response2: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
         var error2: NSErrorPointer = nil
-        
-        if (Reachability.isConnectedToNetwork() == false) {
-            return
-        }
-        
+                
         let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Burnaby,CA&units=metric")
         let request = NSURLRequest(URL: url!)
         
@@ -170,13 +166,15 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
             weatherIcon.image = cloudy
         }
         
-
-        
-      
-        
        
         //self.updateSch()
     }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
+    
     // adds matrix to database
     func updateSch () -> Void {
         var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Time.php")!)
@@ -214,9 +212,6 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         println("MEM")
     }
     
-
-
-    
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
@@ -234,6 +229,27 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
         println("sideMenuShouldOpenSideMenu")
         return true;
     }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
 
     //parses schedule after login 
     
