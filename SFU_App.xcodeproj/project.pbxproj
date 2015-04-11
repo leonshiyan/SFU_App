@@ -47,6 +47,7 @@
 		3E5C83481ABCC39700A4DB0B /* list23(big).png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C83471ABCC39700A4DB0B /* list23(big).png */; };
 		3E5C834A1ABCC3CB00A4DB0B /* list23(bigger).png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C83491ABCC3CB00A4DB0B /* list23(bigger).png */; };
 		3E5C834C1ABCC43800A4DB0B /* list23(biggering).png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C834B1ABCC43800A4DB0B /* list23(biggering).png */; };
+		3E8FB4E41AD9A13B00E2F105 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8FB4E31AD9A13B00E2F105 /* Reachability.swift */; };
 		3E9628F31AA94DCF00A8DE88 /* TransitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9628F21AA94DCF00A8DE88 /* TransitController.swift */; };
 		3E9628F71AA953D700A8DE88 /* article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9628F41AA953D700A8DE88 /* article.swift */; };
 		3E9628F81AA953D700A8DE88 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9628F51AA953D700A8DE88 /* BlogPost.swift */; };
@@ -169,6 +170,7 @@
 		3E5C83471ABCC39700A4DB0B /* list23(big).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list23(big).png"; sourceTree = "<group>"; };
 		3E5C83491ABCC3CB00A4DB0B /* list23(bigger).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list23(bigger).png"; sourceTree = "<group>"; };
 		3E5C834B1ABCC43800A4DB0B /* list23(biggering).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list23(biggering).png"; sourceTree = "<group>"; };
+		3E8FB4E31AD9A13B00E2F105 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3E9628F21AA94DCF00A8DE88 /* TransitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitController.swift; sourceTree = "<group>"; };
 		3E9628F41AA953D700A8DE88 /* article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = article.swift; sourceTree = "<group>"; };
 		3E9628F51AA953D700A8DE88 /* BlogPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				7DB78C991AC9AE3E00F17700 /* CoreDat.xcdatamodeld */,
 				7DB78C9E1AC9AED200F17700 /* FavBus.swift */,
+				3E8FB4E31AD9A13B00E2F105 /* Reachability.swift */,
 				7DB78C9C1AC9AE9100F17700 /* Friend.swift */,
 				3EA102DC1ACDDFDC005C12A8 /* errorMessage.swift */,
 				3ED637661ACDCD6C00E5F75C /* internetCheck.swift */,
@@ -699,6 +702,7 @@
 				3E25ECE21AC4B87400CEABCC /* DiningController.swift in Sources */,
 				C52B8C831ACB7872005DEE20 /* campusInfoController.swift in Sources */,
 				3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */,
+				3E8FB4E41AD9A13B00E2F105 /* Reachability.swift in Sources */,
 				C5C424A61AC280D000BC212E /* mainContentController.swift in Sources */,
 				3ED91B971AB2467900554BDF /* ENSideMenu.swift in Sources */,
 				3ED91B981AB2467900554BDF /* ENSideMenuNavigationController.swift in Sources */,

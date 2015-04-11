@@ -20,6 +20,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     @IBOutlet weak var TOTAL: UILabel!
     @IBOutlet weak var msgLabel: UILabel!
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
+    
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
@@ -30,9 +33,11 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     var qrCodeFrameView:UIView!*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (Reachability.isConnectedToNetwork() == false) {
-            return
-        }
+
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
+        
         FetchPoints()
 
         /*var captureSession : AVCaptureSession
@@ -92,6 +97,32 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         
         
     }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         
         // Check if the metadataObjects array is not nil and it contains at least one object.

@@ -11,18 +11,13 @@ import UIKit
 class ViewController: UIViewController, ENSideMenuDelegate {
 
     @IBOutlet weak var container: UIView!
-    
+
     override func viewDidLoad() {
         //super.viewDidLoad()
         self.sideMenuController()?.sideMenu?.delegate = self;
         
-
-        
-        
-        
-        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,6 +40,5 @@ class ViewController: UIViewController, ENSideMenuDelegate {
         println("sideMenuShouldOpenSideMenu")
         return true;
     }
-
 }
 

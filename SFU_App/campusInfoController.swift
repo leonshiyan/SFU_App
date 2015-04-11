@@ -31,6 +31,9 @@ class campusInfoController: UITableViewController{
     
     @IBOutlet weak var weatherWebView: UIWebView!
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
+    
     @IBAction func bCall(sender: AnyObject) {
         let phone = "tel://7787824500";
         let url:NSURL = NSURL(string:phone)!;
@@ -53,6 +56,10 @@ class campusInfoController: UITableViewController{
     }
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         //URL to sfu canvas
         var url = NSURL (string:"http://cgi.sfu.ca/~netops/cgi-bin/image.php?cam=mallcam&nocache=0.6927982002962381&update=2000&timeout=1800000&offset=4")
@@ -134,6 +141,32 @@ class campusInfoController: UITableViewController{
         
         
     }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
