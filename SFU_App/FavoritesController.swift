@@ -37,7 +37,7 @@ class FavoritesController: UITableViewController,ENSideMenuDelegate ,NSFetchedRe
         buses = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil ) as [FavBus]
         
         //add the new bus to the players array
-        players.append(player)
+            players.append(player)
         
         //update the tableView
         let indexPath = NSIndexPath(forRow: buses.count-1, inSection: 0)

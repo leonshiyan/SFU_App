@@ -8,7 +8,7 @@
 
 import UIKit
 
-class goSFUController: UIViewController,ENSideMenuDelegate {
+class goSFUController: UIViewController,ENSideMenuDelegate,UIWebViewDelegate {
     
     // Create a reachability object
     let reachability = Reachability.reachabilityForInternetConnection()
@@ -18,7 +18,7 @@ class goSFUController: UIViewController,ENSideMenuDelegate {
     @IBOutlet weak var goSFUview: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if(Reachability.isConnectedToNetwork() == false){return}
         // Prepare notifier which constantly observes for connection in the background
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
         reachability.startNotifier()
@@ -27,11 +27,11 @@ class goSFUController: UIViewController,ENSideMenuDelegate {
         self.sideMenuController()?.sideMenu?.delegate = self;
         
         // url for goSFU
-        var url = NSURL(string: "https://go.sfu.ca/psp/paprd/EMPLOYEE/h/?tab=SFU_STUDENT_CENTER")
+        var url = NSURL(string: "https://go.sfu.ca/psp/paprd/EMPLOYEE/EMPL/h/?tab=SFU_STUDENT_CENTER")
         
         var request = NSURLRequest(URL:url!)
         goSFUview.loadRequest(request)
-        
+        goSFUview.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -79,4 +79,20 @@ class goSFUController: UIViewController,ENSideMenuDelegate {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    
+    
+    
+    
+      /*func webViewDidFinishLoad(webView: UIWebView) {
+        var u = defaults.valueForKey("usernameKey")
+        var p  = defaults.valueForKey("passwordLey")
+        println(u)
+        println(p)
+        goSFUview.stringByEvaluatingJavaScriptFromString("document.getElementById('user').value='\(u)'")
+        goSFUview.stringByEvaluatingJavaScriptFromString("document.getElementById('pwd').value='\(p)'")
+        goSFUview.stringByEvaluatingJavaScriptFromString("document.getElementsByName('Submit')[0].click()")
+        
+    }*/
+    
+    
 }

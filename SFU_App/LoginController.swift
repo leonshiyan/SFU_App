@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 // View controller responsible for SFU authentication for both SIS system and CAS, serves to maintain login state for canvas, connect and SIS//
 var USERID = ""
+var validbit = 0;
 let defaults = NSUserDefaults.standardUserDefaults()
 class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UITextFieldDelegate {
     // Reference to login and password fields//
@@ -122,8 +123,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
             loginButton.alpha = 0.1
             logoutButton.alpha = 1
             Bounce = true;
-            
-            
+            validbit = 1;
+          
            
         }else{
             login.enabled = true
@@ -137,7 +138,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
         
         loginLoader.startAnimating()
         loginLoader.hidesWhenStopped = true
-        
+        println(defaults.stringForKey(userNameKeyConstant))
         if(defaults.stringForKey(userNameKeyConstant) != nil){
             login.text = defaults.stringForKey(userNameKeyConstant)
             password.text = defaults.stringForKey(passwordKeyConstant)
@@ -212,14 +213,16 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
         
         if result.containsString("credentials you provided"){
             errorLabel.text = "Invalid Username/Password."
+            
 
-            login.enabled = true
-            password.enabled = true
-            loginButton.enabled = true
-            logoutButton.enabled = false
-            loginButton.alpha = 1
-            logoutButton.alpha = 0.1
-             Bounce = false;
+           login.enabled = true
+           password.enabled = true
+           loginButton.enabled = true
+           logoutButton.enabled = false
+           loginButton.alpha = 1
+           logoutButton.alpha = 0.1
+             Bounce = true;
+            validbit = 0
         }else if result.containsString("successfully logged out"){
             errorLabel.text=""
 
@@ -234,7 +237,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
             LoginPage.delegate=self
             
             LoginPage.loadRequest(LoginRequest)
-          
+            defaults.setObject(login.text, forKey: userNameKeyConstant)
+            defaults.setObject(password.text, forKey: passwordKeyConstant)
             
         }else if result.containsString("successfully logged in"){
             errorLabel.text=""
@@ -246,6 +250,14 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
             loginButton.alpha = 0.1
             logoutButton.alpha = 1
             Bounce = true;
+            validbit = 1 ;
+            
+            defaults.setObject(login.text, forKey: userNameKeyConstant)
+            println(defaults.stringForKey(userNameKeyConstant))
+            defaults.setObject(password.text, forKey: passwordKeyConstant)
+            //println(defaults.stringForKey(passwordKeyConstant))
+            
+            
             
             var request = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/newuser.php")!)
             
@@ -351,11 +363,14 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
                 Bounce = false;
             }else{
                 errorLabel.text=""
+               
                 
-            
-                defaults.setObject(login.text, forKey: userNameKeyConstant)
-                defaults.setObject(password.text, forKey: passwordKeyConstant)
-            
+               // defaults.setObject(login.text, forKey: userNameKeyConstant)
+               // println(defaults.stringForKey(userNameKeyConstant))
+               // defaults.setObject(password.text, forKey: passwordKeyConstant)
+               // println(defaults.stringForKey(passwordKeyConstant))
+                
+                }
             
                 //CANVAS: Javascript to fill in login fields wwith user input and submit web form //
             LoginPage.stringByEvaluatingJavaScriptFromString("document.getElementById('username').value='\(login.text)'")
@@ -375,10 +390,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
         
         
         
-    }
+    
     
     
 
-    
-    
 }

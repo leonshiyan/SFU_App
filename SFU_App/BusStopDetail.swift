@@ -70,11 +70,17 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
     }
     //save enter bus stop and name to players array
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(BusStopNum.text.isEmpty  || BusStopName.text.isEmpty){
+            
+            
+            }
+        
+
         if segue.identifier == "saveBusStopDetail" {
-            player = Player(name: self.BusStopName.text, number: self.BusStopNum.text)
             
-            
-            // Adding code to add BusStopName.text and BusStopNum to core data //
+           
+            player = Player(name: self.BusStopName.text, number: self.BusStopNum.text)            // Adding code to add BusStopName.text and BusStopNum to core data //
             let entityDescription = NSEntityDescription.entityForName("FavBus", inManagedObjectContext: managedObjectContext!)
             
             let favs = FavBus(entity: entityDescription!,insertIntoManagedObjectContext: managedObjectContext)
@@ -84,8 +90,13 @@ class BusStopDetail: UITableViewController,ENSideMenuDelegate {
             
             var error: NSError?
             
-            managedObjectContext?.save(&error)
+            // if bus stop number or tag is empty, dont save to core data//
+           
+                 //managedObjectContext?.save(&error)
             
+          
+            managedObjectContext?.save(&error)
+
             if  let err = error {
                 println(err.localizedFailureReason)
                 
