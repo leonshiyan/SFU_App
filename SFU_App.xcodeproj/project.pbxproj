@@ -64,6 +64,19 @@
 		406DB1221ABF8719004583DA /* sfusurrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1211ABF8719004583DA /* sfusurrey.png */; };
 		406DB1241ABF871E004583DA /* sfudeadline.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1231ABF871E004583DA /* sfudeadline.png */; };
 		406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */ = {isa = PBXBuildFile; fileRef = 406DB1251ABF8727004583DA /* sfuvancouver.png */; };
+		40CB86BE1AD9FA80001101CE /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86BD1AD9FA80001101CE /* GoogleMaps.framework */; };
+		40CB86C31AD9FB7E001101CE /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 40CB86C21AD9FB7E001101CE /* GoogleMaps.bundle */; };
+		40CB86C51AD9FB97001101CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86C41AD9FB97001101CE /* AVFoundation.framework */; };
+		40CB86C71AD9FBA3001101CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86C61AD9FBA3001101CE /* CoreLocation.framework */; };
+		40CB86C91AD9FC01001101CE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86C81AD9FC01001101CE /* CoreText.framework */; };
+		40CB86CB1AD9FC09001101CE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86CA1AD9FC09001101CE /* GLKit.framework */; };
+		40CB86CD1AD9FC0F001101CE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86CC1AD9FC0F001101CE /* ImageIO.framework */; };
+		40CB86CF1AD9FC19001101CE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86CE1AD9FC19001101CE /* libc++.dylib */; };
+		40CB86D11AD9FC27001101CE /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86D01AD9FC27001101CE /* libicucore.dylib */; };
+		40CB86D31AD9FC2E001101CE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86D21AD9FC2E001101CE /* libz.dylib */; };
+		40CB86D51AD9FC34001101CE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86D41AD9FC34001101CE /* OpenGLES.framework */; };
+		40CB86D71AD9FC40001101CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86D61AD9FC40001101CE /* QuartzCore.framework */; };
+		40CB86D91AD9FC4A001101CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB86D81AD9FC4A001101CE /* SystemConfiguration.framework */; };
 		7D2E5A731AD43B1B003C5EC8 /* BreakMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */; };
 		7D2E5A821AD4847F003C5EC8 /* led-green-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E5A811AD4847F003C5EC8 /* led-green-black.png */; };
 		7D2E5A841AD48641003C5EC8 /* led-red-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E5A831AD48641003C5EC8 /* led-red-black.png */; };
@@ -187,6 +200,19 @@
 		406DB1211ABF8719004583DA /* sfusurrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfusurrey.png; sourceTree = "<group>"; };
 		406DB1231ABF871E004583DA /* sfudeadline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfudeadline.png; sourceTree = "<group>"; };
 		406DB1251ABF8727004583DA /* sfuvancouver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfuvancouver.png; sourceTree = "<group>"; };
+		40CB86BD1AD9FA80001101CE /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		40CB86C21AD9FB7E001101CE /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "../../Downloads/GoogleMaps-iOS-1.9.2/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
+		40CB86C41AD9FB97001101CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		40CB86C61AD9FBA3001101CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		40CB86C81AD9FC01001101CE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		40CB86CA1AD9FC09001101CE /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		40CB86CC1AD9FC0F001101CE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		40CB86CE1AD9FC19001101CE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		40CB86D01AD9FC27001101CE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		40CB86D21AD9FC2E001101CE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		40CB86D41AD9FC34001101CE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		40CB86D61AD9FC40001101CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		40CB86D81AD9FC4A001101CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7D2E5A721AD43B1B003C5EC8 /* BreakMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakMatchCell.swift; sourceTree = "<group>"; };
 		7D2E5A811AD4847F003C5EC8 /* led-green-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "led-green-black.png"; sourceTree = "<group>"; };
 		7D2E5A831AD48641003C5EC8 /* led-red-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "led-red-black.png"; sourceTree = "<group>"; };
@@ -252,6 +278,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CB86D91AD9FC4A001101CE /* SystemConfiguration.framework in Frameworks */,
+				40CB86D71AD9FC40001101CE /* QuartzCore.framework in Frameworks */,
+				40CB86D51AD9FC34001101CE /* OpenGLES.framework in Frameworks */,
+				40CB86D31AD9FC2E001101CE /* libz.dylib in Frameworks */,
+				40CB86D11AD9FC27001101CE /* libicucore.dylib in Frameworks */,
+				40CB86CF1AD9FC19001101CE /* libc++.dylib in Frameworks */,
+				40CB86CD1AD9FC0F001101CE /* ImageIO.framework in Frameworks */,
+				40CB86CB1AD9FC09001101CE /* GLKit.framework in Frameworks */,
+				40CB86C91AD9FC01001101CE /* CoreText.framework in Frameworks */,
+				40CB86C71AD9FBA3001101CE /* CoreLocation.framework in Frameworks */,
+				40CB86C51AD9FB97001101CE /* AVFoundation.framework in Frameworks */,
+				40CB86BE1AD9FA80001101CE /* GoogleMaps.framework in Frameworks */,
 				7DB78C981AC9AE1B00F17700 /* CoreData.framework in Frameworks */,
 				3ADDB5861AB8D5A800153543 /* libxml2.dylib in Frameworks */,
 			);
@@ -409,6 +447,25 @@
 			name = SlideyMenuMaJiggy;
 			sourceTree = "<group>";
 		};
+		40CB86BF1AD9FABA001101CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40CB86D81AD9FC4A001101CE /* SystemConfiguration.framework */,
+				40CB86D61AD9FC40001101CE /* QuartzCore.framework */,
+				40CB86D41AD9FC34001101CE /* OpenGLES.framework */,
+				40CB86D21AD9FC2E001101CE /* libz.dylib */,
+				40CB86D01AD9FC27001101CE /* libicucore.dylib */,
+				40CB86CE1AD9FC19001101CE /* libc++.dylib */,
+				40CB86CC1AD9FC0F001101CE /* ImageIO.framework */,
+				40CB86CA1AD9FC09001101CE /* GLKit.framework */,
+				40CB86C81AD9FC01001101CE /* CoreText.framework */,
+				40CB86C61AD9FBA3001101CE /* CoreLocation.framework */,
+				40CB86C41AD9FB97001101CE /* AVFoundation.framework */,
+				40CB86C21AD9FB7E001101CE /* GoogleMaps.bundle */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D2E5A741AD44B09003C5EC8 /* Breakmatcher */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,9 +481,11 @@
 				7DB78C991AC9AE3E00F17700 /* CoreDat.xcdatamodeld */,
 				7DB78C9E1AC9AED200F17700 /* FavBus.swift */,
 				3E8FB4E31AD9A13B00E2F105 /* Reachability.swift */,
+				40CB86BF1AD9FABA001101CE /* Frameworks */,
 				7DB78C9C1AC9AE9100F17700 /* Friend.swift */,
 				3EA102DC1ACDDFDC005C12A8 /* errorMessage.swift */,
 				3ED637661ACDCD6C00E5F75C /* internetCheck.swift */,
+				40CB86BD1AD9FA80001101CE /* GoogleMaps.framework */,
 				7DB78C971AC9AE1B00F17700 /* CoreData.framework */,
 				3ADDB5851AB8D5A800153543 /* libxml2.dylib */,
 				7DC35E371AA669B700554367 /* SFU_App */,
@@ -639,6 +698,7 @@
 				3ADDB59D1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg in Resources */,
 				3A6785AA1AAA6C8C0000B21E /* SFULogo.jpg in Resources */,
 				406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */,
+				40CB86C31AD9FB7E001101CE /* GoogleMaps.bundle in Resources */,
 				C5DF45E11AC3EE9300FD2277 /* rain.png in Resources */,
 				C5DF45DF1AC3EE9300FD2277 /* cloudy.png in Resources */,
 				3A83190A1AA69271006D0922 /* see.png in Resources */,
@@ -866,6 +926,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -873,6 +937,8 @@
 				);
 				INFOPLIST_FILE = SFU_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-Objc";
+				"OTHER_LDFLAGS[arch=*]" = "-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "892e92ca-c763-4f37-8173-ae07162cc81d";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -884,6 +950,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

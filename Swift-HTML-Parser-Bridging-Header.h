@@ -9,3 +9,4 @@
 
 #import <libxml/HTMLtree.h>
 #import <libxml/xpath.h>
+#import <GoogleMaps/GoogleMaps.h>
