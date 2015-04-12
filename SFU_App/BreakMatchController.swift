@@ -128,7 +128,7 @@ func CreateMatrix() ->String {
             var end = endtime - 8
             var hourOfClass = endtime - startime
             for (var i = 0; i < hourOfClass ; i++)
-            {			
+            {								
                 matrix[daymult*timeSlotsOfADay + start + i] = "1"
             }
             
