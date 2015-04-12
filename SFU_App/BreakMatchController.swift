@@ -165,13 +165,8 @@ var timeSlotsOfADay = 12
         var matrix: String
     }
 
-
-
-
-
-
-
-
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
 
 
 class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
@@ -184,12 +179,6 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     //var FriendArray: [buddy] = []
     var DisplayList : [String]  = []
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
-
-   
-
-    
-    
-    
     
     
     
@@ -197,18 +186,26 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Check internet connection to instantly return
         if (Reachability.isConnectedToNetwork() == false) {
             return
         }
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
+        
         checkBreak()
         self.FriendTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "FriendCell")
         FriendTable.delegate = self
         FriendTable.dataSource = self
-              }
+        }
     
-    
-    
-    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
  
 
     
@@ -562,6 +559,26 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     func numberOfSectionsINtableView(tableView: UITableView) -> Int {

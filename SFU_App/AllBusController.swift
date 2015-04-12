@@ -21,8 +21,15 @@ class AllBusController: UITableViewController, NSXMLParserDelegate,ENSideMenuDel
     var eName : String = String() // Tag name
     var i = 0
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         println(passNo)
         
@@ -34,6 +41,11 @@ class AllBusController: UITableViewController, NSXMLParserDelegate,ENSideMenuDel
         parser = NSXMLParser(contentsOfURL: url)!
         parser.delegate = self
         parser.parse()
+    }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
     }
     
     // Obtain access to correct layer from url XML
@@ -124,6 +136,26 @@ class AllBusController: UITableViewController, NSXMLParserDelegate,ENSideMenuDel
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     

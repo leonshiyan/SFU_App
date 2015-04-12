@@ -45,6 +45,11 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        //Check internet connection to instantly return
+        if(Reachability.isConnectedToNetwork() == false){
+            return
+        }
+        
         // Prepare notifier which constantly observes for connection in the background
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
         reachability.startNotifier()
@@ -249,10 +254,6 @@ class mainContentController: UITableViewController, ENSideMenuDelegate {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
-
-
-    //parses schedule after login 
-    
     
   
     

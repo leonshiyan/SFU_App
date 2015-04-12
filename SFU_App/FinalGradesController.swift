@@ -35,9 +35,15 @@ class FinalGradeController: UITableViewController,ENSideMenuDelegate {
     @IBOutlet weak var gpa5: UILabel!
     @IBOutlet weak var gpa6: UILabel!
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
@@ -199,9 +205,11 @@ class FinalGradeController: UITableViewController,ENSideMenuDelegate {
             //gpa0.text = inputNodes.contents
         }
         
-        
-        
-        
+    }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
     }
     
     override func didReceiveMemoryWarning() {
@@ -221,6 +229,26 @@ class FinalGradeController: UITableViewController,ENSideMenuDelegate {
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
 
     

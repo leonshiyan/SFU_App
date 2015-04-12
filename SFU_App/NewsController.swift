@@ -7,9 +7,15 @@ class NewsController: UITableViewController, NSXMLParserDelegate,ENSideMenuDeleg
     var items:[String] = []
     var item = ""
     
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         //Set slide menu control to this controller
         self.sideMenuController()?.sideMenu?.delegate = self;
@@ -17,6 +23,11 @@ class NewsController: UITableViewController, NSXMLParserDelegate,ENSideMenuDeleg
         //   dispatch_queue_t myQueue = dispatch_queue_create("queue",NULL)
         println("TEST")
         loadParser()
+    }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
     }
     
     // MARK: - ENSideMenu Delegate
@@ -31,6 +42,26 @@ class NewsController: UITableViewController, NSXMLParserDelegate,ENSideMenuDeleg
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
         return false;
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     //MARK - tableviewdelegate

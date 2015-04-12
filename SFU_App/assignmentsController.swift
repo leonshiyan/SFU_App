@@ -27,8 +27,6 @@ class assignmentsController: UITableViewController {
     
     @IBOutlet var assignmentTable: UITableView!
     
-    
-    
     var programVar : Int = 1
     
     var assignmentNames: [String] = []
@@ -37,9 +35,20 @@ class assignmentsController: UITableViewController {
     
     let chars: [Character] = [" ", "\n"]
     
-    
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     override func viewDidLoad() {
+        
+        //Check internet connection to instantly return
+        if(Reachability.isConnectedToNetwork() == false){
+            return
+        }
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
+        
         let currentURLString = "https://canvas.sfu.ca/courses/" + String(programVar) + "/grades/"
         
         
@@ -78,10 +87,12 @@ class assignmentsController: UITableViewController {
                 }
             }
         }
-        
-        
     }
     
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
     
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int)
@@ -104,6 +115,26 @@ class assignmentsController: UITableViewController {
             (cell as MyCustomCell).grade.text = score + "/" + outOf
             
             return cell
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     

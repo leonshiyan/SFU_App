@@ -50,17 +50,25 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
         DataTask.resume()
         println(matrix)
     }
-
+    
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
     
     override func viewDidLoad(){
-        
+    
+    //Check internet connection to instantly return
+    if(Reachability.isConnectedToNetwork() == false){
+        return
+    }
+       
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
     // Set slide menu control to this controller
     self.sideMenuController()?.sideMenu?.delegate = self;
     
     if(courseList.isEmpty){
-    
-    
     
     let currentURLString = "https://sims-prd.sfu.ca/psc/csprd_1/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSR_SSENRL_SCHD_W.GBL?Page=SSR_SS_WEEK&Action=A&ExactKeys=Y&EMPLID=301179599&TargetFrameName=None&PortalActualURL=https%3a%2f%2fsims-prd.sfu.ca%2fpsc%2fcsprd_1%2fEMPLOYEE%2fHRMS%2fc%2fSA_LEARNER_SERVICES.SSR_SSENRL_SCHD_W.GBL%3fPage%3dSSR_SS_WEEK%26Action%3dA%26ExactKeys%3dY%26EMPLID%3d301179599%26TargetFrameName%3dNone&PortalRegistryName=EMPLOYEE&PortalServletURI=https%3a%2f%2fgo.sfu.ca%2fpsp%2fpaprd_1%2f&PortalURI=https%3a%2f%2fgo.sfu.ca%2fpsc%2fpaprd_1%2f&PortalHostNode=EMPL&NoCrumbs=yes&PortalKeyStruct=yes"
     
@@ -397,6 +405,11 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
         
     }
     
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
+    }
+    
     // if schedule havent been formulated, parse then create matrix
     // using jerrod's parse code from scehdule view controller //
     
@@ -483,6 +496,27 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
         println("sideMenuShouldOpenSideMenu")
         return true;
     }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
     
         
         

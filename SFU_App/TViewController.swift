@@ -14,14 +14,24 @@ class TViewController: UIViewController,UITextFieldDelegate {
     // ViewController that takes user input for bus stop number
     @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var input: UITextField!
+    
+    // Create a reachability object
+    let reachability = Reachability.reachabilityForInternetConnection()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (Reachability.isConnectedToNetwork() == false) {
-            return
-        }
+        
+        // Prepare notifier which constantly observes for connection in the background
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        reachability.startNotifier()
         
         input.delegate = self
         
+    }
+    
+    // Deinitializes notifier
+    deinit {
+        reachability.stopNotifier()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,6 +41,26 @@ class TViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
+    }
+    
+    // Function to output alert when internet connection changed
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+            let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
 // Submit button action//
