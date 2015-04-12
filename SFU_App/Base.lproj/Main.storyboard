@@ -2632,7 +2632,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tnp-b9-ITf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3059" y="1173"/>
+            <point key="canvasLocation" x="2875" y="1105"/>
         </scene>
         <!--Maps-->
         <scene sceneID="mS6-mn-uGV">
@@ -2643,6 +2643,16 @@ $8 per guest + tax</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pDq-el-8JY">
+                            <rect key="frame" x="-23" y="-15" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <segue destination="m9q-hy-FjK" kind="push" id="ZJj-sO-E7f"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection id="ASs-oe-u9s">
                                 <cells>
@@ -2804,6 +2814,25 @@ $8 per guest + tax</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hn-8f-nzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1300" y="1116"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="5nM-tm-DeD">
+            <objects>
+                <viewController id="m9q-hy-FjK" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q6g-Xe-FxG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Snu-Q1-v3G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFa-Gl-dEK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZAt-e4-SvC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHn-dx-a1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="1113"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="Zag-md-mDI">
@@ -3305,7 +3334,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwn-7I-gAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3059" y="1824"/>
+            <point key="canvasLocation" x="3023" y="1888"/>
         </scene>
         <!--Add Friend-->
         <scene sceneID="c6n-vO-ky8">
@@ -3460,7 +3489,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzI-wQ-Y7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935" y="1377"/>
+            <point key="canvasLocation" x="2411" y="1095"/>
         </scene>
         <!--Services-->
         <scene sceneID="Ckv-Tu-euG">
