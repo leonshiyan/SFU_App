@@ -101,28 +101,28 @@ class ChannelController: UITableViewController{
         if (segue!.identifier == "event1")
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/2.xml"
-            svc.eventTitle = "Burnaby Events Calender"
+            svc.eventTitle = "Burnaby Events Calendar"
         }
         else if (segue!.identifier == "event2")
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/5.xml"
-            svc.eventTitle = "Surrey Events Calender"
+            svc.eventTitle = "Surrey Events Calendar"
 
         }
         else if(segue!.identifier == "event3")
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/6.xml"
-            svc.eventTitle = "Vancouver Event Calender"
+            svc.eventTitle = "Vancouver Event Calendar"
         }
         else if(segue!.identifier == "event4")
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/18.xml"
-            svc.eventTitle = "Volunteer Servicies"
+            svc.eventTitle = "Volunteer Services"
         }
         else
         {
             svc.rsschn = "https://events.sfu.ca/rss/calendar_id/30.xml"
-            svc.eventTitle = "eadlines"
+            svc.eventTitle = "Deadlines"
 
         }
         
