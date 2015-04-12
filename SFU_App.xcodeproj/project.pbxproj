@@ -42,6 +42,7 @@
 		3E1B391F1ABCD881001CF09E /* BreakMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B391E1ABCD881001CF09E /* BreakMatchController.swift */; };
 		3E1B39231ABCDB6F001CF09E /* BusPassUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B39221ABCDB6F001CF09E /* BusPassUpController.swift */; };
 		3E25ECE21AC4B87400CEABCC /* DiningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25ECE11AC4B87400CEABCC /* DiningController.swift */; };
+		3E589F7B1ADA3914008DED5A /* stickFriends.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E589F7A1ADA3914008DED5A /* stickFriends.png */; };
 		3E5A96D91AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A96D81AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png */; };
 		3E5C83431ABCBE8800A4DB0B /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C83421ABCBE8800A4DB0B /* QRViewController.swift */; };
 		3E5C83481ABCC39700A4DB0B /* list23(big).png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C83471ABCC39700A4DB0B /* list23(big).png */; };
@@ -164,6 +165,7 @@
 		3E1B391E1ABCD881001CF09E /* BreakMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakMatchController.swift; sourceTree = "<group>"; };
 		3E1B39221ABCDB6F001CF09E /* BusPassUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusPassUpController.swift; sourceTree = "<group>"; };
 		3E25ECE11AC4B87400CEABCC /* DiningController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningController.swift; sourceTree = "<group>"; };
+		3E589F7A1ADA3914008DED5A /* stickFriends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickFriends.png; sourceTree = "<group>"; };
 		3E5A96D81AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png; sourceTree = "<group>"; };
 		3E5C83421ABCBE8800A4DB0B /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		3E5C83471ABCC39700A4DB0B /* list23(big).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list23(big).png"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		3ED91B321AB2443700554BDF /* Picture Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E589F7A1ADA3914008DED5A /* stickFriends.png */,
 				C5DF45FC1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg */,
 				C5DF45B51AC3E79F00FD2277 /* instagram pics */,
 				C59004F21AC3DA49009C85BC /* Dining */,
@@ -633,6 +636,7 @@
 				7D2E5A841AD48641003C5EC8 /* led-red-black.png in Resources */,
 				C5DF45F71AC3F54900FD2277 /* 7.png in Resources */,
 				C59004ED1AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg in Resources */,
+				3E589F7B1ADA3914008DED5A /* stickFriends.png in Resources */,
 				3ADDB59D1AB927D500153543 /* BlurryWhoAddedThisPic=.=.jpg in Resources */,
 				3A6785AA1AAA6C8C0000B21E /* SFULogo.jpg in Resources */,
 				406DB1261ABF8727004583DA /* sfuvancouver.png in Resources */,
