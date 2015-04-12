@@ -210,21 +210,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     
  
-    override func viewDidAppear(animated: Bool) {
-       
-       /* let fetchRequest  = NSFetchRequest(entityName:"Friend")
-        
-         let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
-        for  result in fetchResults as [Friend] {
-            println(result.userid)
-            println(result.sch)
-        */
-      
-        self.FriendTable.reloadData()
-        
-      
-        
-    }
+
+    
     // Runs through the list
    func checkBreak (){
         
@@ -242,7 +229,9 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
         // iterate each friendslist and check//
         for  result in fetchResults as [Friend] {
+            println(result.sch)
             var Usermatrix = Array(result.sch)
+            
             
         
 
@@ -311,18 +300,19 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
         if(daymult >= 100)
         {
-            println("There is no class today")
-            var Busy1 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
+            //println("There is no class today")
+            //var Busy1 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
+            var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
+            FriendArray.append(Free)
             
-            self.DisplayList.append(result.userid)
-            FriendArray.append(Busy1)
+            //FriendArray.append(Busy1)
             
 
         }
         else if (timeSlot == 24) //Current time is not regular class hour : 0000-0930
         {
-            println("All classes over now")
-            self.DisplayList.append(result.userid)
+            //println("All classes over now")
+           
             var Busy2 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
              FriendArray.append(Busy2)
 
@@ -336,10 +326,10 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                 //var newbuddy :buddy = buddy(name: result.userid,status: "Free")
                 
                 //self.FriendArray.append(buddy(name: result.userid,status: "Free"))
-                self.DisplayList.append(result.userid)
+               
                 var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
                 FriendArray.append(Free)
-                println("Yes, he is free now")
+                //println("Yes, he is free now")
             }
             else
             {
@@ -348,10 +338,10 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                 
               //  self.FriendArray.append(buddy(name: result.userid,status: "Busy"))
             
-                self.DisplayList.append(result.userid)
+               
                 var Busy3 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
                 FriendArray.append(Busy3)
-                println("No, he is not free now")
+               // println("No, he is not free now")
             
             }
         }
@@ -378,7 +368,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         let day = components.day
         var currentTime = hour*100 + minutes
         var timeSlot = 0
-        if(FriendArray[index].matrix.isEmpty){return""}
+        if(FriendArray[index].matrix.isEmpty){return"7"}
          var mat = Array(FriendArray[index].matrix)
         // iterate each friendslist and check//
         
@@ -450,6 +440,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
             if(daymult >= 100)
             {
+                
+                
                 return "There is no class today"
                 
                 
@@ -469,8 +461,8 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                     var startPoint = daymult*timeSlotsOfADay + timeSlot
                     
                     var submat = mat.slice(startPoint + 1)
-                    println(mat)
-                    println(submat)
+                    //println(mat)
+                   // println(submat)
                     if(find(submat,"1") == nil){return""}
                     var nextClass = (Float) (find(submat,"1")! + startPoint)
                     var floatofDay = Float(daymult*timeSlotsOfADay)
@@ -550,7 +542,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         for friend in FriendArray{
             println(friend.status)
         }
-        self.FriendTable.reloadData();
+        //self.FriendTable.reloadData();
       /*  FriendArray = []
         println("Array count before: %@", FriendArray.count)
         checkBreak()
@@ -586,7 +578,25 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         return  FriendArray.count   }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell   // let fetchRequest  = NSFetchRequest(entityName:"Friend")
+        
+        //var cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell
+        
+       var cell = UITableViewCell(style:UITableViewCellStyle.Subtitle , reuseIdentifier: "FriendCell")
+        
+        
+       
+          //  cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,"
+              //  reuseIdentifier: "FriendCell")
+        
+        
+        
+       
+    
+        
+        
+        
+        
+        // let fetchRequest  = NSFetchRequest(entityName:"Friend")
         //let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
        // var Display2 : [String] = []
        // for  result in fetchResults as [Friend] {
@@ -594,24 +604,41 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
             
       //  }
-        if(FriendArray.isEmpty){return cell ;}
+        //if(FriendArray.isEmpty){
+            
+            
+            
+          //  return cell ;}//
         var green:UIImage = UIImage(named:"led-green-black")!
         var red: UIImage = UIImage(named:"led-red-black")!
         
         let row = indexPath.row
         
-        cell.textLabel?.text = FriendArray[row].name
-        cell.imageView?.image = green
+       // let label2 = cell.contentView.viewWithTag(1111) as UILabel!
+        //label2?.text = "hello"
+       // cell.imageView?.image = green
+       // cell.detailTextLabel?.text = "Hello World"
+       
         
-        
-        //(cell.contentView.viewWithTag(10) as UILabel).text = self.FriendArray[row].status
+      
         if(FriendArray[row].status == "Busy"){
+            var test = self.TimeTillClass(row)
+            cell.textLabel?.text = FriendArray[row].name
             cell.detailTextLabel?.text = self.TimeTillClass(row)
+            cell.textLabel?.text = self.TimeTillClass(row)
             cell.imageView?.image = red
+           
+            
         }
         else{
         cell.detailTextLabel?.text = self.TimeTillClass(row)
+        
+        cell.textLabel?.text = FriendArray[row].name
+        //cell.textLabel?.text = self.TimeTillClass(row)
+        //cell.detailTextLabel?.text = self.TimeTillClass(row)
         cell.imageView?.image = green
+      
+         
         }
        
         return cell     }
@@ -619,10 +646,6 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController!)
-    {
-        self.FriendTable.reloadData()
-    }
     
 }
 

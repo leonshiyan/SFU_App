@@ -9,6 +9,13 @@
 import Foundation
 import CoreData
 import UIKit
+var Matrix : NSString = ""
+var user : NSString = ""
+
+
+
+
+
 
 class ContactsViewController: UIViewController,ENSideMenuDelegate {
    
@@ -398,7 +405,7 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
     
     
     // Get friend from scheudle from post
-    @IBAction func FetchFriend(sender: AnyObject) {
+  /*  @IBAction func FetchFriend(sender: AnyObject) {
         
         var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
         var name = self.friendinput.text
@@ -417,9 +424,9 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
                 return;
             }
             var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            
+            Matrix = strData
             println(strData)
-            self.saveContact(name,Matrix: strData)
+           // self.saveContact(self.friendinput.text,Matrix: strData)
             // save data long with user name to database 
             
             
@@ -429,8 +436,8 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
         }
         
         DataTask.resume()
-        
-    }
+       self.saveContact(self.friendinput.text,Matrix: Matrix)
+    }*/
 
         
         
@@ -474,7 +481,7 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
     // disabled Slide Menu
     func sideMenuShouldOpenSideMenu() -> Bool {
         println("sideMenuShouldOpenSideMenu")
-        return false;
+        return true;
     }
     
         
@@ -716,12 +723,13 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
     }*/
 
    @IBAction func UpdateFriendTable(sender: AnyObject) {
+
         var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
         var name = self.friendinput.text
         var session = NSURLSession.sharedSession()
         POSTrequest.HTTPMethod="POST"
         POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-        //var matrix = CreateMatrix()
+    
         var body = "USERID=\(name)"
         POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
                var DataTask = session.dataTaskWithRequest(POSTrequest) {
@@ -737,6 +745,7 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
             if(strData == "FAIL" ){
                 println("no such student")
                 return}
+            
             self.saveContact(name,Matrix: strData)
             self.view.setNeedsDisplay()
             // save data long with user name to database
@@ -744,10 +753,11 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
             
             
             
-            
+            //poop
         }
-        var tenp = FriendArray
+    
         DataTask.resume()
+        //self.saveContact(self.friendinput.text,Matrix: Matrix)
        // FriendArray.removeAll()
         performSegueWithIdentifier("SaveFriend", sender: self)
        // performSegueWithIdentifier("breakMatcher", sender: self)
