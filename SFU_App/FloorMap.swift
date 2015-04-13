@@ -17,6 +17,9 @@ class FloorMap: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 1
+        if (building == "AQ" || building == "ASB" ){
+            return;
+        }
         let image = UIImage(named: "\(building)_\(level).png")!
         imageView = UIImageView(image: image)
         /*var newSize = image.size
