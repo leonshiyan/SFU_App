@@ -66,7 +66,9 @@ class SchViewController: UITableViewController,ENSideMenuDelegate {
         
         let currentURLString = "https://sims-prd.sfu.ca/psc/csprd_1/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSR_SSENRL_SCHD_W.GBL?Page=SSR_SS_WEEK"
         
-        if(courseList.isEmpty){
+        courseList.removeAll()
+        arr.removeAll()
+        if(true){
         let currentURL = NSURL(string: currentURLString)
         var err : NSError?
         
