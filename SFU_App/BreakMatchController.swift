@@ -470,7 +470,6 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                     var nextClass = (Float) (find(submat,"1")! + startPoint)
                     //println(nextClass)
                     var floatofDay = Float(daymult*timeSlotsOfADay)
-                    println(nextClass - startPoint)
                     if( nextClass < floatofDay + 8.0){
                         
                         // difference is just matter of hours//
