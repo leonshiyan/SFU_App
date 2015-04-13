@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B7758C1ADB2C8D0066F951 /* SFUbur.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B7758B1ADB2C8D0066F951 /* SFUbur.png */; };
+		21B7758E1ADB32280066F951 /* SFUburbetter.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B7758D1ADB32280066F951 /* SFUburbetter.png */; };
+		21B775901ADB3B4D0066F951 /* buildingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B7758F1ADB3B4D0066F951 /* buildingList.swift */; };
+		21B775921ADB44110066F951 /* BuildingLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B775911ADB44110066F951 /* BuildingLevels.swift */; };
+		21B775941ADB63D20066F951 /* FloorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B775931ADB63D20066F951 /* FloorMap.swift */; };
+		21BF4DFF1ADB073E00263996 /* burbmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BF4DFE1ADB073E00263996 /* burbmap.png */; };
+		21BF4E011ADB091100263996 /* obMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BF4E001ADB091100263996 /* obMapController.swift */; };
+		21BF4E031ADB190E00263996 /* burnaby900.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BF4E021ADB190E00263996 /* burnaby900.png */; };
+		21BF4E051ADB1F7700263996 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BF4E041ADB1F7700263996 /* photo1.png */; };
 		3A6785AA1AAA6C8C0000B21E /* SFULogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A6785A91AAA6C8C0000B21E /* SFULogo.jpg */; };
 		3A6785AC1AAA76D40000B21E /* FinalGradesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6785AB1AAA76D40000B21E /* FinalGradesController.swift */; };
 		3A6785AE1AAA77630000B21E /* goSFUController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6785AD1AAA77630000B21E /* goSFUController.swift */; };
@@ -130,6 +139,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21B7758B1ADB2C8D0066F951 /* SFUbur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SFUbur.png; sourceTree = "<group>"; };
+		21B7758D1ADB32280066F951 /* SFUburbetter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SFUburbetter.png; sourceTree = "<group>"; };
+		21B7758F1ADB3B4D0066F951 /* buildingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = buildingList.swift; sourceTree = "<group>"; };
+		21B775911ADB44110066F951 /* BuildingLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingLevels.swift; sourceTree = "<group>"; };
+		21B775931ADB63D20066F951 /* FloorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloorMap.swift; sourceTree = "<group>"; };
+		21BF4DFE1ADB073E00263996 /* burbmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burbmap.png; path = ../../../../../Downloads/burbmap.png; sourceTree = "<group>"; };
+		21BF4E001ADB091100263996 /* obMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = obMapController.swift; sourceTree = "<group>"; };
+		21BF4E021ADB190E00263996 /* burnaby900.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burnaby900.png; path = ../../../../../Downloads/burnaby900.png; sourceTree = "<group>"; };
+		21BF4E041ADB1F7700263996 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
 		3A6785A91AAA6C8C0000B21E /* SFULogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SFULogo.jpg; sourceTree = SOURCE_ROOT; };
 		3A6785AB1AAA76D40000B21E /* FinalGradesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalGradesController.swift; sourceTree = "<group>"; };
 		3A6785AD1AAA77630000B21E /* goSFUController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goSFUController.swift; sourceTree = "<group>"; };
@@ -306,7 +324,10 @@
 		3ED91B321AB2443700554BDF /* Picture Files */ = {
 			isa = PBXGroup;
 			children = (
+				21BF4DFE1ADB073E00263996 /* burbmap.png */,
 				3E589F7A1ADA3914008DED5A /* stickFriends.png */,
+				21BF4E021ADB190E00263996 /* burnaby900.png */,
+				21B7758B1ADB2C8D0066F951 /* SFUbur.png */,
 				C5DF45FC1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg */,
 				C5DF45B51AC3E79F00FD2277 /* instagram pics */,
 				C59004F21AC3DA49009C85BC /* Dining */,
@@ -315,6 +336,7 @@
 				3E5A96D81AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png */,
 				3A8318FD1AA69069006D0922 /* location4.png */,
 				3A8318FF1AA69070006D0922 /* news.png */,
+				21B7758D1ADB32280066F951 /* SFUburbetter.png */,
 				3A8319011AA69075006D0922 /* like.png */,
 				3E5C83471ABCC39700A4DB0B /* list23(big).png */,
 				3A8319031AA6907C006D0922 /* small59.png */,
@@ -330,6 +352,7 @@
 				3A8319051AA69087006D0922 /* study.png */,
 				3A8319071AA69092006D0922 /* bubble1.png */,
 				3A8319091AA69271006D0922 /* see.png */,
+				21BF4E041ADB1F7700263996 /* photo1.png */,
 				3A83190B1AA69290006D0922 /* paperplane.png */,
 				3A83190D1AA6929C006D0922 /* small61.png */,
 				3A83190F1AA692B6006D0922 /* user12.png */,
@@ -377,8 +400,12 @@
 			children = (
 				3A8318E61AA67599006D0922 /* bMapController.swift */,
 				C52B8C841ACB8EE4005DEE20 /* sMapController.swift */,
+				21BF4E001ADB091100263996 /* obMapController.swift */,
 				C52B8C861ACB8EF6005DEE20 /* vMapController.swift */,
 				3E1B391B1ABCD76C001CF09E /* MapTableController.swift */,
+				21B7758F1ADB3B4D0066F951 /* buildingList.swift */,
+				21B775911ADB44110066F951 /* BuildingLevels.swift */,
+				21B775931ADB63D20066F951 /* FloorMap.swift */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -627,13 +654,16 @@
 				C5DF45F81AC3F54900FD2277 /* 8.png in Resources */,
 				C5DF45F31AC3F54900FD2277 /* 3.png in Resources */,
 				C5DF45F11AC3F54900FD2277 /* 1.png in Resources */,
+				21BF4E031ADB190E00263996 /* burnaby900.png in Resources */,
 				3ADDB59F1AB9284700153543 /* SchoolQuadSexy.jpg in Resources */,
+				21B7758E1ADB32280066F951 /* SFUburbetter.png in Resources */,
 				3A83190C1AA69290006D0922 /* paperplane.png in Resources */,
 				3A8319001AA69070006D0922 /* news.png in Resources */,
 				C5DF45E31AC3EE9300FD2277 /* sunny.png in Resources */,
 				3A8319081AA69092006D0922 /* bubble1.png in Resources */,
 				3E5A96D91AB79D1F0098F6AC /* stuffcontentmgrfiles2ac67e44c30a21635f8a9d498f832bc1cmisc_resized80_313_257_hamenu.png in Resources */,
 				7D2E5A841AD48641003C5EC8 /* led-red-black.png in Resources */,
+				21BF4E051ADB1F7700263996 /* photo1.png in Resources */,
 				C5DF45F71AC3F54900FD2277 /* 7.png in Resources */,
 				C59004ED1AC3DA34009C85BC /* Dining-Hallthumbnail270x175_25766.jpg in Resources */,
 				3E589F7B1ADA3914008DED5A /* stickFriends.png in Resources */,
@@ -646,6 +676,7 @@
 				7D2E5A821AD4847F003C5EC8 /* led-green-black.png in Resources */,
 				C5DF45FA1AC3F54900FD2277 /* 10.png in Resources */,
 				3E5C83481ABCC39700A4DB0B /* list23(big).png in Resources */,
+				21BF4DFF1ADB073E00263996 /* burbmap.png in Resources */,
 				C5DF45F21AC3F54900FD2277 /* 2.png in Resources */,
 				C5DF45E21AC3EE9300FD2277 /* snow.png in Resources */,
 				C5DF45F51AC3F54900FD2277 /* 5.png in Resources */,
@@ -661,6 +692,7 @@
 				C5DF45F61AC3F54900FD2277 /* 6.png in Resources */,
 				C59004EF1AC3DA34009C85BC /* IMG_0495thumbnail270x175_25769.JPG in Resources */,
 				7DC35E451AA669B700554367 /* LaunchScreen.xib in Resources */,
+				21B7758C1ADB2C8D0066F951 /* SFUbur.png in Resources */,
 				3E5C834C1ABCC43800A4DB0B /* list23(biggering).png in Resources */,
 				C5DF45FD1AC40A7D00FD2277 /* CampusDiningMapwSbux-Large.jpg in Resources */,
 				7DC35E421AA669B700554367 /* Images.xcassets in Resources */,
@@ -690,8 +722,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1B391C1ABCD76C001CF09E /* MapTableController.swift in Sources */,
+				21B775901ADB3B4D0066F951 /* buildingList.swift in Sources */,
 				406DB11A1ABF8692004583DA /* ChannelController.swift in Sources */,
 				7D37513A1AD1BCF900D6655D /* Contacts.swift in Sources */,
+				21BF4E011ADB091100263996 /* obMapController.swift in Sources */,
 				3A8318E31AA67207006D0922 /* EmailController.swift in Sources */,
 				3E9628FB1AA95D2900A8DE88 /* TViewController.swift in Sources */,
 				3ADDB5881AB8FC6600153543 /* courseGradeController.swift in Sources */,
@@ -713,6 +747,7 @@
 				3E9628F71AA953D700A8DE88 /* article.swift in Sources */,
 				3EA102DD1ACDDFDC005C12A8 /* errorMessage.swift in Sources */,
 				7DB78C9B1AC9AE3E00F17700 /* CoreDat.xcdatamodeld in Sources */,
+				21B775921ADB44110066F951 /* BuildingLevels.swift in Sources */,
 				3ADDB5841AB8D0D800153543 /* HTMLParser.swift in Sources */,
 				3E9628F81AA953D700A8DE88 /* BlogPost.swift in Sources */,
 				3E13D3991AB2520B00EAF7B3 /* MyNavigationController.swift in Sources */,
@@ -733,6 +768,7 @@
 				3E5C83431ABCBE8800A4DB0B /* QRViewController.swift in Sources */,
 				3A6785AC1AAA76D40000B21E /* FinalGradesController.swift in Sources */,
 				3A6785B41AAA81680000B21E /* PostViewController.swift in Sources */,
+				21B775941ADB63D20066F951 /* FloorMap.swift in Sources */,
 				7DC35E3D1AA669B700554367 /* ViewController.swift in Sources */,
 				7DBBAF141AC0B52400066BCB /* AllBusController.swift in Sources */,
 				7DBBAF161AC0B56600066BCB /* BusStopDetail.swift in Sources */,

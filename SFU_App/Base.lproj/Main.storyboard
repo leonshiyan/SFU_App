@@ -2119,6 +2119,82 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="2074" y="1976"/>
         </scene>
+        <!--Building List-->
+        <scene sceneID="JyE-Se-NJB">
+            <objects>
+                <tableViewController id="7u2-FC-s1Z" customClass="buildingList" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KAo-jO-FBu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="VTL-8d-Cvu" style="IBUITableViewCellStyleDefault" id="rGn-hM-ZCN">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGn-hM-ZCN" id="6JP-zM-JbY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VTL-8d-Cvu">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6DK-wK-TY2" kind="push" id="Zd6-bC-C5c"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7u2-FC-s1Z" id="GNU-Cm-gVe"/>
+                            <outlet property="delegate" destination="7u2-FC-s1Z" id="mwL-u5-J84"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Building List" id="NWH-Eb-7tL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rD8-Lx-PxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518" y="1990"/>
+        </scene>
+        <!--Building Levels List-->
+        <scene sceneID="nOc-RI-E21">
+            <objects>
+                <tableViewController id="6DK-wK-TY2" customClass="buildingLevelsList" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="B3o-YF-kGD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="VF6-N8-oVq" style="IBUITableViewCellStyleDefault" id="na9-1U-hBA">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="na9-1U-hBA" id="iQQ-he-4fp">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VF6-N8-oVq">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vmh-VF-NqH" kind="push" id="S6k-df-g5x"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6DK-wK-TY2" id="eEr-ro-50J"/>
+                            <outlet property="delegate" destination="6DK-wK-TY2" id="bfv-FU-RYf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="6P6-Mh-qYn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iQ-jU-xaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2947" y="1990"/>
+        </scene>
         <!--Login Controller-->
         <scene sceneID="MHK-di-ZDq">
             <objects>
@@ -2272,7 +2348,7 @@ $8 per guest + tax</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitCell" id="N79-e3-owF" customClass="customTransitCell" customModule="SFU_App" customModuleProvider="target">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitCell" id="N79-e3-owF" customClass="customTransitCell" customModule="SFU_App" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N79-e3-owF" id="Eft-Dz-2fN">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -2644,7 +2720,7 @@ $8 per guest + tax</string>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection id="ASs-oe-u9s">
+                            <tableViewSection headerTitle="Google Maps" id="ASs-oe-u9s">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="2fa-Sh-S6m">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2655,7 +2731,7 @@ $8 per guest + tax</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48L-DQ-Se4">
                                                     <rect key="frame" x="8" y="7" width="304" height="43"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SFU Burnaby Google Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgV-iM-8uu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU Burnaby" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgV-iM-8uu">
                                                             <rect key="frame" x="13" y="11" width="184" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -2664,18 +2740,13 @@ $8 per guest + tax</string>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="PgV-iM-8uu" firstAttribute="leading" secondItem="48L-DQ-Se4" secondAttribute="leading" constant="13" id="860-QN-fB8"/>
-                                                        <constraint firstItem="PgV-iM-8uu" firstAttribute="centerY" secondItem="48L-DQ-Se4" secondAttribute="centerY" id="Ox6-Fw-CIh"/>
-                                                        <constraint firstItem="PgV-iM-8uu" firstAttribute="top" secondItem="48L-DQ-Se4" secondAttribute="top" constant="11" id="QLh-cc-5iC"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="48L-DQ-Se4" firstAttribute="trailing" secondItem="Ru6-k1-90s" secondAttribute="trailingMargin" id="5PP-YB-g4D"/>
-                                                <constraint firstAttribute="bottom" secondItem="48L-DQ-Se4" secondAttribute="bottom" id="UC1-Uh-6MQ"/>
-                                                <constraint firstItem="48L-DQ-Se4" firstAttribute="top" secondItem="Ru6-k1-90s" secondAttribute="topMargin" constant="-1" id="aiB-5b-48K"/>
-                                                <constraint firstItem="48L-DQ-Se4" firstAttribute="leading" secondItem="Ru6-k1-90s" secondAttribute="leadingMargin" id="gsu-ld-9CF"/>
+                                                <constraint firstItem="48L-DQ-Se4" firstAttribute="leading" secondItem="Ru6-k1-90s" secondAttribute="leadingMargin" id="IHL-bH-a0X"/>
+                                                <constraint firstItem="48L-DQ-Se4" firstAttribute="trailing" secondItem="Ru6-k1-90s" secondAttribute="trailingMargin" id="MBe-ck-fiG"/>
+                                                <constraint firstItem="48L-DQ-Se4" firstAttribute="top" secondItem="Ru6-k1-90s" secondAttribute="topMargin" constant="-1" id="VPt-ce-3vK"/>
+                                                <constraint firstAttribute="bottom" secondItem="48L-DQ-Se4" secondAttribute="bottom" id="hhe-9Y-wJz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -2692,7 +2763,7 @@ $8 per guest + tax</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tN-ES-Zlv">
                                                     <rect key="frame" x="8" y="7" width="304" height="43"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SFU Surrey Google Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1P-15-q64">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU Surrey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1P-15-q64">
                                                             <rect key="frame" x="13" y="11" width="170" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -2701,18 +2772,13 @@ $8 per guest + tax</string>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="C1P-15-q64" firstAttribute="top" secondItem="3tN-ES-Zlv" secondAttribute="top" constant="11" id="MoU-7A-ela"/>
-                                                        <constraint firstItem="C1P-15-q64" firstAttribute="leading" secondItem="3tN-ES-Zlv" secondAttribute="leading" constant="13" id="OmF-dV-tX1"/>
-                                                        <constraint firstItem="C1P-15-q64" firstAttribute="centerY" secondItem="3tN-ES-Zlv" secondAttribute="centerY" id="oMi-HW-tez"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="3tN-ES-Zlv" secondAttribute="bottom" id="SIa-TB-cct"/>
-                                                <constraint firstItem="3tN-ES-Zlv" firstAttribute="top" secondItem="9u2-ep-d4S" secondAttribute="topMargin" constant="-1" id="abq-u3-eeZ"/>
-                                                <constraint firstItem="3tN-ES-Zlv" firstAttribute="trailing" secondItem="9u2-ep-d4S" secondAttribute="trailingMargin" id="kK9-XI-Nve"/>
-                                                <constraint firstItem="3tN-ES-Zlv" firstAttribute="leading" secondItem="9u2-ep-d4S" secondAttribute="leadingMargin" id="xM3-dw-vkG"/>
+                                                <constraint firstItem="3tN-ES-Zlv" firstAttribute="leading" secondItem="9u2-ep-d4S" secondAttribute="leadingMargin" id="IWT-u8-oN5"/>
+                                                <constraint firstItem="3tN-ES-Zlv" firstAttribute="top" secondItem="9u2-ep-d4S" secondAttribute="topMargin" constant="-1" id="MAa-kz-YMG"/>
+                                                <constraint firstItem="3tN-ES-Zlv" firstAttribute="trailing" secondItem="9u2-ep-d4S" secondAttribute="trailingMargin" id="baX-U5-Us2"/>
+                                                <constraint firstAttribute="bottom" secondItem="3tN-ES-Zlv" secondAttribute="bottom" id="qCd-xa-DSx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -2729,7 +2795,7 @@ $8 per guest + tax</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufx-vW-nH0">
                                                     <rect key="frame" x="8" y="7" width="304" height="43"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SFU Vancouver Google Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-4b-BXZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU Vancouver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-4b-BXZ">
                                                             <rect key="frame" x="13" y="11" width="198" height="21"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -2738,23 +2804,84 @@ $8 per guest + tax</string>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="Ygd-4b-BXZ" firstAttribute="centerY" secondItem="ufx-vW-nH0" secondAttribute="centerY" id="HC1-52-oNi"/>
-                                                        <constraint firstItem="Ygd-4b-BXZ" firstAttribute="top" secondItem="ufx-vW-nH0" secondAttribute="top" constant="11" id="PY6-w7-jq1"/>
-                                                        <constraint firstItem="Ygd-4b-BXZ" firstAttribute="leading" secondItem="ufx-vW-nH0" secondAttribute="leading" constant="13" id="elB-6J-8Pk"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ufx-vW-nH0" secondAttribute="bottom" id="002-3h-1eM"/>
-                                                <constraint firstItem="ufx-vW-nH0" firstAttribute="trailing" secondItem="Od1-aT-zH9" secondAttribute="trailingMargin" id="BYk-xh-sb2"/>
-                                                <constraint firstItem="ufx-vW-nH0" firstAttribute="leading" secondItem="Od1-aT-zH9" secondAttribute="leadingMargin" id="Tx7-Ku-Urk"/>
-                                                <constraint firstItem="ufx-vW-nH0" firstAttribute="top" secondItem="Od1-aT-zH9" secondAttribute="topMargin" constant="-1" id="djG-xU-V6c"/>
+                                                <constraint firstItem="ufx-vW-nH0" firstAttribute="leading" secondItem="Od1-aT-zH9" secondAttribute="leadingMargin" id="Kxl-WG-9Of"/>
+                                                <constraint firstItem="ufx-vW-nH0" firstAttribute="top" secondItem="Od1-aT-zH9" secondAttribute="topMargin" constant="-1" id="LOK-Do-hB6"/>
+                                                <constraint firstAttribute="bottom" secondItem="ufx-vW-nH0" secondAttribute="bottom" id="LiO-LH-Yqh"/>
+                                                <constraint firstItem="ufx-vW-nH0" firstAttribute="trailing" secondItem="Od1-aT-zH9" secondAttribute="trailingMargin" id="Vte-R3-WEv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="CsA-u5-2GO" kind="push" id="QLm-Y8-16l"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Offline Maps" id="S3x-9t-SGt">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="KBb-4e-qhH">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KBb-4e-qhH" id="eLQ-EB-zGe">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIZ-fz-s5L">
+                                                    <rect key="frame" x="8" y="8" width="304" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU Burnaby Campus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGE-Pj-fl0">
+                                                            <rect key="frame" x="18" y="11" width="196" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tIZ-fz-s5L" firstAttribute="trailing" secondItem="eLQ-EB-zGe" secondAttribute="trailingMargin" id="HQ3-5V-76G"/>
+                                                <constraint firstItem="tIZ-fz-s5L" firstAttribute="leading" secondItem="eLQ-EB-zGe" secondAttribute="leadingMargin" id="K7E-Mb-Ims"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tIZ-fz-s5L" secondAttribute="bottom" constant="-9" id="NcA-sc-T42"/>
+                                                <constraint firstItem="tIZ-fz-s5L" firstAttribute="top" secondItem="eLQ-EB-zGe" secondAttribute="topMargin" id="dro-6B-rLz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <connections>
+                                            <segue destination="cTP-LE-8Js" kind="push" id="JmU-xb-VkU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="jXj-Zb-QzM">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jXj-Zb-QzM" id="BxS-Qi-qrj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ak-Dd-Qz6">
+                                                    <rect key="frame" x="8" y="8" width="304" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SFU Burnaby Floor Plans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpn-Dd-ISX">
+                                                            <rect key="frame" x="18" y="11" width="196" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4ak-Dd-Qz6" secondAttribute="bottom" constant="-9" id="G2d-O6-vhl"/>
+                                                <constraint firstItem="4ak-Dd-Qz6" firstAttribute="trailing" secondItem="BxS-Qi-qrj" secondAttribute="trailingMargin" id="Pwh-uH-Szl"/>
+                                                <constraint firstItem="4ak-Dd-Qz6" firstAttribute="leading" secondItem="BxS-Qi-qrj" secondAttribute="leadingMargin" id="SXl-Mp-aJU"/>
+                                                <constraint firstItem="4ak-Dd-Qz6" firstAttribute="top" secondItem="BxS-Qi-qrj" secondAttribute="topMargin" id="YjS-jQ-bdo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <connections>
+                                            <segue destination="7u2-FC-s1Z" kind="push" id="Bd2-MZ-ro8"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -3305,7 +3432,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwn-7I-gAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3059" y="1824"/>
+            <point key="canvasLocation" x="3407" y="1173"/>
         </scene>
         <!--Add Friend-->
         <scene sceneID="c6n-vO-ky8">
@@ -3329,7 +3456,7 @@ $8 per guest + tax</string>
                                         </state>
                                         <connections>
                                             <action selector="UpdateFriendTable:" destination="3eJ-Qt-q32" eventType="touchUpInside" id="vil-LP-qJW"/>
-                                            <segue destination="heL-Zm-ppH" kind="push" identifier="SaveFriend" id="fSS-GX-8Zq"/>
+                                            <segue destination="heL-Zm-ppH" kind="push" identifier="SaveFriend" id="VOS-m7-g5h"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-b2-j1w">
@@ -3467,7 +3594,7 @@ $8 per guest + tax</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzI-wQ-Y7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935" y="1377"/>
+            <point key="canvasLocation" x="2677" y="1173"/>
         </scene>
         <!--Services-->
         <scene sceneID="Ckv-Tu-euG">
@@ -3823,6 +3950,66 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="-8" y="-1"/>
         </scene>
+        <!--Ob Map Controller-->
+        <scene sceneID="iM8-9F-zmb">
+            <objects>
+                <viewController id="cTP-LE-8Js" customClass="obMapController" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sVL-BC-kv3"/>
+                        <viewControllerLayoutGuide type="bottom" id="mOv-CM-2nC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W23-Tp-GTw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-le-BvQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cTP-LE-8Js" id="5dy-9t-yeM"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Q9-2R-jee"/>
+                    <connections>
+                        <outlet property="scrollView" destination="eXE-le-BvQ" id="QMC-Ms-riQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drl-mC-7rt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2331" y="1173"/>
+        </scene>
+        <!--Floor Map-->
+        <scene sceneID="exP-OK-cSh">
+            <objects>
+                <viewController id="vmh-VF-NqH" customClass="FloorMap" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="unq-qy-gBg"/>
+                        <viewControllerLayoutGuide type="bottom" id="wgy-2w-3mv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7fC-yB-4LY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-mx-5dm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vmh-VF-NqH" id="g4Q-Sv-2Yh"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UIv-sK-Q2F"/>
+                    <connections>
+                        <outlet property="scrollView" destination="lA2-mx-5dm" id="WfZ-Wz-DhT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUq-w0-FDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3359" y="1990"/>
+        </scene>
     </scenes>
     <resources>
         <image name="20141125_090007thumbnail270x175_25866.jpg" width="270" height="175"/>
@@ -3847,9 +4034,9 @@ $8 per guest + tax</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="rB3-uP-a2d"/>
         <segue reference="w7c-Wy-zfK"/>
         <segue reference="i4a-i0-ING"/>
-        <segue reference="rB3-uP-a2d"/>
         <segue reference="5AZ-ci-rw3"/>
     </inferredMetricsTieBreakers>
 </document>

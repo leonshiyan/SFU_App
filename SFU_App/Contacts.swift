@@ -786,14 +786,20 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
             
             
             
-            
-            //poop
+    
         }
     
         DataTask.resume()
         //self.saveContact(self.friendinput.text,Matrix: Matrix)
        // FriendArray.removeAll()
         performSegueWithIdentifier("SaveFriend", sender: self)
+        /*var rootVC = self.view.window!.rootViewController
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var breakMatchVC = mainStoryboard.instantiateViewControllerWithIdentifier("breakMatcher") as ViewController
+        self.presentedViewController.
+        rootVC.navigationController.pushViewController(breakMatchVC, animated: false)
+    */
+    
        // performSegueWithIdentifier("breakMatcher", sender: self)
     }
     
