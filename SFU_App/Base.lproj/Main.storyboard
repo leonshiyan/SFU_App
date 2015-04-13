@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qPl-Dy-uZq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qPl-Dy-uZq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -2121,7 +2121,7 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="2518" y="1990"/>
         </scene>
-        <!--Building Levels List-->
+        <!--Building Floors-->
         <scene sceneID="nOc-RI-E21">
             <objects>
                 <tableViewController id="6DK-wK-TY2" customClass="buildingLevelsList" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -2153,7 +2153,7 @@ $8 per guest + tax</string>
                             <outlet property="delegate" destination="6DK-wK-TY2" id="bfv-FU-RYf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6P6-Mh-qYn"/>
+                    <navigationItem key="navigationItem" title="Building Floors" id="6P6-Mh-qYn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iQ-jU-xaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3910,7 +3910,7 @@ $8 per guest + tax</string>
             </objects>
             <point key="canvasLocation" x="2331" y="1173"/>
         </scene>
-        <!--Floor Map-->
+        <!--Floor Plans-->
         <scene sceneID="exP-OK-cSh">
             <objects>
                 <viewController id="vmh-VF-NqH" customClass="FloorMap" customModule="SFU_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -3922,7 +3922,7 @@ $8 per guest + tax</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-mx-5dm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-mx-5dm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="vmh-VF-NqH" id="g4Q-Sv-2Yh"/>
@@ -3930,8 +3930,14 @@ $8 per guest + tax</string>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lA2-mx-5dm" secondAttribute="trailing" id="8eK-26-PxO"/>
+                            <constraint firstItem="lA2-mx-5dm" firstAttribute="leading" secondItem="7fC-yB-4LY" secondAttribute="leading" id="IpU-wx-BXM"/>
+                            <constraint firstItem="lA2-mx-5dm" firstAttribute="top" secondItem="7fC-yB-4LY" secondAttribute="top" id="PAH-1w-7q9"/>
+                            <constraint firstAttribute="bottom" secondItem="lA2-mx-5dm" secondAttribute="bottom" id="VPk-Kq-qwP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UIv-sK-Q2F"/>
+                    <navigationItem key="navigationItem" title="Floor Plans" id="UIv-sK-Q2F"/>
                     <connections>
                         <outlet property="scrollView" destination="lA2-mx-5dm" id="WfZ-Wz-DhT"/>
                     </connections>
