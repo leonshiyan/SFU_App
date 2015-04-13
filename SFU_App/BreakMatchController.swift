@@ -80,12 +80,14 @@ func CreateMatrix() ->String {
         //println(course.times)
         var daymult = 0
         var intstring : [String] = course.times.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ": -"))
-        
+        println(intstring)
+        var startime = 0
+        var endtime  = 0
         var daystring = course.days.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ", "))
-        
-        //if (daystring.count > 5){
-        var startime = intstring[0].toInt()
-        var endtime = intstring[5].toInt()
+    
+        if(intstring.count<=1){startime = 0;  endtime = 0} else{
+        startime = intstring[0].toInt()!
+        endtime = intstring[5].toInt()!}
         
         
         
@@ -122,11 +124,11 @@ func CreateMatrix() ->String {
             }
             
             //Do some computation here
-            var start = startime! - 8
-            var end = endtime! - 8
-            var hourOfClass = endtime! - startime!
+            var start = startime - 8
+            var end = endtime - 8
+            var hourOfClass = endtime - startime
             for (var i = 0; i < hourOfClass ; i++)
-            {
+            {								
                 matrix[daymult*timeSlotsOfADay + start + i] = "1"
             }
             
