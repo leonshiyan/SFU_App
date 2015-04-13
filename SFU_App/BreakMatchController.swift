@@ -466,13 +466,16 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                    
                     if(find(submat,"1") == nil){return "no class left"}
                     // calculate offsets between sub arrays
+                   
                     var nextClass = (Float) (find(submat,"1")! + startPoint)
+                    //println(nextClass)
                     var floatofDay = Float(daymult*timeSlotsOfADay)
+                    println(nextClass - startPoint)
                     if( nextClass < floatofDay + 8.0){
                         
                         // difference is just matter of hours//
-                        var difference = nextClass
-                     
+                        var difference = nextClass - floatofDay
+                        
                         if(difference <= 1 ){
                             difference = 1
                             return " Class in \(difference) hour"
@@ -493,22 +496,27 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                 if(mat[daymult*timeSlotsOfADay + timeSlot] == "1"){
                     var startPoint = daymult*timeSlotsOfADay + timeSlot
                     
-                    var submat = mat.slice(startPoint)
+                    var submat = mat.slice(startPoint+1)
+                    println(submat)
                   
                     if(find(submat,"0") == nil){return"Never Free"}
-                    var nextClass = (Float) (find(submat,"0")! + startPoint)
+                
+                    var nextClass = (Float) (find(submat,"0")!)
+                    //println(nextClass)
                     var floatofDay = Float(daymult*timeSlotsOfADay)
                   
                     if( nextClass < floatofDay + 8.0){
+                        
                         // difference is just matter of hours//
                         var difference = nextClass
+                        println(difference)
                         if (difference <= 0){
                             difference = 1;
-                            return " Break in \(difference) hour"
+                            return " Class ends in \(difference) hour left"
 
                         }
-                        
-                        return " Break in \(difference) hours"
+                        //Break in \(difference) hours
+                        return " Class ends in \(difference) hours left"
                     }else{
                         return "No Breaks Left Today"
                         

@@ -237,8 +237,8 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
             LoginPage.delegate=self
             
             LoginPage.loadRequest(LoginRequest)
-            defaults.setObject(login.text, forKey: userNameKeyConstant)
-            defaults.setObject(password.text, forKey: passwordKeyConstant)
+            //defaults.setObject(login.text, forKey: userNameKeyConstant)
+            //defaults.setObject(password.text, forKey: passwordKeyConstant)
             
         }else if result.containsString("successfully logged in"){
             errorLabel.text=""
