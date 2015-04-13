@@ -412,48 +412,6 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
     
     // if schedule havent been formulated, parse then create matrix
     // using jerrod's parse code from scehdule view controller //
-    
-    
-    
-    
-    
-    // Get friend from scheudle from post
-  /*  @IBAction func FetchFriend(sender: AnyObject) {
-        
-        var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
-        var name = self.friendinput.text
-        var session = NSURLSession.sharedSession()
-        POSTrequest.HTTPMethod="POST"
-        POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-        //var matrix = CreateMatrix()
-        var body = "USERID=\(name)"
-        POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        var DataTask = session.dataTaskWithRequest(POSTrequest) {
-            data, response, error in
-            
-            if(error != nil){
-                println("error=\(error)")
-                return;
-            }
-            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            Matrix = strData
-            println(strData)
-           // self.saveContact(self.friendinput.text,Matrix: strData)
-            // save data long with user name to database 
-            
-            
-            
-            
-            
-        }
-        
-        DataTask.resume()
-       self.saveContact(self.friendinput.text,Matrix: Matrix)
-    }*/
-
-        
-        
         
     func saveContact (userID: NSString , Matrix: NSString) -> Void {
         
@@ -518,243 +476,7 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
     }
 
     
-        
-        
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ToBreak" {
-            
-            
-            var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
-            var name = self.friendinput.text
-            var session = NSURLSession.sharedSession()
-            POSTrequest.HTTPMethod="POST"
-            POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-            //var matrix = CreateMatrix()
-            var body = "USERID=\(name)"
-            POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
-            
-            var DataTask = session.dataTaskWithRequest(POSTrequest) {
-                data, response, error in
-                
-                if(error != nil){
-                    println("error=\(error)")
-                    return;
-                }
-                var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
-                
-                println(strData)
-                if(strData == "FAIL" ){
-                    println("no such student")
-                    return}
-                self.saveContact(name,Matrix: strData)
-                self.view.setNeedsDisplay()
-                // save data long with user name to database
-                
-                
-                
-                
-                
-            }
-            
-            DataTask.resume()
-            //var Table : BreakMatchController! = BreakMatchController()
-            //Table.FriendTable.reloadData()
-            
-        
-        
-        }*/
-    
-   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "saveNewFriend" {
-            
-            // Fetch Matrix from server 
-            
-            var POSTrequest = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Friend.php")!)
-            var name = self.friendinput.text
-            var session = NSURLSession.sharedSession()
-            POSTrequest.HTTPMethod="POST"
-            POSTrequest.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
-            
-            var body = "USERID=\(name)"
-            POSTrequest.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
-            
-            var DataTask = session.dataTaskWithRequest(POSTrequest) {
-                data, response, error in
-                
-                if(error != nil){
-                    println("error=\(error)")
-                    return;
-                }
-                var strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
-                
-                println(strData)
-                if(strData == "FAIL" ){
-                    println("no such student")
-                    return}
-                self.saveContact(name,Matrix: strData)
-                // UpdateFriend array
-                
-                
-                self.view.setNeedsDisplay()
-                // save data long with user name to database
-                
-                
-                
-                
-                
-            }
-            
-            DataTask.resume()
-   
-            
-            // Matrix Fetched,update Friend Array//
-            
-            FriendArray = []
-            
-          
-                
-                
-                let date = NSDate()
-                let calendar = NSCalendar.currentCalendar()
-                let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
-                let hour = components.hour
-                let minutes = components.minute
-                let day = components.day
-                var currentTime = hour*100 + minutes
-                var timeSlot = 0
-                
-                let fetchRequest  = NSFetchRequest(entityName:"Friend")
-                let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
-                // iterate each friendslist and check//
-                for  result in fetchResults as [Friend] {
-                    var Usermatrix = Array(result.sch)
-                    
-                    
-                    
-                    
-                    switch currentTime
-                    {
-                    case 830...929:
-                        timeSlot = 0;
-                    case 930...1029:
-                        timeSlot = 1;
-                    case 1030...1129:
-                        timeSlot = 2;
-                    case 1130...1229:
-                        timeSlot = 3;
-                    case 1230...1329:
-                        timeSlot = 4;
-                    case 1330...1429:
-                        timeSlot = 5;
-                    case 1430...1529:
-                        timeSlot = 6;
-                    case 1530...1629:
-                        timeSlot = 7;
-                    case 1630...1729:
-                        timeSlot = 8;
-                    case 1730...1829:
-                        timeSlot = 9;
-                    case 1830...1929:
-                        timeSlot = 10;
-                    case 1930...2329:
-                        timeSlot = 11;
-                    default :
-                        timeSlot = 24;// Non regular class time
-                    }
-                    let dayTimeFormatter = NSDateFormatter()
-                    dayTimeFormatter.dateFormat = "EEEEEE"
-                    let dayString = dayTimeFormatter.stringFromDate(date)
-                    
-                    
-                    var daymult = 0
-                    switch dayString {
-                    case "Mo" :
-                        
-                        daymult = 0
-                        break;
-                        
-                    case "Tu":
-                        daymult = 1
-                        break;
-                        
-                    case "We":
-                        daymult = 2
-                        break;
-                        
-                    case "Th":
-                        daymult = 3
-                        break;
-                        
-                    case "Fr":
-                        daymult = 4
-                        break;
-                        
-                    default :
-                        daymult = 100;
-                    }
-                    
-                    
-                    if(daymult >= 100)
-                    {
-                        println("There is no class today")
-                        var Busy1 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
-                        
-                        //self.DisplayList.append(result.userid)
-                        FriendArray.append(Busy1)
-                        
-                        
-                    }
-                    else if (timeSlot == 24) //Current time is not regular class hour : 0000-0930
-                    {
-                        println("All classes over now")
-                        //self.DisplayList.append(result.userid)
-                        var Busy2 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
-                        FriendArray.append(Busy2)
-                        
-                        
-                    }
-                    else
-                    {
-                        if(Usermatrix[daymult*timeSlotsOfADay + timeSlot] == "0")
-                        {
-                            //Display for tesing purpose
-                            //var newbuddy :buddy = buddy(name: result.userid,status: "Free")
-                            
-                            //self.FriendArray.append(buddy(name: result.userid,status: "Free"))
-                            //self.DisplayList.append(result.userid)
-                            var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
-                            FriendArray.append(Free)
-                            //println("Yes, he is free now")
-                        }
-                        else
-                        {
-                            //Display for tesing purpose
-                            //  var newbuddy :buddy = buddy(name: result.userid,status: "Free")
-                            
-                            //  self.FriendArray.append(buddy(name: result.userid,status: "Busy"))
-                            
-                           // self.DisplayList.append(result.userid)
-                            var Busy3 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
-                            FriendArray.append(Busy3)
-                            //println("No, he is not free now")
-                            
-                        }
-                    }
-                }
-                
-                
-                
-                
-            }
-            
-            
-            
-            
-            
-            
-            
-        
-    }*/
+
 
    @IBAction func UpdateFriendTable(sender: AnyObject) {
 
@@ -778,6 +500,12 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
             println(strData)
             if(strData == "FAIL" ){
                 println("no such student")
+                
+                let alertController = UIAlertController(title: "Error", message: "Student does not exist", preferredStyle: .Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+
                 return}
             
             self.saveContact(name,Matrix: strData)
@@ -790,17 +518,9 @@ class ContactsViewController: UIViewController,ENSideMenuDelegate {
         }
     
         DataTask.resume()
-        //self.saveContact(self.friendinput.text,Matrix: Matrix)
-       // FriendArray.removeAll()
+
         performSegueWithIdentifier("SaveFriend", sender: self)
-        /*var rootVC = self.view.window!.rootViewController
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var breakMatchVC = mainStoryboard.instantiateViewControllerWithIdentifier("breakMatcher") as ViewController
-        self.presentedViewController.
-        rootVC.navigationController.pushViewController(breakMatchVC, animated: false)
-    */
-    
-       // performSegueWithIdentifier("breakMatcher", sender: self)
+
     }
     
     

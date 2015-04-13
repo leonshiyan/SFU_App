@@ -255,7 +255,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
             defaults.setObject(login.text, forKey: userNameKeyConstant)
             println(defaults.stringForKey(userNameKeyConstant))
             defaults.setObject(password.text, forKey: passwordKeyConstant)
-            //println(defaults.stringForKey(passwordKeyConstant))
+           
             
             
             
@@ -275,7 +275,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
                     return;
                 }
                 var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-                //println(strData)
+              
             }
             
             DataTask.resume()
@@ -332,9 +332,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
         login.text = ""
         password.text = ""
         logoutBool = true;
-        //let returnP : AnyObject? = self.storyboard?.instantiateInitialViewController()//self.storyboard?.instantiateViewControllerWithIdentifier("CanvasPage")
-        //self.storyboard?.instantiateInitialViewController()
-        //self.showViewController(returnP as UIViewController, sender: returnP)
+       
         
     }
     
@@ -351,7 +349,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
             
             pass=password.text
             username=login.text
-            //  println(LoginPage.stringByEvaluatingJavaScriptFromString("window.location"))
+          
             
            
             
@@ -365,10 +363,7 @@ class LoginController: UIViewController,UIWebViewDelegate,ENSideMenuDelegate,UIT
                 errorLabel.text=""
                
                 
-               // defaults.setObject(login.text, forKey: userNameKeyConstant)
-               // println(defaults.stringForKey(userNameKeyConstant))
-               // defaults.setObject(password.text, forKey: passwordKeyConstant)
-               // println(defaults.stringForKey(passwordKeyConstant))
+            
                 
                 }
             

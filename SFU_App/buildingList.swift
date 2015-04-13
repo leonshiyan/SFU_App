@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+// SFU burnaby buildings list set up
 var buildings: [String] = ["Academic Quadrangle", "Alcan Aquatic Research Centre", "Applied Sciences Building",  "Blusson Hall", "Bee Research Building", "Childcare Centre", "Diamond Alumni Centre", "Dining Hall", "Discovery 1", "Discovery 2", "Education Building", "Facilities Services", "Greenhouses", "Halpern Centre", "Lorne Davies Complex", "Maggie Benston Centre", "Robert C. Brown Hall", "Saywell Hall", "Shrum Science Centre Biology", "Shrum Science Centre Chemisty", "Shrum Science Centre Kinesiology", "Shrum Science Building Physics", "South East Classroom Block", "South Sciences Building", "Science Research Annex", "Strand Hall", "Strand Hall Annex", "T3 - Achiology Trailer", "Technology & Science Complex 1", "Technology & Science Complex 2", "Transportation Centre", "University Theatre", "W.A.C. Bennett Library", "West Mall Centre", "Water Tower Building"]
 
+// index of selected building to pass through and use with floor array
 var arrIndex = 0
 
 class buildingList: UITableViewController {

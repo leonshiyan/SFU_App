@@ -5,13 +5,18 @@
 //  Created by Nethaniel Yuen on 2015-03-20.
 //  Copyright (c) 2015 Hugo Cheng. All rights reserved.
 //   
+    
+    
+    // Array of Friends that will be populated //
+   
     var FriendArray: [buddy] = []
+    // Couurses object to store each class in an array
     class courses{
         var department: String = String();
         var section: String = String();
         var number: String = String();
     }
-    
+    // a list of courses
     class courseLists{
         var name: String = String("NaN");
         var instructor: String = String("NaN");
@@ -22,7 +27,7 @@
         
     }
     
-    
+    // Array class extension method to slice strings//
     extension Array {
         func slice(args: Int...) -> Array {
             var s = args[0]
@@ -56,7 +61,7 @@
     
 
     
-    
+    // search for particiular course in coursearray
     func checkArrayForCourse(var x : courses) -> Bool{
         for y in arr{
             if x.department == y.department &&
@@ -71,25 +76,28 @@
 
 // Final List of names to display
    
-
+// Uses the parsed schedule to create a matrix , each 0 = no class and 1 = class , each digit of the matrix is a time slot between the beginging of class from x.30 o clock till x.20 , matching the class schedule format of SFU 
+// each 12 digits a full school day of the week ( does not include weekends)
 func CreateMatrix() ->String {
     
-    
+    // if course list isnt present or parsing error then return blank matrix..
     if (courseList.isEmpty ){return "000000000000000000000000000000000000000000000000000000000000"}
+    
+    // for Each course in courselist , splice the string to seperate starting time from ending time //
     for course in courseList {
-        //println(course.times)
+        
         var daymult = 0
         var intstring : [String] = course.times.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ": -"))
-        println(intstring)
+        
         var startime = 0
         var endtime  = 0
         var daystring = course.days.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ", "))
-    
+        // special case where theres a online course, the time is set as break
         if(intstring.count<=1){startime = 0;  endtime = 0} else{
         startime = intstring[0].toInt()!
         endtime = intstring[5].toInt()!}
         
-        
+        //convert string of days to a multipler offset for matrix
         
         
         for day in daystring {
@@ -146,6 +154,7 @@ func CreateMatrix() ->String {
         
         
     }
+    // convert matrix back to string
     let schedule  = "" + matrix
    
     return schedule
@@ -159,7 +168,7 @@ var matrix = Array("000000000000000000000000000000000000000000000000000000000000
 var timeSlotsOfADay = 12
 
 
-
+    // Object displayed on table each one stores a name, status and schedule
     struct buddy {
         
         var name: String
@@ -211,7 +220,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
  
 
     
-    // Runs through the list
+    // Runs checks core data for each added contact, fetch schedule and add a buddy object to be displayed.
    func checkBreak (){
         
     
@@ -228,12 +237,12 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
         // iterate each friendslist and check//
         for  result in fetchResults as [Friend] {
-            println(result.sch)
+        
             var Usermatrix = Array(result.sch)
             
             
         
-
+        // Map current time string to matrix decimal location
         
         switch currentTime
         {
@@ -264,10 +273,11 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         default :
             timeSlot = 24;// Non regular class time
         }
+            
         let dayTimeFormatter = NSDateFormatter()
         dayTimeFormatter.dateFormat = "EEEEEE"
         let dayString = dayTimeFormatter.stringFromDate(date)
-        
+        // convert current day of the week to offset for matrix
         
         var daymult = 0
         switch dayString {
@@ -299,49 +309,41 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
         if(daymult >= 100)
         {
-            //println("There is no class today")
-            //var Busy1 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
+            // if it is the weekend then everyone is free //
             var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
             FriendArray.append(Free)
             
-            //FriendArray.append(Busy1)
+          
             
 
         }
         else if (timeSlot == 24) //Current time is not regular class hour : 0000-0930
-        {
-            //println("All classes over now")
+        {    // Past regular  school class hours
+         
            
             var Busy2 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
              FriendArray.append(Busy2)
+           
 
 
         }
             else
-        {
+        {   // 0 = no class
             if(Usermatrix[daymult*timeSlotsOfADay + timeSlot] == "0")
             {
-                //Display for tesing purpose
-                //var newbuddy :buddy = buddy(name: result.userid,status: "Free")
                 
-                //self.FriendArray.append(buddy(name: result.userid,status: "Free"))
                
                 var Free = buddy(name:result.userid,status:"Free",matrix:result.sch)
                 FriendArray.append(Free)
-                //println("Yes, he is free now")
+               
             }
             else
             {
-                //Display for tesing purpose
-              //  var newbuddy :buddy = buddy(name: result.userid,status: "Free")
-                
-              //  self.FriendArray.append(buddy(name: result.userid,status: "Busy"))
-            
+              // User is in class //
                
                 var Busy3 = buddy(name:result.userid,status:"Busy",matrix:result.sch)
                 FriendArray.append(Busy3)
-               // println("No, he is not free now")
-            
+       
             }
         }
     }
@@ -355,7 +357,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
     
     
     
-    // Checks when next class is
+    // Calculates next break or next class for each user in buddy list
     func TimeTillClass (index: Int) ->String{
         // get matrix of person 
         // Find Current time slot
@@ -374,7 +376,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             
             
             
-            
+            // Map current time to matrix index
             switch currentTime
             {
             case 830...929:
@@ -453,6 +455,7 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
             }
             else
             {
+                // Search matrix for the next class "1"
                 if(mat[daymult*timeSlotsOfADay + timeSlot] == "0")
                 {
                     // if currently is break, then scan rest of array for next 1
@@ -460,16 +463,21 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                     var startPoint = daymult*timeSlotsOfADay + timeSlot
                     
                     var submat = mat.slice(startPoint + 1)
-                    //println(mat)
-                   // println(submat)
-                    if(find(submat,"1") == nil){return""}
+                   
+                    if(find(submat,"1") == nil){return "no class left"}
+                    // calculate offsets between sub arrays
                     var nextClass = (Float) (find(submat,"1")! + startPoint)
                     var floatofDay = Float(daymult*timeSlotsOfADay)
-                    println(nextClass)
-                    println(floatofDay)
                     if( nextClass < floatofDay + 8.0){
+                        
                         // difference is just matter of hours//
-                        var difference = find(submat,"1")!
+                        var difference = nextClass
+                     
+                        if(difference <= 1 ){
+                            difference = 1
+                            return " Class in \(difference) hour"
+                        }
+                        
                         return " Class in \(difference) hours"
                     }else{
                        return "No Class Left Today"
@@ -481,20 +489,25 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
                     
                     
                 }
+                // case when user is in class, search for when their next break is
                 if(mat[daymult*timeSlotsOfADay + timeSlot] == "1"){
                     var startPoint = daymult*timeSlotsOfADay + timeSlot
                     
-                    var submat = mat.slice(startPoint + 1)
-                    println(mat)
-                    println(submat)
+                    var submat = mat.slice(startPoint)
+                  
                     if(find(submat,"0") == nil){return"Never Free"}
                     var nextClass = (Float) (find(submat,"0")! + startPoint)
                     var floatofDay = Float(daymult*timeSlotsOfADay)
-                    println(nextClass)
-                    println(floatofDay)
+                  
                     if( nextClass < floatofDay + 8.0){
                         // difference is just matter of hours//
-                        var difference = find(submat,"0")!
+                        var difference = nextClass
+                        if (difference <= 0){
+                            difference = 1;
+                            return " Break in \(difference) hour"
+
+                        }
+                        
                         return " Break in \(difference) hours"
                     }else{
                         return "No Breaks Left Today"
@@ -535,30 +548,18 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
         FriendArray.removeAll()
       
-        println(FriendArray.count)
+       
         self.checkBreak()
-        println(FriendArray.count)
-        for friend in FriendArray{
-            println(friend.status)
-        }
-        //self.FriendTable.reloadData();
-      /*  FriendArray = []
-        println("Array count before: %@", FriendArray.count)
-        checkBreak()
-        println("Array count after: %@", FriendArray.count)
-        FriendTable.reloadData()
-        if (FriendArray.count > FriendTable .numberOfRowsInSection(0)) {
-            let indexPath = NSIndexPath(forRow: FriendArray.count-1, inSection: 0)
-            FriendTable.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        }   */
-    }
+        
+        
+            }
        
     
   
     
    
         
-    
+    // Enable sidee menu slider
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
@@ -570,12 +571,12 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         
         if reachability.isReachable() {
             if reachability.isReachableViaWiFi() {
-                println("Reachable via WiFi")
+                
             } else {
-                println("Reachable via Cellular")
+                
             }
         } else {
-            println("Not reachable")
+          
             let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertController.addAction(defaultAction)
@@ -583,78 +584,53 @@ class BreakMatchController: UIViewController ,UITableViewDataSource,UITableViewD
         }
     }
     
+    // Code to populate TableViewCells
+    // ---------------------------------
+    
+    
+    
     func numberOfSectionsINtableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section : Int) -> Int {
-       // let fetchRequest  = NSFetchRequest(entityName:"Friend")
-        //let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
-        //fetchResults!.count
-
+       
        
         
         return  FriendArray.count   }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //var cell = FriendTable.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as UITableViewCell
+        
         
        var cell = UITableViewCell(style:UITableViewCellStyle.Subtitle , reuseIdentifier: "FriendCell")
-        
-        
        
-          //  cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,"
-              //  reuseIdentifier: "FriendCell")
         
-        
-        
-       
-    
-        
-        
-        
-        
-        // let fetchRequest  = NSFetchRequest(entityName:"Friend")
-        //let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest,error: nil )
-       // var Display2 : [String] = []
-       // for  result in fetchResults as [Friend] {
-          //   Display2.append(result.userid)
-            
-            
-      //  }
-        //if(FriendArray.isEmpty){
-            
-            
-            
-          //  return cell ;}//
         var green:UIImage = UIImage(named:"led-green-black")!
         var red: UIImage = UIImage(named:"led-red-black")!
         
         let row = indexPath.row
         
-       // let label2 = cell.contentView.viewWithTag(1111) as UILabel!
-        //label2?.text = "hello"
-       // cell.imageView?.image = green
-       // cell.detailTextLabel?.text = "Hello World"
+    
        
         
-      
+       // if busy display different color for image
         if(FriendArray[row].status == "Busy"){
             var test = self.TimeTillClass(row)
             cell.textLabel?.text = FriendArray[row].name
             cell.detailTextLabel?.text = self.TimeTillClass(row)
-            cell.textLabel?.text = self.TimeTillClass(row)
+      
             cell.imageView?.image = red
            
             
         }
+        // if free display green light
         else{
+        
         cell.detailTextLabel?.text = self.TimeTillClass(row)
         
         cell.textLabel?.text = FriendArray[row].name
-        //cell.textLabel?.text = self.TimeTillClass(row)
-        //cell.detailTextLabel?.text = self.TimeTillClass(row)
+        
         cell.imageView?.image = green
       
          

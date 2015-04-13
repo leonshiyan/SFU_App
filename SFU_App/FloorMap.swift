@@ -16,8 +16,12 @@ class FloorMap: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 1
+        // if floors are available but floor plans are not tell user
         if (building == "AQ" || building == "ASB" ){
+            let alertController = UIAlertController(title: "Error", message: "Floor plans under construction", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
             return;
         }
         let image = UIImage(named: "\(building)_\(level).png")!
@@ -27,32 +31,33 @@ class FloorMap: UIViewController, UIScrollViewDelegate {
         newSize.width = newSize.width*2*/
         imageView.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height)
         
-        // 2
+        // set up scroll view dimensions
         scrollView.addSubview(imageView)
         scrollView.contentSize = image.size
         
-        // 3
+        // recognize double tap
         var doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewDoubleTapped:")
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.numberOfTouchesRequired = 1
         scrollView.addGestureRecognizer(doubleTapRecognizer)
         
-        // 4
+        // start zoom set up
         let scrollViewFrame = scrollView.frame
         let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
         let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
         let minScale = max(scaleWidth, scaleHeight);
         scrollView.minimumZoomScale = minScale;
         
-        // 5
+        // make zoom work
         scrollView.maximumZoomScale = 1.0
         scrollView.zoomScale = minScale;
         
-        // 6
+        // centre the image
         centerScrollViewContents()
         
     }
     
+    // centre the image
     func centerScrollViewContents() {
         let boundsSize = scrollView.bounds.size
         var contentsFrame = imageView.frame
@@ -74,14 +79,14 @@ class FloorMap: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDoubleTapped(recognizer: UITapGestureRecognizer) {
-        // 1
+        // set up image view
         let pointInView = recognizer.locationInView(imageView)
         
-        // 2
+        // set up zoom scale
         var newZoomScale = scrollView.zoomScale * 1.5
         newZoomScale = min(newZoomScale, scrollView.maximumZoomScale)
         
-        // 3
+        // set scroll view bounds
         let scrollViewSize = scrollView.bounds.size
         let w = scrollViewSize.width / newZoomScale
         let h = scrollViewSize.height / newZoomScale
@@ -90,7 +95,7 @@ class FloorMap: UIViewController, UIScrollViewDelegate {
         
         let rectToZoomTo = CGRectMake(x, y, w, h);
         
-        // 4
+        // set up scroll animations
         scrollView.zoomToRect(rectToZoomTo, animated: true)
     }
     

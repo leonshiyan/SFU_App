@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
+// String Extention to strip characters in a inputed array
 extension String {
     func stripCharactersInSet(chars: [Character]) -> String {
         return String(filter(self) {find(chars, $0) == nil})
     }
 }
-
+// Custom Table view cell//
 class MyCustomCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     
@@ -28,7 +29,7 @@ class assignmentsController: UITableViewController {
     @IBOutlet var assignmentTable: UITableView!
     
     var programVar : Int = 1
-    
+    // Array to hold scores, assignment names, and totals //
     var assignmentNames: [String] = []
     var assignmentScore: [String] = []
     var assignmentOutOf: [String] = []
@@ -49,6 +50,7 @@ class assignmentsController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
         reachability.startNotifier()
         
+        // Begin RESTAPi calls to parse website for canvas grades
         let currentURLString = "https://canvas.sfu.ca/courses/" + String(programVar) + "/grades/"
         
         
@@ -58,22 +60,25 @@ class assignmentsController: UITableViewController {
         
         let currentHTMLString = NSString(contentsOfURL: currentURL!, encoding: NSUTF8StringEncoding, error: nil)
         
+        // USE imported HTMLParser Class
         
         var parser = HTMLParser(html : currentHTMLString!, error: &err)
         if err != nil{
-            println(err)
+           // println(err)
             exit(1)
         }
         
         var bodyNode = parser.body
-        
+         // Search for unique tags that return course and assignment information
         if let assignmentNodes = bodyNode?.findChildTagsAttr("tr", attrName: "class", attrValue: "student_assignment assignment_graded editable"){
             for node in assignmentNodes{
                 if let nameNode = node.findChildTagAttr("th", attrName: "class", attrValue: "title"){
                     if let nameNode = node.findChildTag("a"){
+                        // Add it to assignNames
                         assignmentNames.append(nameNode.contents)
                     }
                 }
+                // Search for SCore
                 if let nameNode = node.findChildTagAttr("span", attrName: "class", attrValue: "score"){
                     var string = nameNode.contents.stripCharactersInSet(chars)
                     let decimalAsDouble = NSNumberFormatter().numberFromString(string)!.doubleValue
@@ -82,6 +87,7 @@ class assignmentsController: UITableViewController {
                         NSString(format: "%.2f", decimalAsDouble)
                     )
                 }
+                // Search for total
                 if let nameNode = node.findChildTagAttr("td", attrName: "class", attrValue: "possible points_possible"){
                     assignmentOutOf.append(nameNode.contents.stripCharactersInSet(chars))
                 }
@@ -93,6 +99,9 @@ class assignmentsController: UITableViewController {
     deinit {
         reachability.stopNotifier()
     }
+    
+    // Code to populate table view cells
+    
     
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int)
@@ -109,7 +118,7 @@ class assignmentsController: UITableViewController {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("assignmentWithScore", forIndexPath: indexPath) as UITableViewCell
             
-            
+            // iterates through al lthe assignment name and grades to display scores
             
             (cell as MyCustomCell).name.text = name
             (cell as MyCustomCell).grade.text = score + "/" + outOf
@@ -124,12 +133,12 @@ class assignmentsController: UITableViewController {
         
         if reachability.isReachable() {
             if reachability.isReachableViaWiFi() {
-                println("Reachable via WiFi")
+               //println("Reachable via WiFi")
             } else {
-                println("Reachable via Cellular")
+                //println("Reachable via Cellular")
             }
         } else {
-            println("Not reachable")
+            //println("Not reachable")
             let alertController = UIAlertController(title: "Error", message: "No internet connection detected", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertController.addAction(defaultAction)

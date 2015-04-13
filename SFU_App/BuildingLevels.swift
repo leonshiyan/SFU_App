@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-
+// Array of floors with index corresponding to buildings index
 var buildingsLevels: [String] = ["AQ-2000 AQ-3000 AQ-4000 AQ-5000 AQ-6000", "", "ASB-8000 ASB-9000 ASB-10000", "BH-9000 BH-10000A BH-10000B BH-11000A BH-11000B", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
-
+// set up global variables to pass through to next VC
 var building = ""
 var level = ""
 var floorIndex = 0
@@ -20,6 +20,17 @@ var floorIndex = 0
 class buildingLevelsList: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var temp = buildingsLevels[arrIndex]
+        var temparr = split(temp) {$0 == " "}
+        
+        // don't have floor plan records tell user
+        if (temparr.count == 0) {
+            let alertController = UIAlertController(title: "Error", message: "Floors not yet available", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
       
     }
     
@@ -37,6 +48,7 @@ class buildingLevelsList: UITableViewController {
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        // make array to set up display 
         var temp = buildingsLevels[arrIndex]
         var temparr = split(temp) {$0 == " "}
         
@@ -52,6 +64,7 @@ class buildingLevelsList: UITableViewController {
         
         
         cell.textLabel!.text = temparr[indexPath.row]
+        
         return cell
         
     }

@@ -26,11 +26,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-    /*var strData : NSString!
-    var ActualData = ""
-    var captureSession : AVCaptureSession!
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    var qrCodeFrameView:UIView!*/
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,11 +36,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         
         FetchPoints()
 
-        /*var captureSession : AVCaptureSession
-        var videoPreviewLayer: AVCaptureVideoPreviewLayer
-        var qrCodeFrameView:UIView
         
-        */
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
         // as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
@@ -154,12 +146,12 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             if(metadataObj.stringValue.toInt() > 0) {
                 println("Hello world")
                 IncrementP();
-                //FetchPoints();
+               
             }
             
             if(metadataObj.stringValue.toInt() < 0 ) {
                 DecrementP()
-                //FetchPoints()
+               
                 
             }
             
@@ -182,7 +174,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         println(amount!)
         
         if (amount! < 0 ){
-            // future version will have alert dialog
+  
             return;
         }
         var request = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Earn.php")!)
@@ -208,22 +200,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             
             
             
-            //self.TOTAL.text = NSString(data: data, encoding: NSUTF8StringEncoding)
+           
         })
         
-        /*var DataTask = session.dataTaskWithRequest(request) {
-        data, response, error in
-        
-        if(error != nil){
-        println("error=\(error)")
-        return;
-        }
-        //self.strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-        //println("after add :\(self.strData)")
-        
-        self.TOTAL.text = NSString(data: data, encoding: NSUTF8StringEncoding)
-        }
-        */
         DataTask.resume()
         FetchPoints()
         captureSession?.stopRunning()
@@ -268,7 +247,7 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
         
         var amountInt = 0
         
-        var amount = msgLabel.text//?.toInt()
+        var amount = msgLabel.text
         amount = amount!.substringWithRange(Range<String.Index>(start: advance(amount!.startIndex, 1), end: advance(amount!.endIndex, 0)))
         amountInt = amount!.toInt()!
         
@@ -276,11 +255,11 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
             println("not valid input, you are not loggedin");
             return;
         }
-        // Future version will have alert dialog
+       
         
         var request = NSMutableURLRequest(URL: NSURL( string: "http://cmpt275team1.hostoi.com/Spend.php")!)
         if (amountInt < 0 ){
-            // future version will have alert dialog
+          
             return;
         }
         var session = NSURLSession.sharedSession()
@@ -305,9 +284,9 @@ class QRViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-    
+    // Enable side slide menu
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
